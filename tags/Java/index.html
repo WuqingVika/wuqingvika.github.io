@@ -5,7 +5,7 @@
   <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
   
   
-  <title>  分类: 博文索引 |   Wuqingvika | 吴里庆庆</title>
+  <title>  标签: Java |   Wuqingvika | 吴里庆庆</title>
 
  
   
@@ -97,16 +97,16 @@
 
   
 
-  	
-  	<span class="page-title">博文索引</span>		
-  	
-	     	
-    <article class="article fadeIn">	
+    	
+    	<span  class="page-title"># Java</span>		
+      	
+      	    	
+          <article class="article fadeIn">	
 	
 	
     <div class="article-header">
     
-     <a class="article-title"  href="/2017/11/23/2017-11-20-后端开发/">【索引】后端开发从基础到进阶</a>     
+     <a class="article-title"  href="/2017/11/23/2016-06-20-后端开发-java-1/">【笔记】Java基础知识(一)「文件基本操作」</a>     
 
 
 	 
@@ -122,15 +122,95 @@
   	<ul>
 <li>content<br>{:toc}</li>
 </ul>
-<p>这篇文章汇总了本站中所有与「Java」「Spring」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
-<h2 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h2><h3 id="二、Java"><a href="#二、Java" class="headerlink" title="二、Java"></a>二、Java</h3><ul>
-<li><a href="https://wuqingvika.github.io/2016/06/20/后端开发-java-1/">【笔记】Java基础知识(一)「文件基本操作」</a></li>
-</ul>
-<h3 id="二、Spring"><a href="#二、Spring" class="headerlink" title="二、Spring"></a>二、Spring</h3><ul>
-<li><a href="https://wuqingvika.github.io/2016/06/20/后端开发-spring-1/">【笔记】Spring入门篇（一）了解spring</a></li>
-<li><a href="https://wuqingvika.github.io/2016/06/20/后端开发-spring-2/">【笔记】Spring入门篇（二）spring代理设置</a></li>
-</ul>
-<h2 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h2> 
+<p>本文是我的「Java学习笔记」第一篇之基础知识,具体内容主要包括文件的基本操作，详情可见右侧内容概要，<font color="red">【本文长期更新】</font>。</p>
+<h1 id="1、关于文件的基础知识"><a href="#1、关于文件的基础知识" class="headerlink" title="1、关于文件的基础知识"></a>1、关于文件的基础知识</h1><h2 id="1-1创建文件"><a href="#1-1创建文件" class="headerlink" title="1.1创建文件"></a>1.1创建文件</h2><pre><code>File file=new File(FileUtil.FileName);
+if(!file.exists()){
+file.createNewFile();}//创建文件
+
+获取文件名file.getName();
+文件路径：file.getPath();//相对路径
+        file.getAbsolutePath();//绝对路径
+</code></pre><h2 id="1-2删除文件"><a href="#1-2删除文件" class="headerlink" title="1.2删除文件"></a>1.2删除文件</h2><pre><code>File file=new File(FileUtil.fileName);
+if(file.exists()){
+file.delete();
+}
+</code></pre><h2 id="1-3重命名文件"><a href="#1-3重命名文件" class="headerlink" title="1.3重命名文件"></a>1.3重命名文件</h2><blockquote>
+<p>重命名文件</p>
+</blockquote>
+<pre><code>File file=new File(FileUtil.fileName);
+File newfile=new File(&quot;anotherFile.txt&quot;);
+file.renameTo(newfile);
+</code></pre><h2 id="1-4创建文件夹"><a href="#1-4创建文件夹" class="headerlink" title="1.4创建文件夹"></a>1.4创建文件夹</h2><pre><code>  File folder=new File(FileUtil.folderName);
+    if(folder.exists()!=false){//不存在
+     folder.mkdirs();
+     //folder.mkdirs()用这个比mkdir()
+     //以后只要创建文件夹，都用Mkdirs()更确保程序的稳定性。
+}
+//加上分隔符
+folderName=&quot;newFolder&quot;+File.separator+&quot;SubFolder&quot;;
+</code></pre><h2 id="1-5删除文件夹"><a href="#1-5删除文件夹" class="headerlink" title="1.5删除文件夹"></a>1.5删除文件夹</h2><pre><code>//RemoveFolder
+   File folder=new File(FileUtil.folderName);
+   if(folder.exists()){
+   folder.delete();}//只能删除子目录。不能删除非空文件夹
+</code></pre><h2 id="1-6获得文件大小"><a href="#1-6获得文件大小" class="headerlink" title="1.6获得文件大小"></a>1.6获得文件大小</h2><pre><code>file.length();
+//文件是否可读
+file.canRead();
+//文件是否可写；
+file.canWrite();
+//文件是否隐藏
+file.isHidden();
+</code></pre><h1 id="2、字节流"><a href="#2、字节流" class="headerlink" title="2、字节流"></a>2、字节流</h1><h2 id="2-1文件输入流"><a href="#2-1文件输入流" class="headerlink" title="2.1文件输入流"></a>2.1文件输入流</h2><pre><code> InputStream is=null;
+ is=new FileInputStream(&quot;D:/hello.txt&quot;);
+    byte[] b=new byte[1024];
+    int len=-1;
+    while((len=is.read(b))!=-1){
+    sysout(new String(b,0,len))
+    }
+
+is.close();!!!!!!
+</code></pre><h2 id="2-2文件输出流"><a href="#2-2文件输出流" class="headerlink" title="2.2文件输出流"></a>2.2文件输出流</h2><pre><code>OutputStream os=new FileOutputStream(&quot;D:/hell2.txt&quot;,true);
+//true代表不覆盖原来的，继续append
+String str=&quot;hello wuqingvika!&quot;;
+os.write(str.getBytes());
+os.close();
+}
+</code></pre><h1 id="3、字符流"><a href="#3、字符流" class="headerlink" title="3、字符流"></a>3、字符流</h1><h2 id="3-1读"><a href="#3-1读" class="headerlink" title="3.1读"></a>3.1读</h2><pre><code>Reader reader=new FileReader(&quot;D:/a.txt&quot;);
+char[] chars=new char[1024];
+int len=-1;
+while((len=reader.read(chars)!=-1){
+sysout(new String(chars,0,len));
+}
+</code></pre><h2 id="3-2写"><a href="#3-2写" class="headerlink" title="3.2写"></a>3.2写</h2><p>Writer writer=new FileWriter(“D:/hi.txt”);<br>writer.write(“吴庆加油啦。！！haha”);<br>writer.close();</p>
+<h1 id="4、转换流"><a href="#4、转换流" class="headerlink" title="4、转换流"></a>4、转换流</h1><pre><code>InputStream is=new FileInputStream(&quot;D:/hi.txt&quot;);
+    InputStreamReader reader=new InputStreamReader(is);
+    int len=-1;
+    char[] chars=new char[1024];
+    while((len=reader.read(chars))!=-1){
+        System.out.println(new String(chars,0,len));
+    }
+    reader.close();
+</code></pre><h1 id="5、缓冲流"><a href="#5、缓冲流" class="headerlink" title="5、缓冲流"></a>5、缓冲流</h1><pre><code>Reader reader=new FileReader(&quot;D:/hi.txt&quot;);
+     BufferedReader br=new BufferedReader(reader);
+     String str=null;
+     while((str=br.readLine())!=null){
+        System.out.println(str);
+     }
+   br.close();
+</code></pre><blockquote>
+<p>//第二种写法</p>
+</blockquote>
+<pre><code>BufferedReader br=new BufferedReader(new InputStreamReader(new FileInputStream(&quot;D:/hi.txt&quot;)));
+    String str=null;
+    while((str=br.readLine())!=null){
+       System.out.println(str);
+    }
+  br.close();
+</code></pre><h1 id="6、打印流"><a href="#6、打印流" class="headerlink" title="6、打印流"></a>6、打印流</h1><pre><code>PrintStream ps=null;
+ps=new PrintStream(&quot;D:/ps.txt&quot;);
+ps.print(&quot;helelll&quot;);
+ps.println(&quot;dkdk&quot;);
+ps.print(&quot;dks&quot;);            
+</code></pre> 
 
     
 
@@ -138,171 +218,17 @@
 
     
 
-  	<a class="article-readmore" href="/2017/11/23/2017-11-20-后端开发/">阅读更多</a> 	
+  	<a class="article-readmore" href="/2017/11/23/2016-06-20-后端开发-java-1/">阅读更多</a> 	
 	
-</article> 
-	     	
-    <article class="article fadeIn">	
-	
-	
-    <div class="article-header">
-    
-     <a class="article-title"  href="/2017/11/23/2017-11-19-运维&测试/">【索引】运维&amp;测试从基础到进阶</a>     
-
-
-	 
-
-	 <time class="article-date">2017-11-23 </time>    
-</div>      
-    <div class="article-excerpt">	
-	
-  	
-
-  
-
-  	<ul>
-<li>content<br>{:toc}</li>
-</ul>
-<p>这篇文章汇总了本站中所有与「Linux」「Nginx」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
-<h2 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h2><h3 id="一、Linux篇"><a href="#一、Linux篇" class="headerlink" title="一、Linux篇"></a>一、Linux篇</h3><ul>
-<li><a href="https://wuqingvika.github.io/2017/11/19/运维&amp;测试-linux-1/">【笔记】Linux(一)基础篇之「命令学习」</a></li>
-<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-linux-2/">【笔记】Linux(二)基础篇之「在Linux发布一个简单的web项目」</a><h3 id="二、Nginx篇"><a href="#二、Nginx篇" class="headerlink" title="二、Nginx篇"></a>二、Nginx篇</h3></li>
-<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-1/">【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群</a></li>
-<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-2/">【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群</a></li>
-</ul>
- 
+</article>     
+      	
+    	
 
     
-
-</div>		
-
-    
-
-  	<a class="article-readmore" href="/2017/11/23/2017-11-19-运维&测试/">阅读更多</a> 	
-	
-</article> 
-	     	
-    <article class="article fadeIn">	
-	
-	
-    <div class="article-header">
-    
-     <a class="article-title"  href="/2017/11/23/2017-11-19-前端开发/">【索引】前端开发从基础到进阶</a>     
-
-
-	 
-
-	 <time class="article-date">2017-11-23 </time>    
-</div>      
-    <div class="article-excerpt">	
-	
-  	
-
-  
-
-  	<ul>
-<li>content<br>{:toc}</li>
-</ul>
-<p>这篇文章汇总了本站中所有与「Bootstrap」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
-<h2 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h2><h3 id="一、BootStrap篇"><a href="#一、BootStrap篇" class="headerlink" title="一、BootStrap篇"></a>一、BootStrap篇</h3><ul>
-<li><a href="https://wuqingvika.github.io/2017/11/19/前端开发-bootstrap-1/">【笔记】Bootstrap基础篇（一）test1</a></li>
-<li><a href="https://wuqingvika.github.io/2017/11/19/前端开发-bootstrap-2/">【笔记】Bootstrap基础篇（二）test2</a></li>
-</ul>
-<h2 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h2> 
-
-    
-
-</div>		
-
-    
-
-  	<a class="article-readmore" href="/2017/11/23/2017-11-19-前端开发/">阅读更多</a> 	
-	
-</article> 
-	     	
-    <article class="article fadeIn">	
-	
-	
-    <div class="article-header">
-    
-     <a class="article-title"  href="/2017/11/23/2017-11-19-迷你小技能/">【索引】你值得拥有的一些迷你小技能</a>     
-
-
-	 
-
-	 <time class="article-date">2017-11-23 </time>    
-</div>      
-    <div class="article-excerpt">	
-	
-  	
-
-  
-
-  	<ul>
-<li>content<br>{:toc}</li>
-</ul>
-<p>这篇文章汇总了本站中所有与「小技能」、常用工具下载安装有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
-<h2 id="核心篇"><a href="#核心篇" class="headerlink" title="核心篇"></a>核心篇</h2><h3 id="一、XX-Net下载与安装"><a href="#一、XX-Net下载与安装" class="headerlink" title="一、XX-Net下载与安装"></a>一、XX-Net下载与安装</h3><ul>
-<li><a href="https://wuqingvika.github.io/2017/11/19/迷你小技能-XX-Net/">【工具】XX-Net「带你出去看看」</a></li>
-</ul>
-<h3 id="二、idea下载与安装"><a href="#二、idea下载与安装" class="headerlink" title="二、idea下载与安装"></a>二、idea下载与安装</h3><ul>
-<li><a href="https://wuqingvika.github.io/2017/11/20/迷你小技能-idea/">【工具】idea下载安装注册使用</a></li>
-</ul>
- 
-
-    
-
-</div>		
-
-    
-
-  	<a class="article-readmore" href="/2017/11/23/2017-11-19-迷你小技能/">阅读更多</a> 	
-	
-</article> 
-	     	
-    <article class="article fadeIn">	
-	
-	
-    <div class="article-header">
-    
-     <a class="article-title"  href="/2017/11/23/hello-world/">欢迎来到吴庆的博客</a>     
-
-
-	 
-
-	 <time class="article-date">2017-11-23 </time>    
-</div>      
-    <div class="article-excerpt">	
-	
-  	
-
-  
-
-  	<p>Welcome to <a href="https://wuqingvika.github.io/">Wuqingvika’s Blog</a>! 这里书写了我从「从全沾到全栈」开发的成长过程。欢迎您莅临本站，本宝宝还是一个小菜鸟，所以关于博客中有错误的信息还请私信我<a href="https://weibo.com/wuqingvika" target="_blank" rel="noopener">微博</a>一起探讨哦~~</p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建一篇新的文章"><a href="#创建一篇新的文章" class="headerlink" title="创建一篇新的文章"></a>创建一篇新的文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<h3 id="发布到网站"><a href="#发布到网站" class="headerlink" title="发布到网站"></a>发布到网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
- 
-
-    
-
-</div>		
-
-    
-
-  	<a class="article-readmore" href="/2017/11/23/hello-world/">阅读更多</a> 	
-	
-</article> 
-	 
-
-  	
-
-  
-   </h3>
 
 </section>
-<script src="/js/category.js"></script> </section>
+
+</section>
 
                   
       

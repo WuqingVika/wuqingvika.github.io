@@ -5,7 +5,7 @@
   <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
   
   
-  <title>  Wuqingvika | 吴里庆庆</title>
+  <title>  【笔记】Java基础知识(一)「文件基本操作」 |   Wuqingvika | 吴里庆庆</title>
 
  
   
@@ -87,7 +87,7 @@
      <div class="container">   
       
         
-        <section id="main" class="slideDownMin">
+        <section id="post">
         
         
 
@@ -96,21 +96,21 @@
 <div class="post-head">
 
 	<span class="post-title">	
-		无标题
+		【笔记】Java基础知识(一)「文件基本操作」
 	</span>
 
 
 	<div class="post-info">
 
 		<time class="post-time"><span class="iconfont icon-date"></span>
-		2017/11/22 22:40:03 	
+		2017/11/23 23:00:13 	
 		</time>
 
 
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		52
+		2354
 		</span>
 
 
@@ -124,7 +124,98 @@
 
   <div class="post-content">
    
-    google-site-verification: googlef264f86a3c656343.html    
+    <ul>
+<li>content<br>{:toc}</li>
+</ul>
+<p>本文是我的「Java学习笔记」第一篇之基础知识,具体内容主要包括文件的基本操作，详情可见右侧内容概要，<font color="red">【本文长期更新】</font>。</p>
+<h1 id="1、关于文件的基础知识"><a href="#1、关于文件的基础知识" class="headerlink" title="1、关于文件的基础知识"></a>1、关于文件的基础知识</h1><h2 id="1-1创建文件"><a href="#1-1创建文件" class="headerlink" title="1.1创建文件"></a>1.1创建文件</h2><pre><code>File file=new File(FileUtil.FileName);
+if(!file.exists()){
+file.createNewFile();}//创建文件
+
+获取文件名file.getName();
+文件路径：file.getPath();//相对路径
+        file.getAbsolutePath();//绝对路径
+</code></pre><h2 id="1-2删除文件"><a href="#1-2删除文件" class="headerlink" title="1.2删除文件"></a>1.2删除文件</h2><pre><code>File file=new File(FileUtil.fileName);
+if(file.exists()){
+file.delete();
+}
+</code></pre><h2 id="1-3重命名文件"><a href="#1-3重命名文件" class="headerlink" title="1.3重命名文件"></a>1.3重命名文件</h2><blockquote>
+<p>重命名文件</p>
+</blockquote>
+<pre><code>File file=new File(FileUtil.fileName);
+File newfile=new File(&quot;anotherFile.txt&quot;);
+file.renameTo(newfile);
+</code></pre><h2 id="1-4创建文件夹"><a href="#1-4创建文件夹" class="headerlink" title="1.4创建文件夹"></a>1.4创建文件夹</h2><pre><code>  File folder=new File(FileUtil.folderName);
+    if(folder.exists()!=false){//不存在
+     folder.mkdirs();
+     //folder.mkdirs()用这个比mkdir()
+     //以后只要创建文件夹，都用Mkdirs()更确保程序的稳定性。
+}
+//加上分隔符
+folderName=&quot;newFolder&quot;+File.separator+&quot;SubFolder&quot;;
+</code></pre><h2 id="1-5删除文件夹"><a href="#1-5删除文件夹" class="headerlink" title="1.5删除文件夹"></a>1.5删除文件夹</h2><pre><code>//RemoveFolder
+   File folder=new File(FileUtil.folderName);
+   if(folder.exists()){
+   folder.delete();}//只能删除子目录。不能删除非空文件夹
+</code></pre><h2 id="1-6获得文件大小"><a href="#1-6获得文件大小" class="headerlink" title="1.6获得文件大小"></a>1.6获得文件大小</h2><pre><code>file.length();
+//文件是否可读
+file.canRead();
+//文件是否可写；
+file.canWrite();
+//文件是否隐藏
+file.isHidden();
+</code></pre><h1 id="2、字节流"><a href="#2、字节流" class="headerlink" title="2、字节流"></a>2、字节流</h1><h2 id="2-1文件输入流"><a href="#2-1文件输入流" class="headerlink" title="2.1文件输入流"></a>2.1文件输入流</h2><pre><code> InputStream is=null;
+ is=new FileInputStream(&quot;D:/hello.txt&quot;);
+    byte[] b=new byte[1024];
+    int len=-1;
+    while((len=is.read(b))!=-1){
+    sysout(new String(b,0,len))
+    }
+
+is.close();!!!!!!
+</code></pre><h2 id="2-2文件输出流"><a href="#2-2文件输出流" class="headerlink" title="2.2文件输出流"></a>2.2文件输出流</h2><pre><code>OutputStream os=new FileOutputStream(&quot;D:/hell2.txt&quot;,true);
+//true代表不覆盖原来的，继续append
+String str=&quot;hello wuqingvika!&quot;;
+os.write(str.getBytes());
+os.close();
+}
+</code></pre><h1 id="3、字符流"><a href="#3、字符流" class="headerlink" title="3、字符流"></a>3、字符流</h1><h2 id="3-1读"><a href="#3-1读" class="headerlink" title="3.1读"></a>3.1读</h2><pre><code>Reader reader=new FileReader(&quot;D:/a.txt&quot;);
+char[] chars=new char[1024];
+int len=-1;
+while((len=reader.read(chars)!=-1){
+sysout(new String(chars,0,len));
+}
+</code></pre><h2 id="3-2写"><a href="#3-2写" class="headerlink" title="3.2写"></a>3.2写</h2><p>Writer writer=new FileWriter(“D:/hi.txt”);<br>writer.write(“吴庆加油啦。！！haha”);<br>writer.close();</p>
+<h1 id="4、转换流"><a href="#4、转换流" class="headerlink" title="4、转换流"></a>4、转换流</h1><pre><code>InputStream is=new FileInputStream(&quot;D:/hi.txt&quot;);
+    InputStreamReader reader=new InputStreamReader(is);
+    int len=-1;
+    char[] chars=new char[1024];
+    while((len=reader.read(chars))!=-1){
+        System.out.println(new String(chars,0,len));
+    }
+    reader.close();
+</code></pre><h1 id="5、缓冲流"><a href="#5、缓冲流" class="headerlink" title="5、缓冲流"></a>5、缓冲流</h1><pre><code>Reader reader=new FileReader(&quot;D:/hi.txt&quot;);
+     BufferedReader br=new BufferedReader(reader);
+     String str=null;
+     while((str=br.readLine())!=null){
+        System.out.println(str);
+     }
+   br.close();
+</code></pre><blockquote>
+<p>//第二种写法</p>
+</blockquote>
+<pre><code>BufferedReader br=new BufferedReader(new InputStreamReader(new FileInputStream(&quot;D:/hi.txt&quot;)));
+    String str=null;
+    while((str=br.readLine())!=null){
+       System.out.println(str);
+    }
+  br.close();
+</code></pre><h1 id="6、打印流"><a href="#6、打印流" class="headerlink" title="6、打印流"></a>6、打印流</h1><pre><code>PrintStream ps=null;
+ps=new PrintStream(&quot;D:/ps.txt&quot;);
+ps.print(&quot;helelll&quot;);
+ps.println(&quot;dkdk&quot;);
+ps.print(&quot;dks&quot;);            
+</code></pre>    
 
   </div>  
  
@@ -132,10 +223,20 @@
   <div class="post-bottom">
 		<div class="meta-info">
 
-		
+	
+			<ul class="ul">
+				<li class="li iconfont icon-category"></li>
+				<a class="category-link" href="/categories/后端开发/">后端开发</a>
+			</ul>
+			
 
 
-		
+	
+			<ul class="ul">
+				<li class="li iconfont icon-tag"></li>
+				<a class="tag-link" href="/tags/Java/">Java</a>
+			</ul>
+			
 </div> 
 		
 	
@@ -171,9 +272,26 @@
 
   
      
+      <div class="nav-prev">
+        <a class="nav-link" href="/2017/11/23/2016-06-20-后端开发-spring-1/">  
+           <li class="li iconfont icon-left"></li>         
+              
+          <span class="nav-title">【笔记】Spring入门篇（一）了解spring</span>
+        </a>
+      </div>
+    
 
 
 
+    
+       <div class="nav-next">      
+        <a  class="nav-link" href="/2017/11/23/2017-11-20-运维&测试-nginx-2/">      
+
+             
+         <span class="nav-title">【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群</span>
+          <li class="li iconfont icon-right"></li>
+        </a>
+        </div>
     
 
 </nav>   
@@ -275,267 +393,7 @@
 <script src="/js/post.js"></script>
 </section>
 
-                  
-      
-         
-
- <aside id="sidebar" class="fadeIn">
-  
-    
-
-<div class="widget profile">
-
-		<a  href="/img/header.png">
-		<img class="avatar" src="/img/header.png" alt="No Avatar">
-		</a>
-
-			
-		<span class="author">吴里庆庆</span>
-		
-		<span class="descrption slideDownMin">Java开发攻城狮, 软件设计师, 狮子座元气少女。</span>
-	
-		
-		<span class="location iconfont icon-location slideDownMin">
-		 上海 中国
-		 </span>	
-		
-
-		<div class="social">
-   		    	
-		<a href="https://github.com/wuqingvika" class="iconfont icon-github" target="_blank" title="github"></a>
-	        	
-		<a href="https://www.zhihu.com/people/wuqingvika-95" class="iconfont icon-zhihu" target="_blank" title="zhihu"></a>
-	        	
-		<a href="http://weibo.com/wuqingvika" class="iconfont icon-weibo" target="_blank" title="weibo"></a>
-	        	
-		<a href="https://www.facebook.com/wuqingvika" class="iconfont icon-facebook" target="_blank" title="facebook"></a>
-	        	
-		<a href="https://twitter.com/wu_qingvika" class="iconfont icon-twitter" target="_blank" title="twitter"></a>
-	        	
-		<a href="https://www.instagram.com/wuqingvika/" class="iconfont icon-instagram" target="_blank" title="instagram"></a>
-	        	
-		<a href="https://www.linkedin.com/in/wuqingvika" class="iconfont icon-linkedin" target="_blank" title="linkedin"></a>
-	    
-    	</div>
-			
-		<div class="count">
-			<a href="/archives">	
-			<div class="count-item">				
-			<h4 class="slideDownMin"> 16 </h4> <h4> 文章</h4></div></a>	
-
-			<a href="/categories">	
-			<div class="count-item">
-			<h4 class="slideDownMin"> 5</h4> <h4> 分类</h4></div></a>	
-
-		</div>
-</div>
-  
-    <div class="search-widget">
-	<span  class="search-word">  搜索 </span>
-	<i class="iconfont icon-search"></i>
-</div>
-  
-    
-  <div class="widget">
-
-   	  <a href="/archives"><span class="widget-title">最近文章</span></a>
-
-   	 	
-
-                
-
-        	
-
-            <a class="recent-post slideDownMin animation-border-item" href="/2017/11/23/2017-11-20-运维&测试-nginx-1/">
-
-            【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群
-
-            </a>          
-                
-
-        	
-
-            <a class="recent-post slideDownMin animation-border-item" href="/2017/11/23/2017-11-20-运维&测试-linux-2/">
-
-            【笔记】Linux(二)基础篇之「在Linux发布一个简单的web项目」
-
-            </a>          
-                
-
-        	
-
-            <a class="recent-post slideDownMin animation-border-item" href="/2017/11/23/2017-11-20-迷你小技能-idea/">
-
-            【工具】idea下载安装注册使用
-
-            </a>          
-                
-
-        	
-
-            <a class="recent-post slideDownMin animation-border-item" href="/2017/11/23/2017-11-20-后端开发/">
-
-            【索引】后端开发从基础到进阶
-
-            </a>          
-                
-
-        	
-
-            <a class="recent-post slideDownMin animation-border-item" href="/2017/11/23/2017-11-19-运维&测试-linux-1/">
-
-            【笔记】Linux(一)基础篇之「命令学习」
-
-            </a>          
-                
-
-        	
-
-            <a class="recent-post slideDownMin animation-border-item" href="/2017/11/23/2017-11-19-运维&测试/">
-
-            【索引】运维&amp;测试从基础到进阶
-
-            </a>          
-             
-  </div>
-
-
-  
-    
-<div class="widget">	
-    <a href="/categories"><span class="widget-title">分类</span></a>
- 	
-
-     <div>
-         	
-      	
-
-      <a class="meta-item slideDownMin" href="/categories/博文索引/">博文索引
-      <span class="meta-count">5</span>	
-      	
-      	</a>
-         	
-      	
-
-      <a class="meta-item slideDownMin" href="/categories/运维-测试/">运维&测试
-      <span class="meta-count">4</span>	
-      	
-      	</a>
-         	
-      	
-
-      <a class="meta-item slideDownMin" href="/categories/后端开发/">后端开发
-      <span class="meta-count">3</span>	
-      	
-      	</a>
-         	
-      	
-
-      <a class="meta-item slideDownMin" href="/categories/前端开发/">前端开发
-      <span class="meta-count">2</span>	
-      	
-      	</a>
-         	
-      	
-
-      <a class="meta-item slideDownMin" href="/categories/迷你小技能/">迷你小技能
-      <span class="meta-count">2</span>	
-      	
-      	</a>
-      
-
-     </div>
-
-</div>
-
-
-
-  
-    
-  <div class="widget">
-
-     <a href="/tags"><span class="widget-title">标签</span></a>
-
-     	<div>
-       
-
-        	<a class="meta-item slideDownMin" href="/tags/博文索引/">博文索引
-        	<span class="meta-count">5</span>
-        	</a>    		
-    	
-	   
-
-        	<a class="meta-item slideDownMin" href="/tags/Bootstrap/">Bootstrap
-        	<span class="meta-count">2</span>
-        	</a>    		
-    	
-	   
-
-        	<a class="meta-item slideDownMin" href="/tags/Spring/">Spring
-        	<span class="meta-count">2</span>
-        	</a>    		
-    	
-	   
-
-        	<a class="meta-item slideDownMin" href="/tags/Linux/">Linux
-        	<span class="meta-count">2</span>
-        	</a>    		
-    	
-	   
-
-        	<a class="meta-item slideDownMin" href="/tags/Nginx/">Nginx
-        	<span class="meta-count">2</span>
-        	</a>    		
-    	
-	   
-
-        	<a class="meta-item slideDownMin" href="/tags/Java/">Java
-        	<span class="meta-count">1</span>
-        	</a>    		
-    	
-	   
-
-        	<a class="meta-item slideDownMin" href="/tags/XX-Net/">XX-Net
-        	<span class="meta-count">1</span>
-        	</a>    		
-    	
-	   
-
-        	<a class="meta-item slideDownMin" href="/tags/IntelliJ-IDEA/">IntelliJ IDEA
-        	<span class="meta-count">1</span>
-        	</a>    		
-    	
-	   
-       </div>
-  </div>
-
-  
-    <div class="widget" >
-	
-<span class="widget-title">友链</span>
-
-	<div>
-			
-			<ul class="ul links">
-				
-					<li class="li link-item slideDownMin">
-						<a href="https://github.com/wuqingvika" target="_blank" title="wuqingvika">wuqingvika</a>
-					</li>
-				
-					<li class="li link-item slideDownMin">
-						<a href="//www.colorhexa.com" target="_blank" title="ColorHexa">ColorHexa</a>
-					</li>
-				
-			</ul>
-		
-	</div>
-</div>
-  
-</aside>
-
-      
-    
-    
+     
     
     </div>        
     
