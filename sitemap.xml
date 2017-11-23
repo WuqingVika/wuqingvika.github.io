@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wuqingvika.github.io/tags/index.html</loc>
+    
+    <lastmod>2017-11-23T15:04:16.108Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wuqingvika.github.io/2017/11/23/hello-world/</loc>
     
     <lastmod>2017-11-23T14:58:42.512Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://wuqingvika.github.io/categories/index.html</loc>
     
     <lastmod>2017-11-23T14:55:25.009Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://wuqingvika.github.io/tags/index.html</loc>
-    
-    <lastmod>2017-11-23T13:53:51.952Z</lastmod>
     
   </url>
   
