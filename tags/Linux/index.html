@@ -119,10 +119,7 @@
 
   
 
-  	<ul>
-<li>content<br>{:toc}</li>
-</ul>
-<p>本文是我的「Linux学习笔记」第二篇,主要学习了如何在Linux发布一个web项目(包括：安装Jdk、安装Mysql、安装Tomcat、发布项目直至访问成功)。</p>
+  	<p>本文是我的「Linux学习笔记」第二篇,主要学习了如何在Linux发布一个web项目(包括：安装Jdk、安装Mysql、安装Tomcat、发布项目直至访问成功)。</p>
 <h2 id="在linux发布一个简单的Web项目"><a href="#在linux发布一个简单的Web项目" class="headerlink" title="在linux发布一个简单的Web项目"></a>在linux发布一个简单的Web项目</h2><h3 id="1-安装jdk"><a href="#1-安装jdk" class="headerlink" title="1.安装jdk:"></a>1.安装jdk:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">a.检测是否安装了jdk  运行java -version</span><br><span class="line">b.若有需要将其卸载</span><br><span class="line">c.查看安装那些jdk</span><br><span class="line">       rpm -qa | grep java</span><br><span class="line">d.卸载</span><br><span class="line">     先卸载 openjdk 1.7</span><br><span class="line">           rpm -e --nodeps 卸载的包</span><br><span class="line">            rpm -e --nodeps java-1.7.0-openjdk-1.7.0.45-2.4.3.3.el6.i686</span><br><span class="line">     再卸载 openjdk 1.6		</span><br><span class="line">               rpm -e --nodeps java-1.6.0-openjdk-1.6.0.0-1.66.1.13.0.el6.i686</span><br><span class="line">e.安装jdk</span><br><span class="line">           上传jdk 通过ftp软件上传(上传到root目录下)</span><br><span class="line">           在 /usr/local创建一个 java目录</span><br><span class="line">               mkdir java</span><br><span class="line">           将上传的jdk复制到 java目录下</span><br><span class="line">               cp /root/jdk.xxxxx.tar /usr/local/java</span><br><span class="line">           将其解压</span><br><span class="line">               tar -xvf jdk.xxx.tar</span><br><span class="line">f.安装依赖</span><br><span class="line">           yum install glibc.i686</span><br><span class="line">g.配置环境变量</span><br><span class="line">      编辑  vi /etc/profile</span><br><span class="line">      在文件最后添加一下信息</span><br><span class="line">          #set java environment</span><br><span class="line">           JAVA_HOME=/usr/local/java/jdk1.7.0_72</span><br><span class="line">           CLASSPATH=.:$JAVA_HOME/lib.tools.jar</span><br><span class="line">           PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">           export JAVA_HOME CLASSPATH PATH</span><br><span class="line">           保存退出</span><br><span class="line">           source /etc/profile  使更改的配置立即生效</span><br></pre></td></tr></table></figure>
 <h3 id="2-安装Mysql"><a href="#2-安装Mysql" class="headerlink" title="2.安装Mysql:"></a>2.安装Mysql:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">        a.检测是否安装了mysql</span><br><span class="line">            rpm  -qa | grep mysql</span><br><span class="line">        b.卸载系统自带的mysql</span><br><span class="line">            rpm -e --nodeps 卸载的包</span><br><span class="line">            rpm -e --nodeps mysql-libs-5.1.71-1.el6.i686 </span><br><span class="line">        c.上传mysql</span><br><span class="line">        d.在 /usr/local/ 创建一个mysql</span><br><span class="line">        e.复制mysql 到 mysql目录下</span><br><span class="line">        f.解压 tar</span><br><span class="line">            会有几个rpm文件</span><br><span class="line">        g.安装</span><br><span class="line">            安装mysql的服务器端</span><br><span class="line">                rpm -ivh MySQL-server-5.5.49-1.linux2.6.i386.rpm</span><br><span class="line">                注意:第一次登录mysql的时候没有不需要密码的 以后都需要</span><br><span class="line">            安装mysql的客户端</span><br><span class="line">                rpm -ivh MySQL-client-5.5.49-1.linux2.6.i386.rpm</span><br><span class="line">        h.查看mysql的服务状态</span><br><span class="line">            service mysql status </span><br><span class="line">          启动 mysql</span><br><span class="line">            service mysql start</span><br><span class="line">          停止mysql</span><br><span class="line">            service mysql stop</span><br><span class="line">            </span><br><span class="line">        i.修改mysql的root的密码</span><br><span class="line">            登录:mysql -uroot</span><br><span class="line">            修改密码:</span><br><span class="line">                use mysql;</span><br><span class="line">                update user set password = password(&apos;123456&apos;) where user = &apos;root&apos;;</span><br><span class="line">                flush privileges;# 刷新</span><br><span class="line">        j.开启远程访问</span><br><span class="line">            grant all privileges on *.* to &apos;root&apos; @&apos;%&apos; identified by &apos;1234&apos;;</span><br><span class="line">            flush privileges;</span><br><span class="line">        k.开启防火墙端口 3306 退出mysql</span><br><span class="line">            3306端口放行 </span><br><span class="line">            /sbin/iptables -I INPUT -p tcp --dport 3306 -j ACCEPT</span><br><span class="line">            将该设置添加到防火墙的规则中</span><br><span class="line">            /etc/rc.d/init.d/iptables save</span><br><span class="line">        l:设置mysql的服务随着系统的启动而启动</span><br><span class="line">            加入到系统服务：</span><br><span class="line">            chkconfig --add mysql</span><br><span class="line">            自动启动：</span><br><span class="line">            chkconfig mysql on</span><br><span class="line">``` </span><br><span class="line">### 3.安装tomcat</span><br></pre></td></tr></table></figure>
 <pre><code>a.在/usr/local/        创建tomcat目录
@@ -192,10 +189,7 @@ b.项目
 
   
 
-  	<ul>
-<li>content<br>{:toc}</li>
-</ul>
-<p>本文是我的「Linux学习笔记」第一篇,主要学习了Linux的一些基本命令。</p>
+  	<p>本文是我的「Linux学习笔记」第一篇,主要学习了Linux的一些基本命令。</p>
 <h2 id="linux-操作系统-OS"><a href="#linux-操作系统-OS" class="headerlink" title="linux:操作系统 OS"></a>linux:操作系统 OS</h2><h3 id="首先来了解下unix"><a href="#首先来了解下unix" class="headerlink" title="首先来了解下unix:"></a>首先来了解下unix:</h3><pre><code>unix是一个多用户,多任务的操作系统,收费的操作系统.
 </code></pre><h3 id="linux"><a href="#linux" class="headerlink" title="linux:"></a>linux:</h3><pre><code>版本:
     内核版本
@@ -509,15 +503,6 @@ chown 更改文件的归属者
 
         	
 
-            <a class="recent-post slideDownMin animation-border-item" href="/2017/11/23/2017-11-20-运维&测试-nginx-1/">
-
-            【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群
-
-            </a>          
-                
-
-        	
-
             <a class="recent-post slideDownMin animation-border-item" href="/2017/11/23/2017-11-20-运维&测试-linux-2/">
 
             【笔记】Linux(二)基础篇之「在Linux发布一个简单的web项目」
@@ -536,6 +521,15 @@ chown 更改文件的归属者
 
         	
 
+            <a class="recent-post slideDownMin animation-border-item" href="/2017/11/23/2017-11-19-前端开发-bootstrap-1/">
+
+            【笔记】Bootstrap基础篇（一）test1
+
+            </a>          
+                
+
+        	
+
             <a class="recent-post slideDownMin animation-border-item" href="/2017/11/23/2017-11-20-后端开发/">
 
             【索引】后端开发从基础到进阶
@@ -545,18 +539,18 @@ chown 更改文件的归属者
 
         	
 
-            <a class="recent-post slideDownMin animation-border-item" href="/2017/11/23/2017-11-19-运维&测试-linux-1/">
+            <a class="recent-post slideDownMin animation-border-item" href="/2017/11/23/2017-11-19-前端开发-bootstrap-2/">
 
-            【笔记】Linux(一)基础篇之「命令学习」
+            【笔记】Bootstrap基础篇（二）test2
 
             </a>          
                 
 
         	
 
-            <a class="recent-post slideDownMin animation-border-item" href="/2017/11/23/2017-11-19-运维&测试/">
+            <a class="recent-post slideDownMin animation-border-item" href="/2017/11/23/2017-11-20-运维&测试-nginx-1/">
 
-            【索引】运维&amp;测试从基础到进阶
+            【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群
 
             </a>          
              
@@ -628,13 +622,13 @@ chown 更改文件的归属者
     	
 	   
 
-        	<a class="meta-item slideDownMin" href="/tags/Spring/">Spring
+        	<a class="meta-item slideDownMin" href="/tags/Bootstrap/">Bootstrap
         	<span class="meta-count">2</span>
         	</a>    		
     	
 	   
 
-        	<a class="meta-item slideDownMin" href="/tags/Bootstrap/">Bootstrap
+        	<a class="meta-item slideDownMin" href="/tags/Spring/">Spring
         	<span class="meta-count">2</span>
         	</a>    		
     	
