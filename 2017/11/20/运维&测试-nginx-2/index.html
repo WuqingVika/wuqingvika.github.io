@@ -110,7 +110,7 @@
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		536
+		501
 		</span>
 
 
@@ -144,18 +144,18 @@ AV.init({
 
   <div class="post-content">
    
-    <p>本文是我的「Nginx学习笔记」第一篇,主要介绍了如何在window上搭建一个集群。<br><a id="more"></a></p>
+    <script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Nginx学习笔记」第一篇,主要介绍了如何在window上搭建一个集群。<br><a id="more"></a></p>
 <h2 id="Nginx在windows上搭建集群"><a href="#Nginx在windows上搭建集群" class="headerlink" title="Nginx在windows上搭建集群"></a>Nginx在windows上搭建集群</h2><ul>
 <li>1.先将 nginx上传到linux上</li>
 <li>2.解压nginx</li>
 <li><p>3.先编译nginx</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">安装依赖包</span><br><span class="line">         yum install gcc-c++</span><br><span class="line">         yum install -y pcre pcre-devel</span><br><span class="line">         yum install -y zlib zlib-devel</span><br><span class="line">         yum install -y openssl openssl-devel</span><br><span class="line">执行编译</span><br><span class="line">         先进入 nginx的目录</span><br><span class="line">         执行</span><br><span class="line">             ./configure</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">安装依赖包</span><br><span class="line">         yum install gcc-c++</span><br><span class="line">         yum install -y pcre pcre-devel</span><br><span class="line">         yum install -y zlib zlib-devel</span><br><span class="line">         yum install -y openssl openssl-devel</span><br><span class="line">执行编译</span><br><span class="line">         先进入 nginx的目录</span><br><span class="line">         执行</span><br><span class="line">             ./configure</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>4.安装nginx</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">    执行 </span><br><span class="line">           make</span><br><span class="line">           make install</span><br><span class="line">``` </span><br><span class="line">	</span><br><span class="line">- 5.启动nginx</span><br><span class="line">  ``` bash</span><br><span class="line">        <span class="built_in">cd</span> nginx目录下</span><br><span class="line">                配置文件 conf</span><br><span class="line">                启动nginx </span><br><span class="line">                    ./nginx</span><br><span class="line">  ``` </span><br><span class="line">- 6.将端口号80 放行</span><br><span class="line">  ``` bash</span><br><span class="line">		/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line">		将该设置添加到防火墙的规则中</span><br><span class="line">		/etc/rc.d/init.d/iptables save</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">    执行 </span><br><span class="line">           make</span><br><span class="line">           make install</span><br><span class="line">``` </span><br><span class="line">	</span><br><span class="line">- 5.启动nginx</span><br><span class="line">  ``` bash</span><br><span class="line">        <span class="built_in">cd</span> nginx目录下</span><br><span class="line">                配置文件 conf</span><br><span class="line">                启动nginx </span><br><span class="line">                    ./nginx</span><br><span class="line">  ``` </span><br><span class="line">- 6.将端口号80 放行</span><br><span class="line">  ``` bash</span><br><span class="line">		/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line">		将该设置添加到防火墙的规则中</span><br><span class="line">		/etc/rc.d/init.d/iptables save</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>7.修改conf文件 和window下一样</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">配置集群</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">配置集群</span><br></pre></td></tr></table></figure>
 <ul>
 <li>可以参考<a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-1/">【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群</a></li>
 </ul>
@@ -232,10 +232,10 @@ AV.init({
 
     
        <div class="nav-next">      
-        <a  class="nav-link" href="/2017/11/20/后端开发/">      
+        <a  class="nav-link" href="/2017/11/20/运维&测试-nginx-1/">      
 
              
-         <span class="nav-title">【索引】后端开发从基础到进阶</span>
+         <span class="nav-title">【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群</span>
           <li class="li iconfont icon-right"></li>
         </a>
         </div>

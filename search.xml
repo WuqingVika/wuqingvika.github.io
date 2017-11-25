@@ -5,11 +5,11 @@
     <entry>
       <title><![CDATA[欢迎来到吴庆的博客]]></title>
       <url>/2017/11/23/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://wuqingvika.github.io/">Wuqingvika’s Blog</a>! 这里书写了我从「从全沾到全栈」开发的成长过程。欢迎您莅临本站，本宝宝还是一个小菜鸟，所以关于博客中有错误的信息还请私信我<a href="https://weibo.com/wuqingvika" target="_blank" rel="noopener">微博</a>一起探讨哦~~<br><a id="more"></a></p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建一篇新的文章"><a href="#创建一篇新的文章" class="headerlink" title="创建一篇新的文章"></a>创建一篇新的文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<h3 id="发布到网站"><a href="#发布到网站" class="headerlink" title="发布到网站"></a>发布到网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>Welcome to <a href="https://wuqingvika.github.io/">Wuqingvika’s Blog</a>! 这里书写了我从「从全沾到全栈」开发的成长过程。欢迎您莅临本站，本宝宝还是一个小菜鸟，所以关于博客中有错误的信息还请私信我<a href="https://weibo.com/wuqingvika" target="_blank" rel="noopener">微博</a>一起探讨哦~~<br><a id="more"></a></p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建一篇新的文章"><a href="#创建一篇新的文章" class="headerlink" title="创建一篇新的文章"></a>创建一篇新的文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="发布到网站"><a href="#发布到网站" class="headerlink" title="发布到网站"></a>发布到网站</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 ]]></content>
       
         <categories>
@@ -30,7 +30,7 @@
     <entry>
       <title><![CDATA[【工具】idea下载安装注册使用]]></title>
       <url>/2017/11/20/%E8%BF%B7%E4%BD%A0%E5%B0%8F%E6%8A%80%E8%83%BD-idea/</url>
-      <content type="html"><![CDATA[<p>本文是我的「迷你小技能」第二篇,主要对IntelliJ IDEA安装与使用作一些说明。<br><a id="more"></a></p>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「迷你小技能」第二篇,主要对IntelliJ IDEA安装与使用作一些说明。<br><a id="more"></a></p>
 <h2 id="IntelliJ-IDEA"><a href="#IntelliJ-IDEA" class="headerlink" title="IntelliJ IDEA"></a>IntelliJ IDEA</h2>]]></content>
       
         <categories>
@@ -51,18 +51,18 @@
     <entry>
       <title><![CDATA[【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群]]></title>
       <url>/2017/11/20/%E8%BF%90%E7%BB%B4&amp;%E6%B5%8B%E8%AF%95-nginx-2/</url>
-      <content type="html"><![CDATA[<p>本文是我的「Nginx学习笔记」第一篇,主要介绍了如何在window上搭建一个集群。<br><a id="more"></a></p>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Nginx学习笔记」第一篇,主要介绍了如何在window上搭建一个集群。<br><a id="more"></a></p>
 <h2 id="Nginx在windows上搭建集群"><a href="#Nginx在windows上搭建集群" class="headerlink" title="Nginx在windows上搭建集群"></a>Nginx在windows上搭建集群</h2><ul>
 <li>1.先将 nginx上传到linux上</li>
 <li>2.解压nginx</li>
 <li><p>3.先编译nginx</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">安装依赖包</span><br><span class="line">         yum install gcc-c++</span><br><span class="line">         yum install -y pcre pcre-devel</span><br><span class="line">         yum install -y zlib zlib-devel</span><br><span class="line">         yum install -y openssl openssl-devel</span><br><span class="line">执行编译</span><br><span class="line">         先进入 nginx的目录</span><br><span class="line">         执行</span><br><span class="line">             ./configure</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">安装依赖包</span><br><span class="line">         yum install gcc-c++</span><br><span class="line">         yum install -y pcre pcre-devel</span><br><span class="line">         yum install -y zlib zlib-devel</span><br><span class="line">         yum install -y openssl openssl-devel</span><br><span class="line">执行编译</span><br><span class="line">         先进入 nginx的目录</span><br><span class="line">         执行</span><br><span class="line">             ./configure</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>4.安装nginx</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">    执行 </span><br><span class="line">           make</span><br><span class="line">           make install</span><br><span class="line">``` </span><br><span class="line">	</span><br><span class="line">- 5.启动nginx</span><br><span class="line">  ``` bash</span><br><span class="line">        <span class="built_in">cd</span> nginx目录下</span><br><span class="line">                配置文件 conf</span><br><span class="line">                启动nginx </span><br><span class="line">                    ./nginx</span><br><span class="line">  ``` </span><br><span class="line">- 6.将端口号80 放行</span><br><span class="line">  ``` bash</span><br><span class="line">		/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line">		将该设置添加到防火墙的规则中</span><br><span class="line">		/etc/rc.d/init.d/iptables save</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">    执行 </span><br><span class="line">           make</span><br><span class="line">           make install</span><br><span class="line">``` </span><br><span class="line">	</span><br><span class="line">- 5.启动nginx</span><br><span class="line">  ``` bash</span><br><span class="line">        <span class="built_in">cd</span> nginx目录下</span><br><span class="line">                配置文件 conf</span><br><span class="line">                启动nginx </span><br><span class="line">                    ./nginx</span><br><span class="line">  ``` </span><br><span class="line">- 6.将端口号80 放行</span><br><span class="line">  ``` bash</span><br><span class="line">		/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line">		将该设置添加到防火墙的规则中</span><br><span class="line">		/etc/rc.d/init.d/iptables save</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>7.修改conf文件 和window下一样</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">配置集群</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">配置集群</span><br></pre></td></tr></table></figure>
 <ul>
 <li>可以参考<a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-1/">【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群</a></li>
 </ul>
@@ -86,9 +86,45 @@
     </entry>
     
     <entry>
+      <title><![CDATA[【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群]]></title>
+      <url>/2017/11/20/%E8%BF%90%E7%BB%B4&amp;%E6%B5%8B%E8%AF%95-nginx-1/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Nginx学习笔记」第一篇,主要介绍了Nginx相关特点以及如何在window上搭建一个集群。<br><a id="more"></a></p>
+<h2 id="Nginx介绍："><a href="#Nginx介绍：" class="headerlink" title="Nginx介绍："></a>Nginx介绍：</h2><ul>
+<li>是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器<h3 id="特点"><a href="#特点" class="headerlink" title="特点:"></a>特点:</h3></li>
+</ul>
+<ul>
+<li><p>反向代理 :</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">        先来了解正向代理:需要我们用户,手动的设置代理服务器的ip和端口号</span><br><span class="line">		反向代理:代理服务器的,用户不需要设置.</span><br><span class="line">``` </span><br><span class="line">			</span><br><span class="line">- 负载均衡:</span><br><span class="line">``` bash 	</span><br><span class="line">		原理就是数据流量分摊到多个服务器上执行，减轻每台服务器的压力，</span><br><span class="line">		多台服务器共同完成工作任务，从而提高了数据的吞吐量。</span><br><span class="line">``` </span><br><span class="line">		</span><br><span class="line">- 动静分离:</span><br><span class="line">``` bash 	</span><br><span class="line">		将静态的资源放到反向服务器,节省用户的访问时间.</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="comment">## Nginx在windows上搭建集群</span></span><br><span class="line">- 1.在g盘新建两个目录 tomcat1 tomcat2</span><br><span class="line">- 2.修改tomcat2的端口 在tomcat1的端口上+10</span><br><span class="line">- 3.解压nginx</span><br><span class="line">``` bash</span><br><span class="line">            修改nginx的 nginx.conf文件</span><br><span class="line">            在locatioin / 下添加了反向代理</span><br><span class="line">                proxy_pass 代理服务器</span><br><span class="line">            这里只是代理一台服务器</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.代理集群</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">            需要在http节点上添加一个</span><br><span class="line">                upstream server_wq&#123;</span><br><span class="line">                    server 127.0.0.1:8080;</span><br><span class="line">                    server 127.0.0.1:8090;</span><br><span class="line">                &#125;</span><br><span class="line">            修改location /下的反向代理 </span><br><span class="line">                proxy_pass http://server_wq</span><br><span class="line">``` </span><br><span class="line">	</span><br><span class="line">- 5.session共享问题</span><br><span class="line">  -  解决方式1:只能在window下好使</span><br><span class="line">  ``` bash</span><br><span class="line">         web服务器解决(广播机制)</span><br><span class="line">                注意:tomcat下性能低</span><br><span class="line">                修改两个地方:</span><br><span class="line">                    1.修改tomcat的server.xml 支持共享</span><br><span class="line">                        将 引擎标签下的 </span><br><span class="line">                            &lt;Cluster className=<span class="string">"org.apache.catalina.ha.tcp.SimpleTcpCluster"</span>/&gt;</span><br><span class="line">                        注释去掉</span><br><span class="line">                    2.修改项目的配置文件 web.xml中添加一个节点&lt;distributable/&gt; </span><br><span class="line">  ``` </span><br><span class="line">  -  解决方式2:</span><br><span class="line">  ``` bash</span><br><span class="line">   可以将session的id放入redis中</span><br></pre></td></tr></table></figure>
+<ul>
+<li>解决方式3:<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">保证一个ip地址永远的访问一台web服务器,就不存在session共享问题了,在linux</span><br><span class="line">在nginx的配置文件中</span><br><span class="line">	upstream中添加 ip_hash;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 运维&amp;测试 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Nginx </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[【索引】后端开发从基础到进阶]]></title>
       <url>/2017/11/20/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/</url>
-      <content type="html"><![CDATA[<p>这篇文章汇总了本站中所有与「Java」「Spring」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>这篇文章汇总了本站中所有与「Java」「Spring」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
 <a id="more"></a>
 <h2 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h2><h3 id="二、Java"><a href="#二、Java" class="headerlink" title="二、Java"></a>二、Java</h3><ul>
 <li><a href="https://wuqingvika.github.io/2016/06/20/后端开发-java-1/">【笔记】Java基础知识(一)「文件基本操作」</a></li>
@@ -117,10 +153,10 @@
     <entry>
       <title><![CDATA[【笔记】Linux(二)基础篇之「在Linux发布一个简单的web项目」]]></title>
       <url>/2017/11/20/%E8%BF%90%E7%BB%B4&amp;%E6%B5%8B%E8%AF%95-linux-2/</url>
-      <content type="html"><![CDATA[<p>本文是我的「Linux学习笔记」第二篇,主要学习了如何在Linux发布一个web项目(包括：安装Jdk、安装Mysql、安装Tomcat、发布项目直至访问成功)。<br><a id="more"></a></p>
-<h2 id="在linux发布一个简单的Web项目"><a href="#在linux发布一个简单的Web项目" class="headerlink" title="在linux发布一个简单的Web项目"></a>在linux发布一个简单的Web项目</h2><h3 id="1-安装jdk"><a href="#1-安装jdk" class="headerlink" title="1.安装jdk:"></a>1.安装jdk:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">a.检测是否安装了jdk  运行java -version</span><br><span class="line">b.若有需要将其卸载</span><br><span class="line">c.查看安装那些jdk</span><br><span class="line">       rpm -qa | grep java</span><br><span class="line">d.卸载</span><br><span class="line">     先卸载 openjdk 1.7</span><br><span class="line">           rpm -e --nodeps 卸载的包</span><br><span class="line">            rpm -e --nodeps java-1.7.0-openjdk-1.7.0.45-2.4.3.3.el6.i686</span><br><span class="line">     再卸载 openjdk 1.6		</span><br><span class="line">               rpm -e --nodeps java-1.6.0-openjdk-1.6.0.0-1.66.1.13.0.el6.i686</span><br><span class="line">e.安装jdk</span><br><span class="line">           上传jdk 通过ftp软件上传(上传到root目录下)</span><br><span class="line">           在 /usr/<span class="built_in">local</span>创建一个 java目录</span><br><span class="line">               mkdir java</span><br><span class="line">           将上传的jdk复制到 java目录下</span><br><span class="line">               cp /root/jdk.xxxxx.tar /usr/<span class="built_in">local</span>/java</span><br><span class="line">           将其解压</span><br><span class="line">               tar -xvf jdk.xxx.tar</span><br><span class="line">f.安装依赖</span><br><span class="line">           yum install glibc.i686</span><br><span class="line">g.配置环境变量</span><br><span class="line">      编辑  vi /etc/profile</span><br><span class="line">      在文件最后添加一下信息</span><br><span class="line">          <span class="comment">#set java environment</span></span><br><span class="line">           JAVA_HOME=/usr/<span class="built_in">local</span>/java/jdk1.7.0_72</span><br><span class="line">           CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib.tools.jar</span><br><span class="line">           PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line">           <span class="built_in">export</span> JAVA_HOME CLASSPATH PATH</span><br><span class="line">           保存退出</span><br><span class="line">           <span class="built_in">source</span> /etc/profile  使更改的配置立即生效</span><br></pre></td></tr></table></figure>
-<h3 id="2-安装Mysql"><a href="#2-安装Mysql" class="headerlink" title="2.安装Mysql:"></a>2.安装Mysql:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">        a.检测是否安装了mysql</span><br><span class="line">            rpm  -qa | grep mysql</span><br><span class="line">        b.卸载系统自带的mysql</span><br><span class="line">            rpm -e --nodeps 卸载的包</span><br><span class="line">            rpm -e --nodeps mysql-libs-5.1.71-1.el6.i686 </span><br><span class="line">        c.上传mysql</span><br><span class="line">        d.在 /usr/<span class="built_in">local</span>/ 创建一个mysql</span><br><span class="line">        e.复制mysql 到 mysql目录下</span><br><span class="line">        f.解压 tar</span><br><span class="line">            会有几个rpm文件</span><br><span class="line">        g.安装</span><br><span class="line">            安装mysql的服务器端</span><br><span class="line">                rpm -ivh MySQL-server-5.5.49-1.linux2.6.i386.rpm</span><br><span class="line">                注意:第一次登录mysql的时候没有不需要密码的 以后都需要</span><br><span class="line">            安装mysql的客户端</span><br><span class="line">                rpm -ivh MySQL-client-5.5.49-1.linux2.6.i386.rpm</span><br><span class="line">        h.查看mysql的服务状态</span><br><span class="line">            service mysql status </span><br><span class="line">          启动 mysql</span><br><span class="line">            service mysql start</span><br><span class="line">          停止mysql</span><br><span class="line">            service mysql stop</span><br><span class="line">            </span><br><span class="line">        i.修改mysql的root的密码</span><br><span class="line">            登录:mysql -uroot</span><br><span class="line">            修改密码:</span><br><span class="line">                use mysql;</span><br><span class="line">                update user <span class="built_in">set</span> password = password(<span class="string">'123456'</span>) <span class="built_in">where</span> user = <span class="string">'root'</span>;</span><br><span class="line">                flush privileges;<span class="comment"># 刷新</span></span><br><span class="line">        j.开启远程访问</span><br><span class="line">            grant all privileges on *.* to <span class="string">'root'</span> @<span class="string">'%'</span> identified by <span class="string">'1234'</span>;</span><br><span class="line">            flush privileges;</span><br><span class="line">        k.开启防火墙端口 3306 退出mysql</span><br><span class="line">            3306端口放行 </span><br><span class="line">            /sbin/iptables -I INPUT -p tcp --dport 3306 -j ACCEPT</span><br><span class="line">            将该设置添加到防火墙的规则中</span><br><span class="line">            /etc/rc.d/init.d/iptables save</span><br><span class="line">        l:设置mysql的服务随着系统的启动而启动</span><br><span class="line">            加入到系统服务：</span><br><span class="line">            chkconfig --add mysql</span><br><span class="line">            自动启动：</span><br><span class="line">            chkconfig mysql on</span><br><span class="line">``` </span><br><span class="line"><span class="comment">### 3.安装tomcat</span></span><br><span class="line">``` bash</span><br><span class="line">        a.在/usr/<span class="built_in">local</span>/		创建tomcat目录</span><br><span class="line">        b.复制tomcat 到 /usr/<span class="built_in">local</span>/tomcat</span><br><span class="line">        c.解压tomcat</span><br><span class="line">        d.启动tomcat 进入 bin</span><br><span class="line">            方式1:</span><br><span class="line">                sh startup.sh</span><br><span class="line">            方式2:</span><br><span class="line">                ./startup.sh</span><br><span class="line">        e.开启端口号 8080</span><br><span class="line">            8080端口放行 </span><br><span class="line">            /sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT</span><br><span class="line">            将该设置添加到防火墙的规则中</span><br><span class="line">            /etc/rc.d/init.d/iptables save</span><br><span class="line">            </span><br><span class="line">        注意:</span><br><span class="line">            查看日志文件</span><br><span class="line">                tail -f logs/catalina.out</span><br><span class="line">            退出 ctrl+c</span><br></pre></td></tr></table></figure>
-<h3 id="4-发布项目"><a href="#4-发布项目" class="headerlink" title="4.发布项目"></a>4.发布项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">a.数据库和表</span><br><span class="line">        备份dbgirl的数据库</span><br><span class="line">        在windows下</span><br><span class="line">            mysqldump -uroot -p1234 dbgirl &gt; d:/dbgirl1103.sql</span><br><span class="line">        将dbgirl1103.sql上传 root目录</span><br><span class="line">        通过远程工具还原数据库</span><br><span class="line">            先登录mysql</span><br><span class="line">            创建数据库 dbgirl</span><br><span class="line">            进入dbgirl</span><br><span class="line">                <span class="built_in">source</span> /root/dbgirl1103.sql</span><br><span class="line">        </span><br><span class="line">b.项目</span><br><span class="line">        将项目打包 war</span><br><span class="line">        war包的特点:</span><br><span class="line">            在tomcat/webapps目录下 只要tomcat启动 war会自动解压</span><br><span class="line">        将dbgirl.war上传到虚拟机的root目录下</span><br><span class="line">        将dbgirl.war移动到tomcat/webapps下即可</span><br></pre></td></tr></table></figure>]]></content>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Linux学习笔记」第二篇,主要学习了如何在Linux发布一个web项目(包括：安装Jdk、安装Mysql、安装Tomcat、发布项目直至访问成功)。<br><a id="more"></a></p>
+<h2 id="在linux发布一个简单的Web项目"><a href="#在linux发布一个简单的Web项目" class="headerlink" title="在linux发布一个简单的Web项目"></a>在linux发布一个简单的Web项目</h2><h3 id="1-安装jdk"><a href="#1-安装jdk" class="headerlink" title="1.安装jdk:"></a>1.安装jdk:</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">a.检测是否安装了jdk  运行java -version</span><br><span class="line">b.若有需要将其卸载</span><br><span class="line">c.查看安装那些jdk</span><br><span class="line">       rpm -qa | grep java</span><br><span class="line">d.卸载</span><br><span class="line">     先卸载 openjdk <span class="number">1.7</span></span><br><span class="line">           rpm -e --nodeps 卸载的包</span><br><span class="line">            rpm -e --nodeps java-<span class="number">1.7</span>.0-openjdk-<span class="number">1.7</span>.0.45-<span class="number">2.4</span>.3.3.el6.i686</span><br><span class="line">     再卸载 openjdk <span class="number">1.6</span>		</span><br><span class="line">               rpm -e --nodeps java-<span class="number">1.6</span>.0-openjdk-<span class="number">1.6</span>.0.0-<span class="number">1.66</span>.1.13.0.el6.i686</span><br><span class="line">e.安装jdk</span><br><span class="line">           上传jdk 通过ftp软件上传(上传到root目录下)</span><br><span class="line">           在 /usr/local创建一个 java目录</span><br><span class="line">               mkdir java</span><br><span class="line">           将上传的jdk复制到 java目录下</span><br><span class="line">               cp /root/jdk.xxxxx.tar /usr/local/java</span><br><span class="line">           将其解压</span><br><span class="line">               tar -xvf jdk.xxx.tar</span><br><span class="line">f.安装依赖</span><br><span class="line">           yum install glibc.i686</span><br><span class="line">g.配置环境变量</span><br><span class="line">      编辑  vi /etc/profile</span><br><span class="line">      在文件最后添加一下信息</span><br><span class="line">          #set java environment</span><br><span class="line">           JAVA_HOME=/usr/local/java/jdk1.7.0_72</span><br><span class="line">           CLASSPATH=.:$JAVA_HOME/lib.tools.jar</span><br><span class="line">           PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">           export JAVA_HOME CLASSPATH PATH</span><br><span class="line">           保存退出</span><br><span class="line">           source /etc/profile  使更改的配置立即生效</span><br></pre></td></tr></table></figure>
+<h3 id="2-安装Mysql"><a href="#2-安装Mysql" class="headerlink" title="2.安装Mysql:"></a>2.安装Mysql:</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">        a.检测是否安装了mysql</span><br><span class="line">            rpm  -qa | grep mysql</span><br><span class="line">        b.卸载系统自带的mysql</span><br><span class="line">            rpm -e --nodeps 卸载的包</span><br><span class="line">            rpm -e --nodeps mysql-libs-5.1.71-1.el6.i686 </span><br><span class="line">        c.上传mysql</span><br><span class="line">        d.在 /usr/<span class="built_in">local</span>/ 创建一个mysql</span><br><span class="line">        e.复制mysql 到 mysql目录下</span><br><span class="line">        f.解压 tar</span><br><span class="line">            会有几个rpm文件</span><br><span class="line">        g.安装</span><br><span class="line">            安装mysql的服务器端</span><br><span class="line">                rpm -ivh MySQL-server-5.5.49-1.linux2.6.i386.rpm</span><br><span class="line">                注意:第一次登录mysql的时候没有不需要密码的 以后都需要</span><br><span class="line">            安装mysql的客户端</span><br><span class="line">                rpm -ivh MySQL-client-5.5.49-1.linux2.6.i386.rpm</span><br><span class="line">        h.查看mysql的服务状态</span><br><span class="line">            service mysql status </span><br><span class="line">          启动 mysql</span><br><span class="line">            service mysql start</span><br><span class="line">          停止mysql</span><br><span class="line">            service mysql stop</span><br><span class="line">            </span><br><span class="line">        i.修改mysql的root的密码</span><br><span class="line">            登录:mysql -uroot</span><br><span class="line">            修改密码:</span><br><span class="line">                use mysql;</span><br><span class="line">                update user <span class="built_in">set</span> password = password(<span class="string">'123456'</span>) <span class="built_in">where</span> user = <span class="string">'root'</span>;</span><br><span class="line">                flush privileges;<span class="comment"># 刷新</span></span><br><span class="line">        j.开启远程访问</span><br><span class="line">            grant all privileges on *.* to <span class="string">'root'</span> @<span class="string">'%'</span> identified by <span class="string">'1234'</span>;</span><br><span class="line">            flush privileges;</span><br><span class="line">        k.开启防火墙端口 3306 退出mysql</span><br><span class="line">            3306端口放行 </span><br><span class="line">            /sbin/iptables -I INPUT -p tcp --dport 3306 -j ACCEPT</span><br><span class="line">            将该设置添加到防火墙的规则中</span><br><span class="line">            /etc/rc.d/init.d/iptables save</span><br><span class="line">        l:设置mysql的服务随着系统的启动而启动</span><br><span class="line">            加入到系统服务：</span><br><span class="line">            chkconfig --add mysql</span><br><span class="line">            自动启动：</span><br><span class="line">            chkconfig mysql on</span><br><span class="line">``` </span><br><span class="line"><span class="comment">### 3.安装tomcat</span></span><br><span class="line">``` bash</span><br><span class="line">        a.在/usr/<span class="built_in">local</span>/		创建tomcat目录</span><br><span class="line">        b.复制tomcat 到 /usr/<span class="built_in">local</span>/tomcat</span><br><span class="line">        c.解压tomcat</span><br><span class="line">        d.启动tomcat 进入 bin</span><br><span class="line">            方式1:</span><br><span class="line">                sh startup.sh</span><br><span class="line">            方式2:</span><br><span class="line">                ./startup.sh</span><br><span class="line">        e.开启端口号 8080</span><br><span class="line">            8080端口放行 </span><br><span class="line">            /sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT</span><br><span class="line">            将该设置添加到防火墙的规则中</span><br><span class="line">            /etc/rc.d/init.d/iptables save</span><br><span class="line">            </span><br><span class="line">        注意:</span><br><span class="line">            查看日志文件</span><br><span class="line">                tail -f logs/catalina.out</span><br><span class="line">            退出 ctrl+c</span><br></pre></td></tr></table></figure>
+<h3 id="4-发布项目"><a href="#4-发布项目" class="headerlink" title="4.发布项目"></a>4.发布项目</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">a.数据库和表</span><br><span class="line">        备份dbgirl的数据库</span><br><span class="line">        在windows下</span><br><span class="line">            mysqldump -uroot -p1234 dbgirl &gt; d:/dbgirl1103.sql</span><br><span class="line">        将dbgirl1103.sql上传 root目录</span><br><span class="line">        通过远程工具还原数据库</span><br><span class="line">            先登录mysql</span><br><span class="line">            创建数据库 dbgirl</span><br><span class="line">            进入dbgirl</span><br><span class="line">                <span class="built_in">source</span> /root/dbgirl1103.sql</span><br><span class="line">        </span><br><span class="line">b.项目</span><br><span class="line">        将项目打包 war</span><br><span class="line">        war包的特点:</span><br><span class="line">            在tomcat/webapps目录下 只要tomcat启动 war会自动解压</span><br><span class="line">        将dbgirl.war上传到虚拟机的root目录下</span><br><span class="line">        将dbgirl.war移动到tomcat/webapps下即可</span><br></pre></td></tr></table></figure>]]></content>
       
         <categories>
             
@@ -138,66 +174,9 @@
     </entry>
     
     <entry>
-      <title><![CDATA[【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群]]></title>
-      <url>/2017/11/20/%E8%BF%90%E7%BB%B4&amp;%E6%B5%8B%E8%AF%95-nginx-1/</url>
-      <content type="html"><![CDATA[<p>本文是我的「Nginx学习笔记」第一篇,主要介绍了Nginx相关特点以及如何在window上搭建一个集群。<br><a id="more"></a></p>
-<h2 id="Nginx介绍："><a href="#Nginx介绍：" class="headerlink" title="Nginx介绍："></a>Nginx介绍：</h2><ul>
-<li>是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器<h3 id="特点"><a href="#特点" class="headerlink" title="特点:"></a>特点:</h3></li>
-</ul>
-<ul>
-<li><p>反向代理 :</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">        先来了解正向代理:需要我们用户,手动的设置代理服务器的ip和端口号</span><br><span class="line">		反向代理:代理服务器的,用户不需要设置.</span><br><span class="line">``` </span><br><span class="line">			</span><br><span class="line">- 负载均衡:</span><br><span class="line">``` bash 	</span><br><span class="line">		原理就是数据流量分摊到多个服务器上执行，减轻每台服务器的压力，</span><br><span class="line">		多台服务器共同完成工作任务，从而提高了数据的吞吐量。</span><br><span class="line">``` </span><br><span class="line">		</span><br><span class="line">- 动静分离:</span><br><span class="line">``` bash 	</span><br><span class="line">		将静态的资源放到反向服务器,节省用户的访问时间.</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="comment">## Nginx在windows上搭建集群</span></span><br><span class="line">- 1.在g盘新建两个目录 tomcat1 tomcat2</span><br><span class="line">- 2.修改tomcat2的端口 在tomcat1的端口上+10</span><br><span class="line">- 3.解压nginx</span><br><span class="line">``` bash</span><br><span class="line">            修改nginx的 nginx.conf文件</span><br><span class="line">            在locatioin / 下添加了反向代理</span><br><span class="line">                proxy_pass 代理服务器</span><br><span class="line">            这里只是代理一台服务器</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4.代理集群</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">            需要在http节点上添加一个</span><br><span class="line">                upstream server_wq&#123;</span><br><span class="line">                    server 127.0.0.1:8080;</span><br><span class="line">                    server 127.0.0.1:8090;</span><br><span class="line">                &#125;</span><br><span class="line">            修改location /下的反向代理 </span><br><span class="line">                proxy_pass http://server_wq</span><br><span class="line">``` </span><br><span class="line">	</span><br><span class="line">- 5.session共享问题</span><br><span class="line">  -  解决方式1:只能在window下好使</span><br><span class="line">  ``` bash</span><br><span class="line">         web服务器解决(广播机制)</span><br><span class="line">                注意:tomcat下性能低</span><br><span class="line">                修改两个地方:</span><br><span class="line">                    1.修改tomcat的server.xml 支持共享</span><br><span class="line">                        将 引擎标签下的 </span><br><span class="line">                            &lt;Cluster className=<span class="string">"org.apache.catalina.ha.tcp.SimpleTcpCluster"</span>/&gt;</span><br><span class="line">                        注释去掉</span><br><span class="line">                    2.修改项目的配置文件 web.xml中添加一个节点&lt;distributable/&gt; </span><br><span class="line">  ``` </span><br><span class="line">  -  解决方式2:</span><br><span class="line">  ``` bash</span><br><span class="line">   可以将session的id放入redis中</span><br></pre></td></tr></table></figure>
-<ul>
-<li>解决方式3:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">保证一个ip地址永远的访问一台web服务器,就不存在session共享问题了,在linux</span><br><span class="line">在nginx的配置文件中</span><br><span class="line">	upstream中添加 ip_hash;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 运维&amp;测试 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Nginx </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[【笔记】Bootstrap基础篇（二）test2]]></title>
-      <url>/2017/11/19/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-bootstrap-2/</url>
-      <content type="html"><![CDATA[<p>本文是我的「Bootstrap学习笔记」第二篇。<br><a id="more"></a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 前端开发 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Bootstrap </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[【索引】前端开发从基础到进阶]]></title>
       <url>/2017/11/19/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</url>
-      <content type="html"><![CDATA[<p>这篇文章汇总了本站中所有与「Bootstrap」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>这篇文章汇总了本站中所有与「Bootstrap」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
 <a id="more"></a>
 <h2 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h2><h3 id="一、BootStrap篇"><a href="#一、BootStrap篇" class="headerlink" title="一、BootStrap篇"></a>一、BootStrap篇</h3><ul>
 <li><a href="https://wuqingvika.github.io/2017/11/19/前端开发-bootstrap-1/">【笔记】Bootstrap基础篇（一）test1</a></li>
@@ -221,9 +200,9 @@
     </entry>
     
     <entry>
-      <title><![CDATA[【笔记】Bootstrap基础篇（一）test1]]></title>
-      <url>/2017/11/19/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-bootstrap-1/</url>
-      <content type="html"><![CDATA[<p>本文是我的「Bootstrap学习笔记」第一篇。<br><a id="more"></a></p>
+      <title><![CDATA[【笔记】Bootstrap基础篇（二）test2]]></title>
+      <url>/2017/11/19/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-bootstrap-2/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Bootstrap学习笔记」第二篇。<br><a id="more"></a></p>
 ]]></content>
       
         <categories>
@@ -242,130 +221,9 @@
     </entry>
     
     <entry>
-      <title><![CDATA[【索引】你值得拥有的一些迷你小技能]]></title>
-      <url>/2017/11/19/%E8%BF%B7%E4%BD%A0%E5%B0%8F%E6%8A%80%E8%83%BD/</url>
-      <content type="html"><![CDATA[<p>这篇文章汇总了本站中所有与「小技能」、常用工具下载安装有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font><br><a id="more"></a></p>
-<h2 id="核心篇"><a href="#核心篇" class="headerlink" title="核心篇"></a>核心篇</h2><h3 id="一、XX-Net下载与安装"><a href="#一、XX-Net下载与安装" class="headerlink" title="一、XX-Net下载与安装"></a>一、XX-Net下载与安装</h3><ul>
-<li><a href="https://wuqingvika.github.io/2017/11/19/迷你小技能-XX-Net/">【工具】XX-Net「带你出去看看」</a></li>
-</ul>
-<h3 id="二、idea下载与安装"><a href="#二、idea下载与安装" class="headerlink" title="二、idea下载与安装"></a>二、idea下载与安装</h3><ul>
-<li><a href="https://wuqingvika.github.io/2017/11/20/迷你小技能-idea/">【工具】idea下载安装注册使用</a></li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 博文索引 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 博文索引 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[【索引】运维&测试从基础到进阶]]></title>
-      <url>/2017/11/19/%E8%BF%90%E7%BB%B4&amp;%E6%B5%8B%E8%AF%95/</url>
-      <content type="html"><![CDATA[<p>这篇文章汇总了本站中所有与「Linux」「Nginx」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
-<a id="more"></a>
-<h2 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h2><h3 id="一、Linux篇"><a href="#一、Linux篇" class="headerlink" title="一、Linux篇"></a>一、Linux篇</h3><ul>
-<li><a href="https://wuqingvika.github.io/2017/11/19/运维&amp;测试-linux-1/">【笔记】Linux(一)基础篇之「命令学习」</a></li>
-<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-linux-2/">【笔记】Linux(二)基础篇之「在Linux发布一个简单的web项目」</a><h3 id="二、Nginx篇"><a href="#二、Nginx篇" class="headerlink" title="二、Nginx篇"></a>二、Nginx篇</h3></li>
-<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-1/">【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群</a></li>
-<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-2/">【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群</a></li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 博文索引 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 博文索引 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[【工具】XX-Net「带你出去看看」]]></title>
-      <url>/2017/11/19/%E8%BF%B7%E4%BD%A0%E5%B0%8F%E6%8A%80%E8%83%BD-XX-Net/</url>
-      <content type="html"><![CDATA[<p>本文是我的「迷你小技能」第一篇,主要作一些技能知识的扩充，你懂的。</p>
-<a id="more"></a>
-<h2 id="XX-Net"><a href="#XX-Net" class="headerlink" title="XX-Net"></a>XX-Net</h2><h3 id="首先去Github下载"><a href="#首先去Github下载" class="headerlink" title="首先去Github下载"></a><a href="https://github.com/XX-net/XX-Net" target="_blank" rel="noopener">首先去Github下载</a><br></h3><h3 id="解压到本地-双击运行start-vbs"><a href="#解压到本地-双击运行start-vbs" class="headerlink" title="解压到本地 双击运行start.vbs"></a>解压到本地 双击运行start.vbs</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-1.jpg" alt=""></p>
-<h3 id="高级-gt-开启ipv6"><a href="#高级-gt-开启ipv6" class="headerlink" title="高级-&gt;开启ipv6"></a>高级-&gt;开启ipv6</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-2.jpg" alt=""></p>
-<h3 id="部署服务端-gt-填入googleappid，部署"><a href="#部署服务端-gt-填入googleappid，部署" class="headerlink" title="部署服务端-&gt;填入googleappid，部署"></a>部署服务端-&gt;填入googleappid，部署</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-3.jpg" alt=""></p>
-<h3 id="在部署成功的基础上填入googleappid，保存"><a href="#在部署成功的基础上填入googleappid，保存" class="headerlink" title="在部署成功的基础上填入googleappid，保存"></a>在部署成功的基础上填入googleappid，保存</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-4.jpg" alt=""></p>
-<h3 id="查看状态，出现如下，恭喜你，可以出去啦"><a href="#查看状态，出现如下，恭喜你，可以出去啦" class="headerlink" title="查看状态，出现如下，恭喜你，可以出去啦"></a>查看状态，出现如下，恭喜你，可以出去啦</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-5.jpg" alt=""></p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><h3 id="关于ipv6开启如何解决-请升级至最新版本。-详情可见官方教程"><a href="#关于ipv6开启如何解决-请升级至最新版本。-详情可见官方教程" class="headerlink" title="关于ipv6开启如何解决 请升级至最新版本。 详情可见官方教程"></a>关于ipv6开启如何解决 请升级至最新版本。 <a href="https://github.com/XX-net/XX-Net/wiki/IPv6-Win10" target="_blank" rel="noopener">详情可见官方教程</a></h3><h2 id="家庭版"><a href="#家庭版" class="headerlink" title="家庭版"></a>家庭版</h2><ol>
-<li>命令行</li>
-</ol>
-<ul>
-<li><p>以管理员权限打开命令提示符（右键单击“开始”图标，然后选择“命令提示符(管理员)”），输入命令</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 设置 Teredo 服务器，默认为：win10.ipv6.microsoft.com</span><br><span class="line">netsh interface teredo <span class="built_in">set</span> state enterpriseclient server=default</span><br><span class="line"></span><br><span class="line">// 重置 IPv6 配置</span><br><span class="line">netsh interface ipv6 reset</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重启系统</p>
-</li>
-<li><p>打开命令提示符，通过 <code>ipconfig /all</code> 命令查看当前网络信息，看到 <code>Teredo Tunneling Pseudo-Interface</code> 有以 2001 开头的地址即可。<br>启动IE浏览器，访问 <a href="http://test-ipv6.com" target="_blank" rel="noopener">http://test-ipv6.com</a>，如果选项卡 “<strong>测试项目</strong>” 下面的 “<strong>不使用域名的 IPv6 测试</strong>” 显示成功，则隧道建立成功。chrome浏览器的测试结果可能和IE不一样，请注意</p>
-</li>
-<li><p>如上面操作后仍无法启用 IPv6，可能是 Teredo 服务器无法正常连接，也可能是 Windows 自身配置问题，可尝试以下两种方法</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 第一种：修改 Teredo 服务器为 teredo.remlab.<span class="built_in">net</span></span><br><span class="line">netsh interface teredo <span class="built_in">set</span> state server=teredo.remlab.<span class="built_in">net</span></span><br><span class="line"></span><br><span class="line">// 第二种：先卸载当前 Teredo 适配器再重新启用</span><br><span class="line">netsh interface Teredo <span class="built_in">set</span> state disable</span><br><span class="line">netsh interface Teredo <span class="built_in">set</span> state <span class="built_in">type</span>=default</span><br></pre></td></tr></table></figure>
-<ul>
-<li>其他参考<ul>
-<li><a href="https://support.xbox.com/zh-CN/xbox-on-windows/social/troubleshoot-party-chat" target="_blank" rel="noopener">https://support.xbox.com/zh-CN/xbox-on-windows/social/troubleshoot-party-chat</a></li>
-<li><a href="http://www.windows7en.com/jiaocheng/26518.html" target="_blank" rel="noopener">http://www.windows7en.com/jiaocheng/26518.html</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="专业版"><a href="#专业版" class="headerlink" title="专业版"></a>专业版</h2><h3 id="命令行方法："><a href="#命令行方法：" class="headerlink" title="命令行方法："></a>命令行方法：</h3><p> 以管理员权限运行 XX-Net\code\default\gae_proxy\local\ipv6_tunnel\enable_ipv6.bat  </p>
-<h3 id="组策略方法"><a href="#组策略方法" class="headerlink" title="组策略方法"></a>组策略方法</h3><ul>
-<li><p>win+R打开gpedit.msc<br>1.png   </p>
-</li>
-<li><p>依顺序打开“计算机配置”——&gt;“管理模板”——&gt;“网络”——&gt;“TCPIP 设置”——&gt;“IPv6 转换技术”<br>2.png   </p>
-</li>
-<li><p>“6to4 状态” 和 “ISATAP 状态” 都配置为 “已禁用状态”<br>3.PNG<br>3.1.png<br>3.2.png   </p>
-</li>
-<li><p>重头戏，配置Teredo  </p>
-<ol>
-<li><p>“Teredo 状态” 配置为 “企业客户端”<br>4.1.png   </p>
-</li>
-<li><p>“Teredo 默认限定” 配置为 “已启用状态”   </p>
-</li>
-</ol>
-</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 迷你小技能 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> XX-Net </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[【笔记】Linux(一)基础篇之「命令学习」]]></title>
       <url>/2017/11/19/%E8%BF%90%E7%BB%B4&amp;%E6%B5%8B%E8%AF%95-linux-1/</url>
-      <content type="html"><![CDATA[<p>本文是我的「Linux学习笔记」第一篇,主要学习了Linux的一些基本命令。</p>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Linux学习笔记」第一篇,主要学习了Linux的一些基本命令。</p>
 <a id="more"></a>
 <h2 id="linux-操作系统-OS"><a href="#linux-操作系统-OS" class="headerlink" title="linux:操作系统 OS"></a>linux:操作系统 OS</h2><h3 id="首先来了解下unix"><a href="#首先来了解下unix" class="headerlink" title="首先来了解下unix:"></a>首先来了解下unix:</h3><pre><code>unix是一个多用户,多任务的操作系统,收费的操作系统.
 </code></pre><h3 id="linux"><a href="#linux" class="headerlink" title="linux:"></a>linux:</h3><pre><code>版本:
@@ -607,9 +465,151 @@ chown 更改文件的归属者
     </entry>
     
     <entry>
+      <title><![CDATA[【索引】你值得拥有的一些迷你小技能]]></title>
+      <url>/2017/11/19/%E8%BF%B7%E4%BD%A0%E5%B0%8F%E6%8A%80%E8%83%BD/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>这篇文章汇总了本站中所有与「小技能」、常用工具下载安装有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font><br><a id="more"></a></p>
+<h2 id="核心篇"><a href="#核心篇" class="headerlink" title="核心篇"></a>核心篇</h2><h3 id="一、XX-Net下载与安装"><a href="#一、XX-Net下载与安装" class="headerlink" title="一、XX-Net下载与安装"></a>一、XX-Net下载与安装</h3><ul>
+<li><a href="https://wuqingvika.github.io/2017/11/19/迷你小技能-XX-Net/">【工具】XX-Net「带你出去看看」</a></li>
+</ul>
+<h3 id="二、idea下载与安装"><a href="#二、idea下载与安装" class="headerlink" title="二、idea下载与安装"></a>二、idea下载与安装</h3><ul>
+<li><a href="https://wuqingvika.github.io/2017/11/20/迷你小技能-idea/">【工具】idea下载安装注册使用</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 博文索引 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 博文索引 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[【笔记】Bootstrap基础篇（一）test1]]></title>
+      <url>/2017/11/19/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-bootstrap-1/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Bootstrap学习笔记」第一篇。<br><a id="more"></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 前端开发 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Bootstrap </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[【工具】XX-Net「带你出去看看」]]></title>
+      <url>/2017/11/19/%E8%BF%B7%E4%BD%A0%E5%B0%8F%E6%8A%80%E8%83%BD-XX-Net/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「迷你小技能」第一篇,主要作一些技能知识的扩充，你懂的。</p>
+<a id="more"></a>
+<h2 id="XX-Net"><a href="#XX-Net" class="headerlink" title="XX-Net"></a>XX-Net</h2><h3 id="首先去Github下载"><a href="#首先去Github下载" class="headerlink" title="首先去Github下载"></a><a href="https://github.com/XX-net/XX-Net" target="_blank" rel="noopener">首先去Github下载</a><br></h3><h3 id="解压到本地-双击运行start-vbs"><a href="#解压到本地-双击运行start-vbs" class="headerlink" title="解压到本地 双击运行start.vbs"></a>解压到本地 双击运行start.vbs</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-1.jpg" alt=""></p>
+<h3 id="高级-gt-开启ipv6"><a href="#高级-gt-开启ipv6" class="headerlink" title="高级-&gt;开启ipv6"></a>高级-&gt;开启ipv6</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-2.jpg" alt=""></p>
+<h3 id="部署服务端-gt-填入googleappid，部署"><a href="#部署服务端-gt-填入googleappid，部署" class="headerlink" title="部署服务端-&gt;填入googleappid，部署"></a>部署服务端-&gt;填入googleappid，部署</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-3.jpg" alt=""></p>
+<h3 id="在部署成功的基础上填入googleappid，保存"><a href="#在部署成功的基础上填入googleappid，保存" class="headerlink" title="在部署成功的基础上填入googleappid，保存"></a>在部署成功的基础上填入googleappid，保存</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-4.jpg" alt=""></p>
+<h3 id="查看状态，出现如下，恭喜你，可以出去啦"><a href="#查看状态，出现如下，恭喜你，可以出去啦" class="headerlink" title="查看状态，出现如下，恭喜你，可以出去啦"></a>查看状态，出现如下，恭喜你，可以出去啦</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-5.jpg" alt=""></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><h3 id="关于ipv6开启如何解决-请升级至最新版本。-详情可见官方教程"><a href="#关于ipv6开启如何解决-请升级至最新版本。-详情可见官方教程" class="headerlink" title="关于ipv6开启如何解决 请升级至最新版本。 详情可见官方教程"></a>关于ipv6开启如何解决 请升级至最新版本。 <a href="https://github.com/XX-net/XX-Net/wiki/IPv6-Win10" target="_blank" rel="noopener">详情可见官方教程</a></h3><h2 id="家庭版"><a href="#家庭版" class="headerlink" title="家庭版"></a>家庭版</h2><ol>
+<li>命令行</li>
+</ol>
+<ul>
+<li><p>以管理员权限打开命令提示符（右键单击“开始”图标，然后选择“命令提示符(管理员)”），输入命令</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">// 设置 Teredo 服务器，默认为：win10.ipv6.microsoft.com</span><br><span class="line">netsh interface teredo <span class="built_in">set</span> state enterpriseclient server=default</span><br><span class="line"></span><br><span class="line">// 重置 IPv6 配置</span><br><span class="line">netsh interface ipv6 reset</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启系统</p>
+</li>
+<li><p>打开命令提示符，通过 <code>ipconfig /all</code> 命令查看当前网络信息，看到 <code>Teredo Tunneling Pseudo-Interface</code> 有以 2001 开头的地址即可。<br>启动IE浏览器，访问 <a href="http://test-ipv6.com" target="_blank" rel="noopener">http://test-ipv6.com</a>，如果选项卡 “<strong>测试项目</strong>” 下面的 “<strong>不使用域名的 IPv6 测试</strong>” 显示成功，则隧道建立成功。chrome浏览器的测试结果可能和IE不一样，请注意</p>
+</li>
+<li><p>如上面操作后仍无法启用 IPv6，可能是 Teredo 服务器无法正常连接，也可能是 Windows 自身配置问题，可尝试以下两种方法</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">// 第一种：修改 Teredo 服务器为 teredo.remlab.<span class="built_in">net</span></span><br><span class="line">netsh interface teredo <span class="built_in">set</span> state server=teredo.remlab.<span class="built_in">net</span></span><br><span class="line"></span><br><span class="line">// 第二种：先卸载当前 Teredo 适配器再重新启用</span><br><span class="line">netsh interface Teredo <span class="built_in">set</span> state disable</span><br><span class="line">netsh interface Teredo <span class="built_in">set</span> state <span class="built_in">type</span>=default</span><br></pre></td></tr></table></figure>
+<ul>
+<li>其他参考<ul>
+<li><a href="https://support.xbox.com/zh-CN/xbox-on-windows/social/troubleshoot-party-chat" target="_blank" rel="noopener">https://support.xbox.com/zh-CN/xbox-on-windows/social/troubleshoot-party-chat</a></li>
+<li><a href="http://www.windows7en.com/jiaocheng/26518.html" target="_blank" rel="noopener">http://www.windows7en.com/jiaocheng/26518.html</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="专业版"><a href="#专业版" class="headerlink" title="专业版"></a>专业版</h2><h3 id="命令行方法："><a href="#命令行方法：" class="headerlink" title="命令行方法："></a>命令行方法：</h3><p> 以管理员权限运行 XX-Net\code\default\gae_proxy\local\ipv6_tunnel\enable_ipv6.bat  </p>
+<h3 id="组策略方法"><a href="#组策略方法" class="headerlink" title="组策略方法"></a>组策略方法</h3><ul>
+<li><p>win+R打开gpedit.msc<br>1.png   </p>
+</li>
+<li><p>依顺序打开“计算机配置”——&gt;“管理模板”——&gt;“网络”——&gt;“TCPIP 设置”——&gt;“IPv6 转换技术”<br>2.png   </p>
+</li>
+<li><p>“6to4 状态” 和 “ISATAP 状态” 都配置为 “已禁用状态”<br>3.PNG<br>3.1.png<br>3.2.png   </p>
+</li>
+<li><p>重头戏，配置Teredo  </p>
+<ol>
+<li><p>“Teredo 状态” 配置为 “企业客户端”<br>4.1.png   </p>
+</li>
+<li><p>“Teredo 默认限定” 配置为 “已启用状态”   </p>
+</li>
+</ol>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 迷你小技能 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> XX-Net </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[【索引】运维&测试从基础到进阶]]></title>
+      <url>/2017/11/19/%E8%BF%90%E7%BB%B4&amp;%E6%B5%8B%E8%AF%95/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>这篇文章汇总了本站中所有与「Linux」「Nginx」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
+<a id="more"></a>
+<h2 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h2><h3 id="一、Linux篇"><a href="#一、Linux篇" class="headerlink" title="一、Linux篇"></a>一、Linux篇</h3><ul>
+<li><a href="https://wuqingvika.github.io/2017/11/19/运维&amp;测试-linux-1/">【笔记】Linux(一)基础篇之「命令学习」</a></li>
+<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-linux-2/">【笔记】Linux(二)基础篇之「在Linux发布一个简单的web项目」</a><h3 id="二、Nginx篇"><a href="#二、Nginx篇" class="headerlink" title="二、Nginx篇"></a>二、Nginx篇</h3></li>
+<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-1/">【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群</a></li>
+<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-2/">【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 博文索引 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 博文索引 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[【笔记】Java基础知识(一)「文件基本操作」]]></title>
       <url>/2016/06/23/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91-java-1/</url>
-      <content type="html"><![CDATA[<p>本文是我的「Java学习笔记」第一篇之基础知识,具体内容主要包括文件的基本操作，详情可见右侧内容概要，<font color="red">【本文长期更新】</font>。</p>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Java学习笔记」第一篇之基础知识,具体内容主要包括文件的基本操作，详情可见右侧内容概要，<font color="red">【本文长期更新】</font>。</p>
 <a id="more"></a>
 <h1 id="1、关于文件的基础知识"><a href="#1、关于文件的基础知识" class="headerlink" title="1、关于文件的基础知识"></a>1、关于文件的基础知识</h1><h2 id="1-1创建文件"><a href="#1-1创建文件" class="headerlink" title="1.1创建文件"></a>1.1创建文件</h2><pre><code>File file=new File(FileUtil.FileName);
 if(!file.exists()){
@@ -718,12 +718,12 @@ ps.print(&quot;dks&quot;);
     <entry>
       <title><![CDATA[【笔记】Spring入门篇（二）spring代理设置]]></title>
       <url>/2016/06/20/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91-spring-2/</url>
-      <content type="html"><![CDATA[<p>本文是我的「Spring学习笔记」第二篇,具体内容可见右侧内容概要，<font color="red">【本文长期更新】</font>。</p>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Spring学习笔记」第二篇,具体内容可见右侧内容概要，<font color="red">【本文长期更新】</font>。</p>
 <a id="more"></a>
 <h1 id="1、静态代理模式"><a href="#1、静态代理模式" class="headerlink" title="1、静态代理模式"></a>1、静态代理模式</h1><blockquote>
 <p>PersonDao.java(接口)</p>
-<pre><code class="bash">public interface PersonDao {
-      public void savePerson();
+<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">PersonDao</span> </span>{
+      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">savePerson</span><span class="params">()</span></span>;
   }
 </code></pre>
 <p>PersonDaoImpl(实现类)</p>
@@ -1540,12 +1540,12 @@ PersonService省略。
     <entry>
       <title><![CDATA[【笔记】Spring入门篇（一）了解spring]]></title>
       <url>/2016/06/20/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91-spring-1/</url>
-      <content type="html"><![CDATA[<p>本文是我的「Spring学习笔记」第一篇,具体内容可见右侧内容概要，<font color="red">【本文长期更新】</font>。</p>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Spring学习笔记」第一篇,具体内容可见右侧内容概要，<font color="red">【本文长期更新】</font>。</p>
 <a id="more"></a>
 <h1 id="1、HelloWorld程序"><a href="#1、HelloWorld程序" class="headerlink" title="1、HelloWorld程序"></a>1、HelloWorld程序</h1><blockquote>
 <p>注：导入Jar包（commons-logging.jar 和spring.jar）</p>
 </blockquote>
-<h2 id="1-1HelloWorld-java"><a href="#1-1HelloWorld-java" class="headerlink" title="1.1HelloWorld.java"></a>1.1HelloWorld.java</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br></pre></td><td class="code"><pre><span class="line">    package com.wq.createobject;</span><br><span class="line">    public class HelloWorld &#123;</span><br><span class="line">    	public void <span class="function"><span class="title">sayHello</span></span>()&#123;</span><br><span class="line">    		System.out.println(<span class="string">"Hello wuqingvika"</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">``` </span><br><span class="line">1.2applicationContext.xml</span><br><span class="line">--------</span><br><span class="line">&gt;放在src目录下。</span><br><span class="line">``` bash</span><br><span class="line">    &lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">    &lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span></span><br><span class="line">           xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">           xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans</span></span><br><span class="line"><span class="string">               http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"</span>&gt;</span><br><span class="line">    	&lt;bean id=<span class="string">"HelloWorld"</span> class=<span class="string">"com.wq.createobject.HelloWorld"</span>&gt;&lt;/bean&gt;</span><br><span class="line">    &lt;/beans&gt;</span><br><span class="line">``` </span><br><span class="line">1.3HelloWorldTest.java</span><br><span class="line">----------------------</span><br><span class="line"></span><br><span class="line">&gt;一个测试类。</span><br><span class="line">``` bash</span><br><span class="line">    package com.xzit.test;</span><br><span class="line">    import org.junit.Test;</span><br><span class="line">    import org.springframework.context.ApplicationContext;</span><br><span class="line">    import org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line">    import com.wq.createobject.HelloWorld;</span><br><span class="line">    import junit.framework.TestCase;</span><br><span class="line">    public class HelloWorldTest extends TestCase &#123;</span><br><span class="line">    	@Test</span><br><span class="line">    	public void <span class="function"><span class="title">testHelloWorld</span></span>()&#123;</span><br><span class="line">    		</span><br><span class="line">    		ApplicationContext context=new </span><br><span class="line">    			ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">    		HelloWorld wq=(HelloWorld)context.getBean(<span class="string">"HelloWorld"</span>);</span><br><span class="line">    		wq.sayHello();</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">``` </span><br><span class="line">2、Spring创建对象的方式</span><br><span class="line">===============</span><br><span class="line"></span><br><span class="line">2.1默认的构造函数创建对象</span><br><span class="line">--------------</span><br><span class="line">``` bash</span><br><span class="line">/**</span><br><span class="line">	 * 在spring容器中，默认情况下调用了一个类的默认的构造函数创建对象</span><br><span class="line">	 */</span><br><span class="line">    	 </span><br><span class="line">    public class HelloWorld &#123;</span><br><span class="line">    	public <span class="function"><span class="title">HelloWorld</span></span>()&#123;</span><br><span class="line">    		System.out.println(<span class="string">"hello wucan"</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    	public void <span class="function"><span class="title">sayHello</span></span>()&#123;</span><br><span class="line">    		System.out.println(<span class="string">"Hello wuqingvika"</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">```     </span><br><span class="line">&gt;配置文件</span><br><span class="line"> </span><br><span class="line">``` bash</span><br><span class="line">       &lt;!-- 第1种方式 --&gt;</span><br><span class="line">        	&lt;bean id=<span class="string">"HelloWorld"</span> class=<span class="string">"com.wq.createobject.method.HelloWorld"</span>&gt;&lt;/bean&gt;</span><br><span class="line">``` </span><br><span class="line">&gt;测试方法</span><br><span class="line">``` bash</span><br><span class="line">    @Test</span><br><span class="line">    	public void <span class="function"><span class="title">testHelloWorld_Default</span></span>()&#123;</span><br><span class="line">    		ApplicationContext context=new </span><br><span class="line">    			ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">    		//根据id把spring容器中的bean提取出来了</span><br><span class="line">    		HelloWorld wq=(HelloWorld)context.getBean(<span class="string">"HelloWorld"</span>);</span><br><span class="line">    		wq.sayHello();</span><br><span class="line">    	&#125;</span><br><span class="line">``` </span><br><span class="line">2.2利用静态工厂模式创建对象</span><br><span class="line">---------------</span><br><span class="line">&gt;静态工厂类：</span><br><span class="line">``` bash</span><br><span class="line">    package com.wq.createobject.method.factory;</span><br><span class="line">    import com.wq.createobject.method.HelloWorld;</span><br><span class="line">    public class HelloWorldFactory &#123;</span><br><span class="line">    	public static HelloWorld <span class="function"><span class="title">getInstance</span></span>()&#123;</span><br><span class="line">    		<span class="built_in">return</span> new HelloWorld();</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">&gt;配置文件：</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">    &lt;!-- 第2种方式 --&gt;</span><br><span class="line">    	&lt;bean id=<span class="string">"helloWorld2"</span> </span><br><span class="line">    	class=<span class="string">"com.wq.createobject.method.factory.HelloWorldFactory"</span> </span><br><span class="line">    	factory-method=<span class="string">"getInstance"</span>&gt;&lt;/bean&gt;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">&gt;测试方法：</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">    /**</span><br><span class="line">    	 * 利用静态工厂模式创建对象</span><br><span class="line">    	 * &lt;bean id=<span class="string">"helloWorld2"</span> </span><br><span class="line">    		class=<span class="string">"com.itheima12.spring.createobject.method.factory.HelloWorldFactory"</span></span><br><span class="line">    		factory-method=<span class="string">"getInstance"</span>&gt;&lt;/bean&gt;</span><br><span class="line">    		  spring容器内部调用了HelloWorldFactory中的getInstance方法创建对象</span><br><span class="line">    		      而具体的new对象的过程是由程序员来完成的。</span><br><span class="line">    	 */</span><br><span class="line">    	@Test</span><br><span class="line">    	public void <span class="function"><span class="title">testHelloWorldFactory</span></span>()&#123;</span><br><span class="line">    		</span><br><span class="line">    		ApplicationContext context=new </span><br><span class="line">    			ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">    		HelloWorld wq=(HelloWorld)context.getBean(<span class="string">"helloWorld2"</span>);</span><br><span class="line">    		wq.sayHello();</span><br><span class="line">    	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1-1HelloWorld-java"><a href="#1-1HelloWorld-java" class="headerlink" title="1.1HelloWorld.java"></a>1.1HelloWorld.java</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">    <span class="keyword">package</span> com.wq.createobject;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		System.out.println(<span class="string">"Hello wuqingvika"</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">``` </span><br><span class="line"><span class="number">1.2</span>applicationContext.xml</span><br><span class="line">--------</span><br><span class="line">&gt;放在src目录下。</span><br><span class="line">``` java</span><br><span class="line">    &lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">    &lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span></span><br><span class="line">           xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">           xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans</span></span><br><span class="line"><span class="string">               http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"</span>&gt;</span><br><span class="line">    	&lt;bean id="HelloWorld" class="com.wq.createobject.HelloWorld"&gt;&lt;/bean&gt;</span><br><span class="line">    &lt;/beans&gt;</span><br><span class="line">``` </span><br><span class="line"><span class="number">1.3</span>HelloWorldTest.java</span><br><span class="line">----------------------</span><br><span class="line"></span><br><span class="line">&gt;一个测试类。</span><br><span class="line">``` java</span><br><span class="line">    <span class="keyword">package</span> com.xzit.test;</span><br><span class="line">    <span class="keyword">import</span> org.junit.Test;</span><br><span class="line">    <span class="keyword">import</span> org.springframework.context.ApplicationContext;</span><br><span class="line">    <span class="keyword">import</span> org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line">    <span class="keyword">import</span> com.wq.createobject.HelloWorld;</span><br><span class="line">    <span class="keyword">import</span> junit.framework.TestCase;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldTest</span> <span class="keyword">extends</span> <span class="title">TestCase</span> </span>&#123;</span><br><span class="line">    	<span class="meta">@Test</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHelloWorld</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		</span><br><span class="line">    		ApplicationContext context=<span class="keyword">new</span> </span><br><span class="line">    			ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">    		HelloWorld wq=(HelloWorld)context.getBean(<span class="string">"HelloWorld"</span>);</span><br><span class="line">    		wq.sayHello();</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">``` </span><br><span class="line"><span class="number">2</span>、Spring创建对象的方式</span><br><span class="line">===============</span><br><span class="line"></span><br><span class="line"><span class="number">2.1</span>默认的构造函数创建对象</span><br><span class="line">--------------</span><br><span class="line">``` java</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 在spring容器中，默认情况下调用了一个类的默认的构造函数创建对象</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">    	 </span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="title">HelloWorld</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		System.out.println(<span class="string">"hello wucan"</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		System.out.println(<span class="string">"Hello wuqingvika"</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">```     </span><br><span class="line">&gt;配置文件</span><br><span class="line"> </span><br><span class="line">``` java</span><br><span class="line">       &lt;!-- 第<span class="number">1</span>种方式 --&gt;</span><br><span class="line">        	&lt;bean id="HelloWorld" class="com.wq.createobject.method.HelloWorld"&gt;&lt;/bean&gt;</span><br><span class="line">``` </span><br><span class="line">&gt;测试方法</span><br><span class="line">``` java</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHelloWorld_Default</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		ApplicationContext context=<span class="keyword">new</span> </span><br><span class="line">    			ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">    		<span class="comment">//根据id把spring容器中的bean提取出来了</span></span><br><span class="line">    		HelloWorld wq=(HelloWorld)context.getBean(<span class="string">"HelloWorld"</span>);</span><br><span class="line">    		wq.sayHello();</span><br><span class="line">    	&#125;</span><br><span class="line">``` </span><br><span class="line"><span class="number">2.2</span>利用静态工厂模式创建对象</span><br><span class="line">---------------</span><br><span class="line">&gt;静态工厂类：</span><br><span class="line">``` java</span><br><span class="line">    <span class="keyword">package</span> com.wq.createobject.method.factory;</span><br><span class="line">    <span class="keyword">import</span> com.wq.createobject.method.HelloWorld;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldFactory</span> </span>&#123;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> HelloWorld <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		<span class="keyword">return</span> <span class="keyword">new</span> HelloWorld();</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">&gt;配置文件：</span><br><span class="line"></span><br><span class="line">``` java</span><br><span class="line">    &lt;!-- 第<span class="number">2</span>种方式 --&gt;</span><br><span class="line">    	&lt;bean id=<span class="string">"helloWorld2"</span> </span><br><span class="line">    	<span class="class"><span class="keyword">class</span></span>=<span class="string">"com.wq.createobject.method.factory.HelloWorldFactory"</span> </span><br><span class="line">    	factory-method="getInstance"&gt;&lt;/bean&gt;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">&gt;测试方法：</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    	 * 利用静态工厂模式创建对象</span></span><br><span class="line"><span class="comment">    	 * &lt;bean id="helloWorld2" </span></span><br><span class="line"><span class="comment">    		class="com.itheima12.spring.createobject.method.factory.HelloWorldFactory"</span></span><br><span class="line"><span class="comment">    		factory-method="getInstance"&gt;&lt;/bean&gt;</span></span><br><span class="line"><span class="comment">    		  spring容器内部调用了HelloWorldFactory中的getInstance方法创建对象</span></span><br><span class="line"><span class="comment">    		      而具体的new对象的过程是由程序员来完成的。</span></span><br><span class="line"><span class="comment">    	 */</span></span><br><span class="line">    	<span class="meta">@Test</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHelloWorldFactory</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		</span><br><span class="line">    		ApplicationContext context=<span class="keyword">new</span> </span><br><span class="line">    			ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">    		HelloWorld wq=(HelloWorld)context.getBean(<span class="string">"helloWorld2"</span>);</span><br><span class="line">    		wq.sayHello();</span><br><span class="line">    	&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="2-3实例工厂方法"><a href="#2-3实例工厂方法" class="headerlink" title="2.3实例工厂方法"></a>2.3实例工厂方法</h2><blockquote>
 <p>工厂类：</p>
 <pre><code class="bash">package com.wq.createobject.method.factory;

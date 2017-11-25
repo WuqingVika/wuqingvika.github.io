@@ -110,7 +110,7 @@
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		1270
+		1259
 		</span>
 
 
@@ -144,7 +144,7 @@ AV.init({
 
   <div class="post-content">
    
-    <p>本文是我的「迷你小技能」第一篇,主要作一些技能知识的扩充，你懂的。</p>
+    <script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「迷你小技能」第一篇,主要作一些技能知识的扩充，你懂的。</p>
 <a id="more"></a>
 <h2 id="XX-Net"><a href="#XX-Net" class="headerlink" title="XX-Net"></a>XX-Net</h2><h3 id="首先去Github下载"><a href="#首先去Github下载" class="headerlink" title="首先去Github下载"></a><a href="https://github.com/XX-net/XX-Net" target="_blank" rel="noopener">首先去Github下载</a><br></h3><h3 id="解压到本地-双击运行start-vbs"><a href="#解压到本地-双击运行start-vbs" class="headerlink" title="解压到本地 双击运行start.vbs"></a>解压到本地 双击运行start.vbs</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-1.jpg" alt=""></p>
 <h3 id="高级-gt-开启ipv6"><a href="#高级-gt-开启ipv6" class="headerlink" title="高级-&gt;开启ipv6"></a>高级-&gt;开启ipv6</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-2.jpg" alt=""></p>
@@ -156,14 +156,14 @@ AV.init({
 </ol>
 <ul>
 <li><p>以管理员权限打开命令提示符（右键单击“开始”图标，然后选择“命令提示符(管理员)”），输入命令</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 设置 Teredo 服务器，默认为：win10.ipv6.microsoft.com</span><br><span class="line">netsh interface teredo <span class="built_in">set</span> state enterpriseclient server=default</span><br><span class="line"></span><br><span class="line">// 重置 IPv6 配置</span><br><span class="line">netsh interface ipv6 reset</span><br></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">// 设置 Teredo 服务器，默认为：win10.ipv6.microsoft.com</span><br><span class="line">netsh interface teredo <span class="built_in">set</span> state enterpriseclient server=default</span><br><span class="line"></span><br><span class="line">// 重置 IPv6 配置</span><br><span class="line">netsh interface ipv6 reset</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>重启系统</p>
 </li>
 <li><p>打开命令提示符，通过 <code>ipconfig /all</code> 命令查看当前网络信息，看到 <code>Teredo Tunneling Pseudo-Interface</code> 有以 2001 开头的地址即可。<br>启动IE浏览器，访问 <a href="http://test-ipv6.com" target="_blank" rel="noopener">http://test-ipv6.com</a>，如果选项卡 “<strong>测试项目</strong>” 下面的 “<strong>不使用域名的 IPv6 测试</strong>” 显示成功，则隧道建立成功。chrome浏览器的测试结果可能和IE不一样，请注意</p>
 </li>
 <li><p>如上面操作后仍无法启用 IPv6，可能是 Teredo 服务器无法正常连接，也可能是 Windows 自身配置问题，可尝试以下两种方法</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 第一种：修改 Teredo 服务器为 teredo.remlab.<span class="built_in">net</span></span><br><span class="line">netsh interface teredo <span class="built_in">set</span> state server=teredo.remlab.<span class="built_in">net</span></span><br><span class="line"></span><br><span class="line">// 第二种：先卸载当前 Teredo 适配器再重新启用</span><br><span class="line">netsh interface Teredo <span class="built_in">set</span> state disable</span><br><span class="line">netsh interface Teredo <span class="built_in">set</span> state <span class="built_in">type</span>=default</span><br></pre></td></tr></table></figure>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">// 第一种：修改 Teredo 服务器为 teredo.remlab.<span class="built_in">net</span></span><br><span class="line">netsh interface teredo <span class="built_in">set</span> state server=teredo.remlab.<span class="built_in">net</span></span><br><span class="line"></span><br><span class="line">// 第二种：先卸载当前 Teredo 适配器再重新启用</span><br><span class="line">netsh interface Teredo <span class="built_in">set</span> state disable</span><br><span class="line">netsh interface Teredo <span class="built_in">set</span> state <span class="built_in">type</span>=default</span><br></pre></td></tr></table></figure>
 <ul>
 <li>其他参考<ul>
 <li><a href="https://support.xbox.com/zh-CN/xbox-on-windows/social/troubleshoot-party-chat" target="_blank" rel="noopener">https://support.xbox.com/zh-CN/xbox-on-windows/social/troubleshoot-party-chat</a></li>
@@ -249,10 +249,10 @@ AV.init({
   
      
       <div class="nav-prev">
-        <a class="nav-link" href="/2017/11/19/运维&测试/">  
+        <a class="nav-link" href="/2017/11/19/前端开发-bootstrap-1/">  
            <li class="li iconfont icon-left"></li>         
               
-          <span class="nav-title">【索引】运维&amp;测试从基础到进阶</span>
+          <span class="nav-title">【笔记】Bootstrap基础篇（一）test1</span>
         </a>
       </div>
     
@@ -261,10 +261,10 @@ AV.init({
 
     
        <div class="nav-next">      
-        <a  class="nav-link" href="/2017/11/19/运维&测试-linux-1/">      
+        <a  class="nav-link" href="/2017/11/19/运维&测试/">      
 
              
-         <span class="nav-title">【笔记】Linux(一)基础篇之「命令学习」</span>
+         <span class="nav-title">【索引】运维&amp;测试从基础到进阶</span>
           <li class="li iconfont icon-right"></li>
         </a>
         </div>
