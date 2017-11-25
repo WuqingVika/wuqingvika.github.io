@@ -5,7 +5,7 @@
   <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
   
   
-  <title>  【工具】XX-Net「带你出去看看」 |   Wuqingvika | 吴里庆庆</title>
+  <title>  【笔记】Java基础知识(一)「文件基本操作」 |   Wuqingvika | 吴里庆庆</title>
 
  
   
@@ -96,21 +96,21 @@
 <div class="post-head">
 
 	<span class="post-title">	
-		【工具】XX-Net「带你出去看看」
+		【笔记】Java基础知识(一)「文件基本操作」
 	</span>
 
 
 	<div class="post-info">
 
 		<time class="post-time"><span class="iconfont icon-date"></span>
-		2017/11/19 20:50:42 	
+		2016/06/23 20:50:42 	
 		</time>
 
 
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		1270
+		2339
 		</span>
 
 
@@ -144,53 +144,96 @@ AV.init({
 
   <div class="post-content">
    
-    <p>本文是我的「迷你小技能」第一篇,主要作一些技能知识的扩充，你懂的。</p>
+    <p>本文是我的「Java学习笔记」第一篇之基础知识,具体内容主要包括文件的基本操作，详情可见右侧内容概要，<font color="red">【本文长期更新】</font>。</p>
 <a id="more"></a>
-<h2 id="XX-Net"><a href="#XX-Net" class="headerlink" title="XX-Net"></a>XX-Net</h2><h3 id="首先去Github下载"><a href="#首先去Github下载" class="headerlink" title="首先去Github下载"></a><a href="https://github.com/XX-net/XX-Net" target="_blank" rel="noopener">首先去Github下载</a><br></h3><h3 id="解压到本地-双击运行start-vbs"><a href="#解压到本地-双击运行start-vbs" class="headerlink" title="解压到本地 双击运行start.vbs"></a>解压到本地 双击运行start.vbs</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-1.jpg" alt=""></p>
-<h3 id="高级-gt-开启ipv6"><a href="#高级-gt-开启ipv6" class="headerlink" title="高级-&gt;开启ipv6"></a>高级-&gt;开启ipv6</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-2.jpg" alt=""></p>
-<h3 id="部署服务端-gt-填入googleappid，部署"><a href="#部署服务端-gt-填入googleappid，部署" class="headerlink" title="部署服务端-&gt;填入googleappid，部署"></a>部署服务端-&gt;填入googleappid，部署</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-3.jpg" alt=""></p>
-<h3 id="在部署成功的基础上填入googleappid，保存"><a href="#在部署成功的基础上填入googleappid，保存" class="headerlink" title="在部署成功的基础上填入googleappid，保存"></a>在部署成功的基础上填入googleappid，保存</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-4.jpg" alt=""></p>
-<h3 id="查看状态，出现如下，恭喜你，可以出去啦"><a href="#查看状态，出现如下，恭喜你，可以出去啦" class="headerlink" title="查看状态，出现如下，恭喜你，可以出去啦"></a>查看状态，出现如下，恭喜你，可以出去啦</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-5.jpg" alt=""></p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><h3 id="关于ipv6开启如何解决-请升级至最新版本。-详情可见官方教程"><a href="#关于ipv6开启如何解决-请升级至最新版本。-详情可见官方教程" class="headerlink" title="关于ipv6开启如何解决 请升级至最新版本。 详情可见官方教程"></a>关于ipv6开启如何解决 请升级至最新版本。 <a href="https://github.com/XX-net/XX-Net/wiki/IPv6-Win10" target="_blank" rel="noopener">详情可见官方教程</a></h3><h2 id="家庭版"><a href="#家庭版" class="headerlink" title="家庭版"></a>家庭版</h2><ol>
-<li>命令行</li>
-</ol>
-<ul>
-<li><p>以管理员权限打开命令提示符（右键单击“开始”图标，然后选择“命令提示符(管理员)”），输入命令</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 设置 Teredo 服务器，默认为：win10.ipv6.microsoft.com</span><br><span class="line">netsh interface teredo <span class="built_in">set</span> state enterpriseclient server=default</span><br><span class="line"></span><br><span class="line">// 重置 IPv6 配置</span><br><span class="line">netsh interface ipv6 reset</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重启系统</p>
-</li>
-<li><p>打开命令提示符，通过 <code>ipconfig /all</code> 命令查看当前网络信息，看到 <code>Teredo Tunneling Pseudo-Interface</code> 有以 2001 开头的地址即可。<br>启动IE浏览器，访问 <a href="http://test-ipv6.com" target="_blank" rel="noopener">http://test-ipv6.com</a>，如果选项卡 “<strong>测试项目</strong>” 下面的 “<strong>不使用域名的 IPv6 测试</strong>” 显示成功，则隧道建立成功。chrome浏览器的测试结果可能和IE不一样，请注意</p>
-</li>
-<li><p>如上面操作后仍无法启用 IPv6，可能是 Teredo 服务器无法正常连接，也可能是 Windows 自身配置问题，可尝试以下两种方法</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 第一种：修改 Teredo 服务器为 teredo.remlab.<span class="built_in">net</span></span><br><span class="line">netsh interface teredo <span class="built_in">set</span> state server=teredo.remlab.<span class="built_in">net</span></span><br><span class="line"></span><br><span class="line">// 第二种：先卸载当前 Teredo 适配器再重新启用</span><br><span class="line">netsh interface Teredo <span class="built_in">set</span> state disable</span><br><span class="line">netsh interface Teredo <span class="built_in">set</span> state <span class="built_in">type</span>=default</span><br></pre></td></tr></table></figure>
-<ul>
-<li>其他参考<ul>
-<li><a href="https://support.xbox.com/zh-CN/xbox-on-windows/social/troubleshoot-party-chat" target="_blank" rel="noopener">https://support.xbox.com/zh-CN/xbox-on-windows/social/troubleshoot-party-chat</a></li>
-<li><a href="http://www.windows7en.com/jiaocheng/26518.html" target="_blank" rel="noopener">http://www.windows7en.com/jiaocheng/26518.html</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="专业版"><a href="#专业版" class="headerlink" title="专业版"></a>专业版</h2><h3 id="命令行方法："><a href="#命令行方法：" class="headerlink" title="命令行方法："></a>命令行方法：</h3><p> 以管理员权限运行 XX-Net\code\default\gae_proxy\local\ipv6_tunnel\enable_ipv6.bat  </p>
-<h3 id="组策略方法"><a href="#组策略方法" class="headerlink" title="组策略方法"></a>组策略方法</h3><ul>
-<li><p>win+R打开gpedit.msc<br>1.png   </p>
-</li>
-<li><p>依顺序打开“计算机配置”——&gt;“管理模板”——&gt;“网络”——&gt;“TCPIP 设置”——&gt;“IPv6 转换技术”<br>2.png   </p>
-</li>
-<li><p>“6to4 状态” 和 “ISATAP 状态” 都配置为 “已禁用状态”<br>3.PNG<br>3.1.png<br>3.2.png   </p>
-</li>
-<li><p>重头戏，配置Teredo  </p>
-<ol>
-<li><p>“Teredo 状态” 配置为 “企业客户端”<br>4.1.png   </p>
-</li>
-<li><p>“Teredo 默认限定” 配置为 “已启用状态”   </p>
-</li>
-</ol>
-</li>
-</ul>
-    
+<h1 id="1、关于文件的基础知识"><a href="#1、关于文件的基础知识" class="headerlink" title="1、关于文件的基础知识"></a>1、关于文件的基础知识</h1><h2 id="1-1创建文件"><a href="#1-1创建文件" class="headerlink" title="1.1创建文件"></a>1.1创建文件</h2><pre><code>File file=new File(FileUtil.FileName);
+if(!file.exists()){
+file.createNewFile();}//创建文件
+
+获取文件名file.getName();
+文件路径：file.getPath();//相对路径
+        file.getAbsolutePath();//绝对路径
+</code></pre><h2 id="1-2删除文件"><a href="#1-2删除文件" class="headerlink" title="1.2删除文件"></a>1.2删除文件</h2><pre><code>File file=new File(FileUtil.fileName);
+if(file.exists()){
+file.delete();
+}
+</code></pre><h2 id="1-3重命名文件"><a href="#1-3重命名文件" class="headerlink" title="1.3重命名文件"></a>1.3重命名文件</h2><blockquote>
+<p>重命名文件</p>
+</blockquote>
+<pre><code>File file=new File(FileUtil.fileName);
+File newfile=new File(&quot;anotherFile.txt&quot;);
+file.renameTo(newfile);
+</code></pre><h2 id="1-4创建文件夹"><a href="#1-4创建文件夹" class="headerlink" title="1.4创建文件夹"></a>1.4创建文件夹</h2><pre><code>  File folder=new File(FileUtil.folderName);
+    if(folder.exists()!=false){//不存在
+     folder.mkdirs();
+     //folder.mkdirs()用这个比mkdir()
+     //以后只要创建文件夹，都用Mkdirs()更确保程序的稳定性。
+}
+//加上分隔符
+folderName=&quot;newFolder&quot;+File.separator+&quot;SubFolder&quot;;
+</code></pre><h2 id="1-5删除文件夹"><a href="#1-5删除文件夹" class="headerlink" title="1.5删除文件夹"></a>1.5删除文件夹</h2><pre><code>//RemoveFolder
+   File folder=new File(FileUtil.folderName);
+   if(folder.exists()){
+   folder.delete();}//只能删除子目录。不能删除非空文件夹
+</code></pre><h2 id="1-6获得文件大小"><a href="#1-6获得文件大小" class="headerlink" title="1.6获得文件大小"></a>1.6获得文件大小</h2><pre><code>file.length();
+//文件是否可读
+file.canRead();
+//文件是否可写；
+file.canWrite();
+//文件是否隐藏
+file.isHidden();
+</code></pre><h1 id="2、字节流"><a href="#2、字节流" class="headerlink" title="2、字节流"></a>2、字节流</h1><h2 id="2-1文件输入流"><a href="#2-1文件输入流" class="headerlink" title="2.1文件输入流"></a>2.1文件输入流</h2><pre><code> InputStream is=null;
+ is=new FileInputStream(&quot;D:/hello.txt&quot;);
+    byte[] b=new byte[1024];
+    int len=-1;
+    while((len=is.read(b))!=-1){
+    sysout(new String(b,0,len))
+    }
+
+is.close();!!!!!!
+</code></pre><h2 id="2-2文件输出流"><a href="#2-2文件输出流" class="headerlink" title="2.2文件输出流"></a>2.2文件输出流</h2><pre><code>OutputStream os=new FileOutputStream(&quot;D:/hell2.txt&quot;,true);
+//true代表不覆盖原来的，继续append
+String str=&quot;hello wuqingvika!&quot;;
+os.write(str.getBytes());
+os.close();
+}
+</code></pre><h1 id="3、字符流"><a href="#3、字符流" class="headerlink" title="3、字符流"></a>3、字符流</h1><h2 id="3-1读"><a href="#3-1读" class="headerlink" title="3.1读"></a>3.1读</h2><pre><code>Reader reader=new FileReader(&quot;D:/a.txt&quot;);
+char[] chars=new char[1024];
+int len=-1;
+while((len=reader.read(chars)!=-1){
+sysout(new String(chars,0,len));
+}
+</code></pre><h2 id="3-2写"><a href="#3-2写" class="headerlink" title="3.2写"></a>3.2写</h2><p>Writer writer=new FileWriter(“D:/hi.txt”);<br>writer.write(“吴庆加油啦。！！haha”);<br>writer.close();</p>
+<h1 id="4、转换流"><a href="#4、转换流" class="headerlink" title="4、转换流"></a>4、转换流</h1><pre><code>InputStream is=new FileInputStream(&quot;D:/hi.txt&quot;);
+    InputStreamReader reader=new InputStreamReader(is);
+    int len=-1;
+    char[] chars=new char[1024];
+    while((len=reader.read(chars))!=-1){
+        System.out.println(new String(chars,0,len));
+    }
+    reader.close();
+</code></pre><h1 id="5、缓冲流"><a href="#5、缓冲流" class="headerlink" title="5、缓冲流"></a>5、缓冲流</h1><pre><code>Reader reader=new FileReader(&quot;D:/hi.txt&quot;);
+     BufferedReader br=new BufferedReader(reader);
+     String str=null;
+     while((str=br.readLine())!=null){
+        System.out.println(str);
+     }
+   br.close();
+</code></pre><blockquote>
+<p>//第二种写法</p>
+</blockquote>
+<pre><code>BufferedReader br=new BufferedReader(new InputStreamReader(new FileInputStream(&quot;D:/hi.txt&quot;)));
+    String str=null;
+    while((str=br.readLine())!=null){
+       System.out.println(str);
+    }
+  br.close();
+</code></pre><h1 id="6、打印流"><a href="#6、打印流" class="headerlink" title="6、打印流"></a>6、打印流</h1><pre><code>PrintStream ps=null;
+ps=new PrintStream(&quot;D:/ps.txt&quot;);
+ps.print(&quot;helelll&quot;);
+ps.println(&quot;dkdk&quot;);
+ps.print(&quot;dks&quot;);            
+</code></pre>    
 
   </div>  
  
@@ -201,7 +244,7 @@ AV.init({
 	
 			<ul class="ul">
 				<li class="li iconfont icon-category"></li>
-				<a class="category-link" href="/categories/迷你小技能/">迷你小技能</a>
+				<a class="category-link" href="/categories/后端开发/">后端开发</a>
 			</ul>
 			
 
@@ -209,7 +252,7 @@ AV.init({
 	
 			<ul class="ul">
 				<li class="li iconfont icon-tag"></li>
-				<a class="tag-link" href="/tags/XX-Net/">XX-Net</a>
+				<a class="tag-link" href="/tags/Java/">Java</a>
 			</ul>
 			
 </div> 
@@ -249,10 +292,10 @@ AV.init({
   
      
       <div class="nav-prev">
-        <a class="nav-link" href="/2017/11/19/2017-11-19-迷你小技能/">  
+        <a class="nav-link" href="/2017/11/19/运维&测试-linux-1/">  
            <li class="li iconfont icon-left"></li>         
               
-          <span class="nav-title">【索引】你值得拥有的一些迷你小技能</span>
+          <span class="nav-title">【笔记】Linux(一)基础篇之「命令学习」</span>
         </a>
       </div>
     
@@ -261,10 +304,10 @@ AV.init({
 
     
        <div class="nav-next">      
-        <a  class="nav-link" href="/2017/11/19/2017-11-19-前端开发/">      
+        <a  class="nav-link" href="/2016/06/20/后端开发-spring-2/">      
 
              
-         <span class="nav-title">【索引】前端开发从基础到进阶</span>
+         <span class="nav-title">【笔记】Spring入门篇（二）spring代理设置</span>
           <li class="li iconfont icon-right"></li>
         </a>
         </div>
@@ -330,11 +373,11 @@ AV.init({
 
     <div class="small-tag">
          
-          <a href="/categories/后端开发/">后端开发</a>     
+          <a href="/categories/博文索引/">博文索引</a>     
          
           <a href="/categories/前端开发/">前端开发</a>     
          
-          <a href="/categories/博文索引/">博文索引</a>     
+          <a href="/categories/后端开发/">后端开发</a>     
          
           <a href="/categories/运维-测试/">运维&测试</a>     
          
