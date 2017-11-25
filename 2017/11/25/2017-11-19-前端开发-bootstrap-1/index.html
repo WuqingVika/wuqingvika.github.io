@@ -5,7 +5,7 @@
   <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
   
   
-  <title>  【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群 |   Wuqingvika | 吴里庆庆</title>
+  <title>  【笔记】Bootstrap基础篇（一）test1 |   Wuqingvika | 吴里庆庆</title>
 
  
   
@@ -96,21 +96,21 @@
 <div class="post-head">
 
 	<span class="post-title">	
-		【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群
+		【笔记】Bootstrap基础篇（一）test1
 	</span>
 
 
 	<div class="post-info">
 
 		<time class="post-time"><span class="iconfont icon-date"></span>
-		2017/11/23 23:08:51 	
+		2017/11/25 14:30:46 	
 		</time>
 
 
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		506
+		25
 		</span>
 
 
@@ -124,30 +124,7 @@
 
   <div class="post-content">
    
-    <p>本文是我的「Nginx学习笔记」第一篇,主要介绍了如何在window上搭建一个集群。</p>
-<h2 id="Nginx在windows上搭建集群"><a href="#Nginx在windows上搭建集群" class="headerlink" title="Nginx在windows上搭建集群"></a>Nginx在windows上搭建集群</h2><ul>
-<li>1.先将 nginx上传到linux上</li>
-<li>2.解压nginx</li>
-<li><p>3.先编译nginx</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">安装依赖包</span><br><span class="line">         yum install gcc-c++</span><br><span class="line">         yum install -y pcre pcre-devel</span><br><span class="line">         yum install -y zlib zlib-devel</span><br><span class="line">         yum install -y openssl openssl-devel</span><br><span class="line">执行编译</span><br><span class="line">         先进入 nginx的目录</span><br><span class="line">         执行</span><br><span class="line">             ./configure</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4.安装nginx</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    执行 </span><br><span class="line">           make</span><br><span class="line">           make install</span><br><span class="line">``` </span><br><span class="line">	</span><br><span class="line">- 5.启动nginx</span><br></pre></td></tr></table></figure>
-<pre><code>cd nginx目录下
-        配置文件 conf
-        启动nginx 
-            ./nginx
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 6.将端口号80 放行</span><br></pre></td></tr></table></figure>
-<pre><code>/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT
-将该设置添加到防火墙的规则中
-/etc/rc.d/init.d/iptables save
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 7.修改conf文件 和window下一样</span><br></pre></td></tr></table></figure>
-<p>   配置集群<br>  ```</p>
-<ul>
-<li>可以参考<a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-1/">【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群</a></li>
-</ul>
-</li>
-</ul>
+    <p>本文是我的「Bootstrap学习笔记」第一篇。<br><!--content--></p>
     
 
   </div>  
@@ -159,7 +136,7 @@
 	
 			<ul class="ul">
 				<li class="li iconfont icon-category"></li>
-				<a class="category-link" href="/categories/运维-测试/">运维&测试</a>
+				<a class="category-link" href="/categories/前端开发/">前端开发</a>
 			</ul>
 			
 
@@ -167,7 +144,7 @@
 	
 			<ul class="ul">
 				<li class="li iconfont icon-tag"></li>
-				<a class="tag-link" href="/tags/Nginx/">Nginx</a>
+				<a class="tag-link" href="/tags/Bootstrap/">Bootstrap</a>
 			</ul>
 			
 </div> 
@@ -206,10 +183,10 @@
   
      
       <div class="nav-prev">
-        <a class="nav-link" href="/2017/11/23/2017-11-19-迷你小技能/">  
+        <a class="nav-link" href="/2017/11/25/2016-06-20-后端开发-spring-2/">  
            <li class="li iconfont icon-left"></li>         
               
-          <span class="nav-title">【索引】你值得拥有的一些迷你小技能</span>
+          <span class="nav-title">【笔记】Spring入门篇（二）spring代理设置</span>
         </a>
       </div>
     
@@ -270,13 +247,13 @@
 
     <div class="small-tag">
          
+          <a href="/categories/后端开发/">后端开发</a>     
+         
           <a href="/categories/前端开发/">前端开发</a>     
          
           <a href="/categories/博文索引/">博文索引</a>     
          
           <a href="/categories/运维-测试/">运维&测试</a>     
-         
-          <a href="/categories/后端开发/">后端开发</a>     
          
           <a href="/categories/迷你小技能/">迷你小技能</a>     
         

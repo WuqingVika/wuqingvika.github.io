@@ -5,7 +5,7 @@
   <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
   
   
-  <title>  【索引】你值得拥有的一些迷你小技能 |   Wuqingvika | 吴里庆庆</title>
+  <title>  【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群 |   Wuqingvika | 吴里庆庆</title>
 
  
   
@@ -96,21 +96,21 @@
 <div class="post-head">
 
 	<span class="post-title">	
-		【索引】你值得拥有的一些迷你小技能
+		【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群
 	</span>
 
 
 	<div class="post-info">
 
 		<time class="post-time"><span class="iconfont icon-date"></span>
-		2017/11/23 23:08:51 	
+		2017/11/25 14:30:47 	
 		</time>
 
 
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		135
+		506
 		</span>
 
 
@@ -124,12 +124,29 @@
 
   <div class="post-content">
    
-    <p>这篇文章汇总了本站中所有与「小技能」、常用工具下载安装有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
-<h2 id="核心篇"><a href="#核心篇" class="headerlink" title="核心篇"></a>核心篇</h2><h3 id="一、XX-Net下载与安装"><a href="#一、XX-Net下载与安装" class="headerlink" title="一、XX-Net下载与安装"></a>一、XX-Net下载与安装</h3><ul>
-<li><a href="https://wuqingvika.github.io/2017/11/19/迷你小技能-XX-Net/">【工具】XX-Net「带你出去看看」</a></li>
+    <p>本文是我的「Nginx学习笔记」第一篇,主要介绍了如何在window上搭建一个集群。<br><!--content--></p>
+<h2 id="Nginx在windows上搭建集群"><a href="#Nginx在windows上搭建集群" class="headerlink" title="Nginx在windows上搭建集群"></a>Nginx在windows上搭建集群</h2><ul>
+<li>1.先将 nginx上传到linux上</li>
+<li>2.解压nginx</li>
+<li><p>3.先编译nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">安装依赖包</span><br><span class="line">         yum install gcc-c++</span><br><span class="line">         yum install -y pcre pcre-devel</span><br><span class="line">         yum install -y zlib zlib-devel</span><br><span class="line">         yum install -y openssl openssl-devel</span><br><span class="line">执行编译</span><br><span class="line">         先进入 nginx的目录</span><br><span class="line">         执行</span><br><span class="line">             ./configure</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.安装nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    执行 </span><br><span class="line">           make</span><br><span class="line">           make install</span><br><span class="line">``` </span><br><span class="line">	</span><br><span class="line">- 5.启动nginx</span><br></pre></td></tr></table></figure>
+<pre><code>cd nginx目录下
+        配置文件 conf
+        启动nginx 
+            ./nginx
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 6.将端口号80 放行</span><br></pre></td></tr></table></figure>
+<pre><code>/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+将该设置添加到防火墙的规则中
+/etc/rc.d/init.d/iptables save
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 7.修改conf文件 和window下一样</span><br></pre></td></tr></table></figure>
+<p>   配置集群<br>  ```</p>
+<ul>
+<li>可以参考<a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-1/">【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群</a></li>
 </ul>
-<h3 id="二、idea下载与安装"><a href="#二、idea下载与安装" class="headerlink" title="二、idea下载与安装"></a>二、idea下载与安装</h3><ul>
-<li><a href="https://wuqingvika.github.io/2017/11/20/迷你小技能-idea/">【工具】idea下载安装注册使用</a></li>
+</li>
 </ul>
     
 
@@ -142,7 +159,7 @@
 	
 			<ul class="ul">
 				<li class="li iconfont icon-category"></li>
-				<a class="category-link" href="/categories/博文索引/">博文索引</a>
+				<a class="category-link" href="/categories/运维-测试/">运维&测试</a>
 			</ul>
 			
 
@@ -150,7 +167,7 @@
 	
 			<ul class="ul">
 				<li class="li iconfont icon-tag"></li>
-				<a class="tag-link" href="/tags/博文索引/">博文索引</a>
+				<a class="tag-link" href="/tags/Nginx/">Nginx</a>
 			</ul>
 			
 </div> 
@@ -189,7 +206,7 @@
   
      
       <div class="nav-prev">
-        <a class="nav-link" href="/2017/11/23/2017-11-19-运维&测试/">  
+        <a class="nav-link" href="/2017/11/25/2017-11-19-运维&测试/">  
            <li class="li iconfont icon-left"></li>         
               
           <span class="nav-title">【索引】运维&amp;测试从基础到进阶</span>
@@ -201,10 +218,10 @@
 
     
        <div class="nav-next">      
-        <a  class="nav-link" href="/2017/11/23/2017-11-20-运维&测试-nginx-2/">      
+        <a  class="nav-link" href="/2017/11/25/2017-11-19-迷你小技能-XX-Net/">      
 
              
-         <span class="nav-title">【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群</span>
+         <span class="nav-title">【工具】XX-Net「带你出去看看」</span>
           <li class="li iconfont icon-right"></li>
         </a>
         </div>
@@ -253,13 +270,13 @@
 
     <div class="small-tag">
          
+          <a href="/categories/后端开发/">后端开发</a>     
+         
           <a href="/categories/前端开发/">前端开发</a>     
          
           <a href="/categories/博文索引/">博文索引</a>     
          
           <a href="/categories/运维-测试/">运维&测试</a>     
-         
-          <a href="/categories/后端开发/">后端开发</a>     
          
           <a href="/categories/迷你小技能/">迷你小技能</a>     
         

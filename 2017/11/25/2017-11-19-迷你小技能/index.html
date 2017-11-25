@@ -5,7 +5,7 @@
   <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
   
   
-  <title>  【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群 |   Wuqingvika | 吴里庆庆</title>
+  <title>  【索引】你值得拥有的一些迷你小技能 |   Wuqingvika | 吴里庆庆</title>
 
  
   
@@ -96,21 +96,21 @@
 <div class="post-head">
 
 	<span class="post-title">	
-		【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群
+		【索引】你值得拥有的一些迷你小技能
 	</span>
 
 
 	<div class="post-info">
 
 		<time class="post-time"><span class="iconfont icon-date"></span>
-		2017/11/23 23:08:51 	
+		2017/11/25 14:30:47 	
 		</time>
 
 
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		986
+		135
 		</span>
 
 
@@ -124,25 +124,12 @@
 
   <div class="post-content">
    
-    <p>本文是我的「Nginx学习笔记」第一篇,主要介绍了Nginx相关特点以及如何在window上搭建一个集群。</p>
-<h2 id="Nginx介绍："><a href="#Nginx介绍：" class="headerlink" title="Nginx介绍："></a>Nginx介绍：</h2><ul>
-<li>是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器<h3 id="特点"><a href="#特点" class="headerlink" title="特点:"></a>特点:</h3></li>
+    <p>这篇文章汇总了本站中所有与「小技能」、常用工具下载安装有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font><br><!--content--></p>
+<h2 id="核心篇"><a href="#核心篇" class="headerlink" title="核心篇"></a>核心篇</h2><h3 id="一、XX-Net下载与安装"><a href="#一、XX-Net下载与安装" class="headerlink" title="一、XX-Net下载与安装"></a>一、XX-Net下载与安装</h3><ul>
+<li><a href="https://wuqingvika.github.io/2017/11/19/迷你小技能-XX-Net/">【工具】XX-Net「带你出去看看」</a></li>
 </ul>
-<ul>
-<li><p>反向代理 :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">		反向代理:代理服务器的,用户不需要设置.</span><br><span class="line">``` </span><br><span class="line">			</span><br><span class="line">- 负载均衡:</span><br><span class="line">``` 	</span><br><span class="line">		原理就是数据流量分摊到多个服务器上执行，减轻每台服务器的压力，</span><br><span class="line">		多台服务器共同完成工作任务，从而提高了数据的吞吐量。</span><br><span class="line">``` </span><br><span class="line">		</span><br><span class="line">- 动静分离:</span><br><span class="line">``` 	</span><br><span class="line">		将静态的资源放到反向服务器,节省用户的访问时间.</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">## Nginx在windows上搭建集群</span><br><span class="line">- 1.在g盘新建两个目录 tomcat1 tomcat2</span><br><span class="line">- 2.修改tomcat2的端口 在tomcat1的端口上+10</span><br><span class="line">- 3.解压nginx</span><br></pre></td></tr></table></figure>
-<pre><code>修改nginx的 nginx.conf文件
-在locatioin / 下添加了反向代理
-    proxy_pass 代理服务器
-这里只是代理一台服务器
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 4.代理集群</span><br><span class="line">```	</span><br><span class="line">            需要在http节点上添加一个</span><br><span class="line">                upstream server_wq&#123;</span><br><span class="line">                    server 127.0.0.1:8080;</span><br><span class="line">                    server 127.0.0.1:8090;</span><br><span class="line">                &#125;</span><br><span class="line">            修改location /下的反向代理 </span><br><span class="line">                proxy_pass http://server_wq</span><br><span class="line">``` </span><br><span class="line">	</span><br><span class="line">- 5.session共享问题</span><br><span class="line">  -  解决方式1:只能在window下好使</span><br><span class="line">  ```web服务器解决(广播机制)</span><br><span class="line">                注意:tomcat下性能低</span><br><span class="line">                修改两个地方:</span><br><span class="line">                    1.修改tomcat的server.xml 支持共享</span><br><span class="line">                        将 引擎标签下的 </span><br><span class="line">                            &lt;Cluster className=&quot;org.apache.catalina.ha.tcp.SimpleTcpCluster&quot;/&gt;</span><br><span class="line">                        注释去掉</span><br><span class="line">                    2.修改项目的配置文件 web.xml中添加一个节点&lt;distributable/&gt; </span><br><span class="line">  ``` </span><br><span class="line">  -  解决方式2:</span><br></pre></td></tr></table></figure>
-<p> 可以将session的id放入redis中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-  解决方式3:</span><br></pre></td></tr></table></figure>
-<pre><code>保证一个ip地址永远的访问一台web服务器,就不存在session共享问题了,在linux
-在nginx的配置文件中
-    upstream中添加 ip_hash;
-</code></pre><p>  ```</p>
-</li>
+<h3 id="二、idea下载与安装"><a href="#二、idea下载与安装" class="headerlink" title="二、idea下载与安装"></a>二、idea下载与安装</h3><ul>
+<li><a href="https://wuqingvika.github.io/2017/11/20/迷你小技能-idea/">【工具】idea下载安装注册使用</a></li>
 </ul>
     
 
@@ -155,7 +142,7 @@
 	
 			<ul class="ul">
 				<li class="li iconfont icon-category"></li>
-				<a class="category-link" href="/categories/运维-测试/">运维&测试</a>
+				<a class="category-link" href="/categories/博文索引/">博文索引</a>
 			</ul>
 			
 
@@ -163,7 +150,7 @@
 	
 			<ul class="ul">
 				<li class="li iconfont icon-tag"></li>
-				<a class="tag-link" href="/tags/Nginx/">Nginx</a>
+				<a class="tag-link" href="/tags/博文索引/">博文索引</a>
 			</ul>
 			
 </div> 
@@ -202,10 +189,10 @@
   
      
       <div class="nav-prev">
-        <a class="nav-link" href="/2017/11/23/2017-11-19-前端开发-bootstrap-2/">  
+        <a class="nav-link" href="/2017/11/25/2017-11-20-后端开发/">  
            <li class="li iconfont icon-left"></li>         
               
-          <span class="nav-title">【笔记】Bootstrap基础篇（二）test2</span>
+          <span class="nav-title">【索引】后端开发从基础到进阶</span>
         </a>
       </div>
     
@@ -214,10 +201,10 @@
 
     
        <div class="nav-next">      
-        <a  class="nav-link" href="/2017/11/23/2016-06-20-后端开发-spring-1/">      
+        <a  class="nav-link" href="/2017/11/25/2017-11-19-运维&测试/">      
 
              
-         <span class="nav-title">【笔记】Spring入门篇（一）了解spring</span>
+         <span class="nav-title">【索引】运维&amp;测试从基础到进阶</span>
           <li class="li iconfont icon-right"></li>
         </a>
         </div>
@@ -266,13 +253,13 @@
 
     <div class="small-tag">
          
+          <a href="/categories/后端开发/">后端开发</a>     
+         
           <a href="/categories/前端开发/">前端开发</a>     
          
           <a href="/categories/博文索引/">博文索引</a>     
          
           <a href="/categories/运维-测试/">运维&测试</a>     
-         
-          <a href="/categories/后端开发/">后端开发</a>     
          
           <a href="/categories/迷你小技能/">迷你小技能</a>     
         
