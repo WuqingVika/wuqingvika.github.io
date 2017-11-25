@@ -1,0 +1,688 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+  
+  
+  <title>  【笔记】Linux(一)基础篇之「命令学习」 |   Wuqingvika | 吴里庆庆</title>
+
+ 
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+
+
+  <!-- css -->
+  <link rel="stylesheet" href="/css/style.css">  
+  <!-- Jquery -->
+  <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script> 
+  <!-- Add fancyBox -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script> 
+  <script src="/js/gallery.js"></script>
+  <!-- javascript --> 
+  <script src="/js/mobile.js"></script>  
+  <script src="/js/utils.js"></script>    
+  <script src="/js/script.js"></script>  
+</head> 
+
+  <body> 
+    <header class="header">
+	
+  <nav class="header-nav">       
+	
+  	<span class="iconfont icon-menu mobile-toggle"></span>  
+
+    <a class="header-logo" href="/"><span>Wuqingvika</a>  
+
+    <div class="header-menu">          
+              
+            
+
+              <a class="header-menu-link" id="header-menu-home" href="/">首页
+              </a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-archives" href="/archives">归档
+              </a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-categories" href="/categories">分类
+              </a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-tags" href="/tags">标签
+              </a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-about" href="/about">关于
+              </a>     
+
+            
+            
+            
+
+              <a class="iconfont icon-menu-search header-menu-link" id="header-menu-search"></a>
+
+            
+        
+        
+    </div>  
+  </nav>
+</header>
+
+     <div class="container">   
+      
+        
+        <section id="post">
+        
+        
+
+         <article class="post slideLIn">
+
+<div class="post-head">
+
+	<span class="post-title">	
+		【笔记】Linux(一)基础篇之「命令学习」
+	</span>
+
+
+	<div class="post-info">
+
+		<time class="post-time"><span class="iconfont icon-date"></span>
+		2017/11/19 20:50:42 	
+		</time>
+
+
+		
+
+		<span class="post-words"><span class="iconfont icon-words"></span>
+		3424
+		</span>
+
+
+			
+		
+	</div>
+
+</div>
+ 
+
+
+  <div class="post-content">
+   
+    <p>本文是我的「Linux学习笔记」第一篇,主要学习了Linux的一些基本命令。</p>
+<a id="more"></a>
+<h2 id="linux-操作系统-OS"><a href="#linux-操作系统-OS" class="headerlink" title="linux:操作系统 OS"></a>linux:操作系统 OS</h2><h3 id="首先来了解下unix"><a href="#首先来了解下unix" class="headerlink" title="首先来了解下unix:"></a>首先来了解下unix:</h3><pre><code>unix是一个多用户,多任务的操作系统,收费的操作系统.
+</code></pre><h3 id="linux"><a href="#linux" class="headerlink" title="linux:"></a>linux:</h3><pre><code>版本:
+    内核版本
+    发行版本
+centos:开源的免费的os
+</code></pre><h3 id="安装虚拟机"><a href="#安装虚拟机" class="headerlink" title="安装虚拟机"></a>安装虚拟机</h3><p>虚拟机:就是一台电脑<br>通过虚拟机软件可以在自己的电脑在安装几个电脑<br>常见的虚拟机软件:<br>    VmWare<br>    virtualBox:oracle 免费的</p>
+<h3 id="linux的目录结构"><a href="#linux的目录结构" class="headerlink" title="linux的目录结构"></a>linux的目录结构</h3><pre><code>home:家.用户的家
+   普通用户的家目录文件在home下 例如:一个用户tom 在home就会存在tom的目录
+root:超级管理员root的家
+</code></pre><p>  etc:存放配置文件<br>      usr:存放共享的资源</p>
+<h2 id="linux的命令"><a href="#linux的命令" class="headerlink" title="linux的命令"></a>linux的命令</h2><h3 id="常用的命令"><a href="#常用的命令" class="headerlink" title="常用的命令"></a>常用的命令</h3><pre><code>查看帮助:
+    man 命令
+    退出帮助目录:   q
+切换目录:cd
+    cd 目录
+    cd 目录/目录
+    cd ..  :上一级目录
+    cd /     :根目录
+    cd ~    :回家
+创建目录和删除目录
+    mkdir 创建
+        mkdir 目录名
+        mkdir -p a/b/c
+    rmdir 删除
+        rmdir 目录名:只能删除一个空目录
+
+展示目录下文件列表(以后使用ll即可)
+    ls
+    ls:展示的能看见的文件(和目录)的名称
+    ls -a:展示所有的文件的名称
+        文件前面有&quot;.&quot;代表的是隐藏文件
+    ls -l:显示文件的详细信息
+        简写的方式: ll(★)
+    ll -h:友好的显示
+
+浏览文件
+    cat:显示文件的所有内容
+        cat 文件名
+    more:分页显示
+        空格:下一页
+        回车:下一行
+    less:分页显示
+        可以通过PgUp PgDn 翻页查看
+    tail(★★)
+        查看一个文件的后面的内容
+        tail -显示后几行 文件名
+        tail -f 文件名 
+            动态的查看
+            例如:
+                tail -f catalina.xxx.log
+            通过 ctrl+c 结束滚动查看
+
+文件的操作
+    创建一个文件
+        touch 文件名        创建一个空白的文件
+    复制文件
+        cp 文件 目录/文件名
+            例如:
+                cp 1.txt 2.txt
+                cp 1.txt 1/1.txt
+    移动文件(重命名)
+        mv 文件 目录/文件名
+        mv 文件名 新文件名
+
+    删除文件 rm
+        rm 文件名:带询问删除
+        rm -f 文件名:不带询问删除
+        rm -r 目录:带询问的递归删除
+        rm -rf 目录:不带询问的递归删除(谨慎使用)
+
+    tar:打包或解压 一个文件或者目录(★★)
+        常用的组合
+            -cvf :打包一个文件或者目录
+            -zcvf:打包并压缩一个文件或者目录 压缩的格式:gzip
+            -xvf:解压或者打开一个tar文件
+        格式:
+            tar 参数 文件名 要打包|解压的文件目录
+
+        例如:
+            将当前目录下的所有文件打包成test1.tar
+                tar -cvf test1.tar ./*
+            将当前目录下的所有文件打包并压缩成test2.tar.gz
+                tar -zcvf test2.tar.gz ./*
+            将test1.tar解压到当前目录
+                tar -xvf test1.tar 
+            将test1.tar解压到b目录
+                tar -xvf test1.tar -C b
+</code></pre><h2 id="其他的常用命令"><a href="#其他的常用命令" class="headerlink" title="其他的常用命令"></a>其他的常用命令</h2><pre><code>grep:查找符合条件的字符串(★)
+    grep 字符串 
+pwd:显示当前的工作目录
+wget:下载资料
+    wget 资源路径
+</code></pre><h2 id="vi和vim编辑器-理解中了解"><a href="#vi和vim编辑器-理解中了解" class="headerlink" title="vi和vim编辑器(理解中了解)"></a>vi和vim编辑器(理解中了解)</h2><pre><code>编辑普通文件
+三种模式：命令行、插入、底行模式。
+切换到命令行模式：按Esc键；
+切换到插入模式：按 i 、o、a键；
+    i 在当前位置生前插入
+    I 在当前行首插入
+    a 在当前位置后插入
+    A 在当前行尾插入
+    o 在当前行之后插入一行
+    O 在当前行之前插入一行
+
+切换到底行模式：按 :（冒号）；
+</code></pre><h2 id="管道-★"><a href="#管道-★" class="headerlink" title="管道 | ★"></a>管道 | ★</h2><pre><code>重要的一个概念，其作用是将一个命令的输出用作另一个命令的输入
+例如:
+    在ifconfig的结果里查找 192.168字符串
+    ifconfig | grep 192.168
+以后常用
+    查找和java相关的进程
+    ps -ef | grep java
+    查找和3306相关的信息
+    ps -ef | grep 3306
+</code></pre><h2 id="系统管理命令"><a href="#系统管理命令" class="headerlink" title="系统管理命令"></a>系统管理命令</h2><pre><code>date 显示或设置系统时间
+    date  显示当前系统时间
+    date -s “2014-01-01 10:10:10“  设置系统时间
+
+clear 清屏
+    ctrl+l
+
+ps 正在运行的某个进程的状态
+    ps –ef  查看所有进程
+    ★ps –ef | grep ssh 查找某一进程
+
+kill 杀掉某一进程
+    kill 2868  杀掉2868编号的进程
+    ★kill -9 2868  强制杀死进程
+</code></pre><h2 id="网络管理"><a href="#网络管理" class="headerlink" title="网络管理"></a>网络管理</h2><h3 id="ifconfig-查看所有的网络设置"><a href="#ifconfig-查看所有的网络设置" class="headerlink" title="ifconfig:查看所有的网络设置"></a>ifconfig:查看所有的网络设置</h3><pre><code>ifconfig 网卡名称 down :禁用网卡
+ifconfig 网卡名称 up :启用网卡
+</code></pre><h3 id="ping-和window中一样"><a href="#ping-和window中一样" class="headerlink" title="ping:和window中一样"></a>ping:和window中一样</h3><pre><code>通过ctrl+c取消
+</code></pre><h3 id="netstat-查看网络端口。"><a href="#netstat-查看网络端口。" class="headerlink" title="netstat 查看网络端口。"></a>netstat 查看网络端口。</h3><pre><code>netstat -an | grep 3306 查询3306端口占用情况
+</code></pre><h2 id="了解用户管理"><a href="#了解用户管理" class="headerlink" title="了解用户管理"></a>了解用户管理</h2><h3 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h3><pre><code>useradd 用户名:默认会在home目录下给一个用户创建一个目录
+passwd 用户名: 回车输入密码
+
+useradd 用户名 -d /home/目录:创建一个用户然后在指定该用户的家目录
+</code></pre><h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><pre><code>userdel 用户名:只是删除用户 但是不删除家目录
+userdel -r 用户名:删除用户连带家目录一起删除
+</code></pre><h3 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户:"></a>切换用户:</h3><pre><code>ssh -l 用户名 -p 22 主机
+    例如: ssh -l tom -p 22 192.168.17.131
+su - 用户名
+</code></pre><h3 id="了解组管理"><a href="#了解组管理" class="headerlink" title="了解组管理"></a>了解组管理</h3><pre><code>添加
+    groupadd 组名
+    useradd 用户名 -g 组名
+删除
+    groupdel 组名
+        注意:
+            若组下有用户,删除不了
+</code></pre><h2 id="文件的权限"><a href="#文件的权限" class="headerlink" title="文件的权限:"></a>文件的权限:</h2><ul>
+<li>普通文件： 包括文本文件、数据文件、可执行的二进制程序文件等。 </li>
+<li>目录文件： Linux系统把目录看成是一种特殊的文件，利用它构成文件系统的树型结构。  </li>
+<li><p>设备文件： Linux系统把每一个设备都看成是一个文件</p>
+</li>
+<li><p>通过ll展示的列表<br> 以 d 开始的是目录文件<br> 以 - 开始的是普通文件</p>
+</li>
+<li><p>文件的权限9个字母 三个三个一组<br>  第一组代表的是当前用户的权限<br>  第二组代表的是组的权限<br>  第三组代表的是其他用户的权限</p>
+<p>  r:读      4<br>  w:写    2<br>  x:执行    1</p>
+</li>
+<li><p>chmod 变更文件或目录的权限。<br>  chmod 755 a.txt<br>  chmod u=rwx,g=rx,o=rx a.txt<br>  chmod 000 a.txt  /<br>  ★chmod 777 a.txt</p>
+</li>
+<li><p>了解:chown 变更文件或目录改文件所属用户和组<br> chown u1:public a.txt    ：变更当前的目录或文件的所属用户和组<br> chown -R u1:public dir    ：变更目录中的所有的子目录及文件的所属用户和组<br> 格式:</p>
+<pre><code>chown 用户:组 文件
+</code></pre></li>
+<li><p>linux :多用户 多任务的操作系统<br>常用命令:<br> cd 切换目录</p>
+<pre><code>cd /
+cd ~
+cd ..
+</code></pre><p> ll 展示列表<br> mkdir [-p] 目录<br> rmdir 目录:删除空目录</p>
+<p> touch 文件名:创建空白文件<br> cp 文件 目录/文件:复制文件<br> mv 文件 目录:移动文件<br> mv 文件 新文件:文件重命名<br> rm -rf 文件|目录:不询问递归删除</p>
+<p> tar 打包或者解压</p>
+<pre><code>tar -cvf 文件名称 目录|文件  打包
+tar -zcvf 文件名称 目录|文件  打包并压缩
+tar -xvf 文件名称 解压至当前目录
+tar -xvf 文件名称 -C 目录: 解压至指定目录
+</code></pre><p> grep 查找<br> | 管道</p>
+<p> 设置时间</p>
+<pre><code>date -s &quot;时间&quot;:设置时间
+ps -ef :查看所有进程
+</code></pre><p> ifconfig:查看ip地址</p>
+</li>
+</ul>
+<h2 id="回顾总结"><a href="#回顾总结" class="headerlink" title="回顾总结"></a>回顾总结</h2><h3 id="linux-常用命令"><a href="#linux-常用命令" class="headerlink" title="linux:常用命令:"></a>linux:常用命令:</h3><pre><code>cd  切换命令
+    cd /
+    cd ~
+    cd ../../
+    cd xx
+ll 展示所有的文件
+    ll -h 友好的展示
+mkdir 创建目录
+    mkdir 目录名
+    mkdir -p a/b/b/b
+rmdir 移除目录
+    rmdir 目录名 :移除空目录
+
+touch 文件名:创建一个空文件
+cp 文件名 目录/文件名:复制
+mv 文件名 目录/文件名:移动
+mv 文件名 新文件名:重命名
+
+rm 文件名:带询问的删除文件
+rm -f 文件名:不带询问的删除文件
+rm -rf 目录|文件:不带询问的递归文件
+
+tar: 打包|解压一个目录或者文件
+    tar -cvf 文件名 目录:将指定的目录打包成一个指定的文件
+    tar -zcvf 文件名 目录:将指定的目录打包并且压缩成一个指定的文件
+
+    tar -xvf 文件名 :将指定的文件解压到当前目录
+    tar -xvf 文件名 -C 目录:将指定的文件解压到指定的目录
+
+grep 查找
+|     管道
+
+ps -ef | grep java
+netstate -an | grep 3306
+
+kill -9 pid :强制结束一个进程
+
+ifconfig:查看当前网卡信息
+ping:查看网络是否通畅
+
+chmod 777 文件名
+chown 更改文件的归属者
+</code></pre>    
+
+  </div>  
+ 
+
+  <div class="post-bottom">
+		<div class="meta-info">
+
+	
+			<ul class="ul">
+				<li class="li iconfont icon-category"></li>
+				<a class="category-link" href="/categories/运维-测试/">运维&测试</a>
+			</ul>
+			
+
+
+	
+			<ul class="ul">
+				<li class="li iconfont icon-tag"></li>
+				<a class="tag-link" href="/tags/Linux/">Linux</a>
+			</ul>
+			
+</div> 
+		
+	
+<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
+
+	<div class="-mob-share-list">
+
+		                  
+            <span class="iconfont icon-share-qq -mob-share-qq"></span>
+     	                  
+            <span class="iconfont icon-share-weixin -mob-share-weixin"></span>
+     	                  
+            <span class="iconfont icon-share-weibo -mob-share-weibo"></span>
+     	                  
+            <span class="iconfont icon-share-douban -mob-share-douban"></span>
+     	                  
+            <span class="iconfont icon-share-facebook -mob-share-facebook"></span>
+     	                  
+            <span class="iconfont icon-share-twitter -mob-share-twitter"></span>
+     	                  
+            <span class="iconfont icon-share-tumblr -mob-share-tumblr"></span>
+     	                  
+            <span class="iconfont icon-share-google -mob-share-google"></span>
+     	  
+	</div>    
+
+  </div>
+
+
+
+
+ <nav class="nav">
+
+  
+     
+      <div class="nav-prev">
+        <a class="nav-link" href="/2017/11/19/2017-11-19-运维&测试/">  
+           <li class="li iconfont icon-left"></li>         
+              
+          <span class="nav-title">【索引】运维&amp;测试从基础到进阶</span>
+        </a>
+      </div>
+    
+
+
+
+    
+       <div class="nav-next">      
+        <a  class="nav-link" href="/2017/11/19/2017-11-19-迷你小技能-XX-Net/">      
+
+             
+         <span class="nav-title">【工具】XX-Net「带你出去看看」</span>
+          <li class="li iconfont icon-right"></li>
+        </a>
+        </div>
+    
+
+</nav>   
+
+
+
+
+<div class="donate-btn iconfont icon-donate"></div>
+
+<div id="donate-box">
+
+	<span class="donate-cancel iconfont icon-cancel"></span>
+
+	<div class="donate-img-box">
+		<img id="donate-qr-wechat" class="donate-img no-gallery" src="/img/r1.png" alt="No donate img !">	
+		<img id="donate-qr-alipay" class="donate-img no-gallery" src="/img/r2.png" alt="No donate img !">				
+	</div>
+
+	<span class="donate-word">emm...请赐一包辣条可好..</span>
+
+	<div class="donate-list">
+		<span class="iconfont icon-donate-wechat fadeIn"></span>
+		<span class="iconfont icon-donate-alipay fadeIn"></span>
+	</div>
+
+</div>
+
+ 
+
+
+
+
+	
+
+
+  
+
+  <div class="post-widget">
+    
+    <a class="post-widget-title iconfont icon-category" href="/categories">
+    分类</a>
+
+
+    <div class="small-tag">
+         
+          <a href="/categories/后端开发/">后端开发</a>     
+         
+          <a href="/categories/前端开发/">前端开发</a>     
+         
+          <a href="/categories/博文索引/">博文索引</a>     
+         
+          <a href="/categories/运维-测试/">运维&测试</a>     
+         
+          <a href="/categories/迷你小技能/">迷你小技能</a>     
+        
+    </div>
+
+  </div>
+
+  
+
+
+  
+  <div class="post-widget">
+    
+    <a class="post-widget-title iconfont icon-tag" href="/tags"> 标签</a>
+
+
+    <div class="small-tag">
+
+      <a href="/tags/Bootstrap/" style="font-size: 13px;">Bootstrap</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 13px;">IntelliJ IDEA</a> <a href="/tags/Java/" style="font-size: 13px;">Java</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/Nginx/" style="font-size: 13px;">Nginx</a> <a href="/tags/Spring/" style="font-size: 13px;">Spring</a> <a href="/tags/XX-Net/" style="font-size: 13px;">XX-Net</a> <a href="/tags/博文索引/" style="font-size: 13px;">博文索引</a>
+
+    </div>
+  </div>
+
+  
+ 
+
+
+
+</article>
+
+
+<div id="toc" class="slideRIn">		
+
+	<div class="toc-container">	
+
+	<span class="toc-contents iconfont icon-open" onclick="change()"> 目录 </span>
+
+	<ul class="toc-list"></ul>
+
+	</div>
+
+</div>
+
+
+<script src="/js/toc.js"></script>
+
+<script src="/js/post.js"></script>
+</section>
+
+     
+    
+    </div>        
+    
+    <div class="mask"> </div>
+    <div class="back-to-top iconfont icon-backtotop fadeIn"></div> 
+
+    
+
+
+
+      
+
+             
+              
+      
+
+      
+
+      
+
+      
+
+      
+
+
+
+
+
+
+
+<script src="/js/search.js"></script>     
+          
+          <div class="search-container">
+            <input type="text" placeholder="搜索点什么吧..." id="search-input" class="search-input">  
+              <span class="search-cancel iconfont icon-cancel"></span>
+              <div id="search-result" class="search-result"></div>
+          </div>
+ 
+
+     <div class="mobile-menu">      
+
+      
+      <img class="slide-icon" src= /img/favicon.png >   
+      
+
+         
+            
+
+            <a class="mobile-menu-link"  href="/">首页
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link"  href="/archives">归档
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link"  href="/categories">分类
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link"  href="/tags">标签
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link"  href="/about">关于
+            </a>
+            
+         
+                          
+
+            <a class="mobile-menu-link mobile-menu-search">搜索 </a>                 
+            
+         
+</div>     
+    
+
+<footer id="footer">
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMTk3NS84NTM5">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+    
+   	 <div class="foot-busuanzi">	
+
+     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+   
+     <span class="iconfont icon-pv"></span>
+     <span id="busuanzi_value_site_pv"></span>
+ 
+     <span class="iconfont icon-uv"></span>
+     <span id="busuanzi_value_site_uv"></span>
+
+   	 </div>
+    
+
+    	
+	<div class="foot-link">
+	
+	 <a href="http://hexo.io/" target="_blank">Hexo</a>
+
+	 Theme
+
+	 <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a> 
+
+	 </div>	
+
+	 <div class="foot-copyright">
+	  &copy; 
+	 
+
+	 2017
+	 吴里庆庆	 
+
+	 </div>
+</footer>
+ 
+    
+
+<!-- Baidu Analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c308290134e6d5242e273a2dc60778a1"; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+ 
+  </body>   
+  <script src="/js/animation.js"></script>   
+</html>

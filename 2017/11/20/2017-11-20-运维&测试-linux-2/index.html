@@ -1,0 +1,467 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+  
+  
+  <title>  【笔记】Linux(二)基础篇之「在Linux发布一个简单的web项目」 |   Wuqingvika | 吴里庆庆</title>
+
+ 
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+
+
+  <!-- css -->
+  <link rel="stylesheet" href="/css/style.css">  
+  <!-- Jquery -->
+  <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script> 
+  <!-- Add fancyBox -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script> 
+  <script src="/js/gallery.js"></script>
+  <!-- javascript --> 
+  <script src="/js/mobile.js"></script>  
+  <script src="/js/utils.js"></script>    
+  <script src="/js/script.js"></script>  
+</head> 
+
+  <body> 
+    <header class="header">
+	
+  <nav class="header-nav">       
+	
+  	<span class="iconfont icon-menu mobile-toggle"></span>  
+
+    <a class="header-logo" href="/"><span>Wuqingvika</a>  
+
+    <div class="header-menu">          
+              
+            
+
+              <a class="header-menu-link" id="header-menu-home" href="/">首页
+              </a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-archives" href="/archives">归档
+              </a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-categories" href="/categories">分类
+              </a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-tags" href="/tags">标签
+              </a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-about" href="/about">关于
+              </a>     
+
+            
+            
+            
+
+              <a class="iconfont icon-menu-search header-menu-link" id="header-menu-search"></a>
+
+            
+        
+        
+    </div>  
+  </nav>
+</header>
+
+     <div class="container">   
+      
+        
+        <section id="post">
+        
+        
+
+         <article class="post slideLIn">
+
+<div class="post-head">
+
+	<span class="post-title">	
+		【笔记】Linux(二)基础篇之「在Linux发布一个简单的web项目」
+	</span>
+
+
+	<div class="post-info">
+
+		<time class="post-time"><span class="iconfont icon-date"></span>
+		2017/11/20 20:50:42 	
+		</time>
+
+
+		
+
+		<span class="post-words"><span class="iconfont icon-words"></span>
+		2259
+		</span>
+
+
+			
+		
+	</div>
+
+</div>
+ 
+
+
+  <div class="post-content">
+   
+    <p>本文是我的「Linux学习笔记」第二篇,主要学习了如何在Linux发布一个web项目(包括：安装Jdk、安装Mysql、安装Tomcat、发布项目直至访问成功)。<br><a id="more"></a></p>
+<h2 id="在linux发布一个简单的Web项目"><a href="#在linux发布一个简单的Web项目" class="headerlink" title="在linux发布一个简单的Web项目"></a>在linux发布一个简单的Web项目</h2><h3 id="1-安装jdk"><a href="#1-安装jdk" class="headerlink" title="1.安装jdk:"></a>1.安装jdk:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">a.检测是否安装了jdk  运行java -version</span><br><span class="line">b.若有需要将其卸载</span><br><span class="line">c.查看安装那些jdk</span><br><span class="line">       rpm -qa | grep java</span><br><span class="line">d.卸载</span><br><span class="line">     先卸载 openjdk 1.7</span><br><span class="line">           rpm -e --nodeps 卸载的包</span><br><span class="line">            rpm -e --nodeps java-1.7.0-openjdk-1.7.0.45-2.4.3.3.el6.i686</span><br><span class="line">     再卸载 openjdk 1.6		</span><br><span class="line">               rpm -e --nodeps java-1.6.0-openjdk-1.6.0.0-1.66.1.13.0.el6.i686</span><br><span class="line">e.安装jdk</span><br><span class="line">           上传jdk 通过ftp软件上传(上传到root目录下)</span><br><span class="line">           在 /usr/<span class="built_in">local</span>创建一个 java目录</span><br><span class="line">               mkdir java</span><br><span class="line">           将上传的jdk复制到 java目录下</span><br><span class="line">               cp /root/jdk.xxxxx.tar /usr/<span class="built_in">local</span>/java</span><br><span class="line">           将其解压</span><br><span class="line">               tar -xvf jdk.xxx.tar</span><br><span class="line">f.安装依赖</span><br><span class="line">           yum install glibc.i686</span><br><span class="line">g.配置环境变量</span><br><span class="line">      编辑  vi /etc/profile</span><br><span class="line">      在文件最后添加一下信息</span><br><span class="line">          <span class="comment">#set java environment</span></span><br><span class="line">           JAVA_HOME=/usr/<span class="built_in">local</span>/java/jdk1.7.0_72</span><br><span class="line">           CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib.tools.jar</span><br><span class="line">           PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line">           <span class="built_in">export</span> JAVA_HOME CLASSPATH PATH</span><br><span class="line">           保存退出</span><br><span class="line">           <span class="built_in">source</span> /etc/profile  使更改的配置立即生效</span><br></pre></td></tr></table></figure>
+<h3 id="2-安装Mysql"><a href="#2-安装Mysql" class="headerlink" title="2.安装Mysql:"></a>2.安装Mysql:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">        a.检测是否安装了mysql</span><br><span class="line">            rpm  -qa | grep mysql</span><br><span class="line">        b.卸载系统自带的mysql</span><br><span class="line">            rpm -e --nodeps 卸载的包</span><br><span class="line">            rpm -e --nodeps mysql-libs-5.1.71-1.el6.i686 </span><br><span class="line">        c.上传mysql</span><br><span class="line">        d.在 /usr/<span class="built_in">local</span>/ 创建一个mysql</span><br><span class="line">        e.复制mysql 到 mysql目录下</span><br><span class="line">        f.解压 tar</span><br><span class="line">            会有几个rpm文件</span><br><span class="line">        g.安装</span><br><span class="line">            安装mysql的服务器端</span><br><span class="line">                rpm -ivh MySQL-server-5.5.49-1.linux2.6.i386.rpm</span><br><span class="line">                注意:第一次登录mysql的时候没有不需要密码的 以后都需要</span><br><span class="line">            安装mysql的客户端</span><br><span class="line">                rpm -ivh MySQL-client-5.5.49-1.linux2.6.i386.rpm</span><br><span class="line">        h.查看mysql的服务状态</span><br><span class="line">            service mysql status </span><br><span class="line">          启动 mysql</span><br><span class="line">            service mysql start</span><br><span class="line">          停止mysql</span><br><span class="line">            service mysql stop</span><br><span class="line">            </span><br><span class="line">        i.修改mysql的root的密码</span><br><span class="line">            登录:mysql -uroot</span><br><span class="line">            修改密码:</span><br><span class="line">                use mysql;</span><br><span class="line">                update user <span class="built_in">set</span> password = password(<span class="string">'123456'</span>) <span class="built_in">where</span> user = <span class="string">'root'</span>;</span><br><span class="line">                flush privileges;<span class="comment"># 刷新</span></span><br><span class="line">        j.开启远程访问</span><br><span class="line">            grant all privileges on *.* to <span class="string">'root'</span> @<span class="string">'%'</span> identified by <span class="string">'1234'</span>;</span><br><span class="line">            flush privileges;</span><br><span class="line">        k.开启防火墙端口 3306 退出mysql</span><br><span class="line">            3306端口放行 </span><br><span class="line">            /sbin/iptables -I INPUT -p tcp --dport 3306 -j ACCEPT</span><br><span class="line">            将该设置添加到防火墙的规则中</span><br><span class="line">            /etc/rc.d/init.d/iptables save</span><br><span class="line">        l:设置mysql的服务随着系统的启动而启动</span><br><span class="line">            加入到系统服务：</span><br><span class="line">            chkconfig --add mysql</span><br><span class="line">            自动启动：</span><br><span class="line">            chkconfig mysql on</span><br><span class="line">``` </span><br><span class="line"><span class="comment">### 3.安装tomcat</span></span><br><span class="line">``` bash</span><br><span class="line">        a.在/usr/<span class="built_in">local</span>/		创建tomcat目录</span><br><span class="line">        b.复制tomcat 到 /usr/<span class="built_in">local</span>/tomcat</span><br><span class="line">        c.解压tomcat</span><br><span class="line">        d.启动tomcat 进入 bin</span><br><span class="line">            方式1:</span><br><span class="line">                sh startup.sh</span><br><span class="line">            方式2:</span><br><span class="line">                ./startup.sh</span><br><span class="line">        e.开启端口号 8080</span><br><span class="line">            8080端口放行 </span><br><span class="line">            /sbin/iptables -I INPUT -p tcp --dport 8080 -j ACCEPT</span><br><span class="line">            将该设置添加到防火墙的规则中</span><br><span class="line">            /etc/rc.d/init.d/iptables save</span><br><span class="line">            </span><br><span class="line">        注意:</span><br><span class="line">            查看日志文件</span><br><span class="line">                tail -f logs/catalina.out</span><br><span class="line">            退出 ctrl+c</span><br></pre></td></tr></table></figure>
+<h3 id="4-发布项目"><a href="#4-发布项目" class="headerlink" title="4.发布项目"></a>4.发布项目</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">a.数据库和表</span><br><span class="line">        备份dbgirl的数据库</span><br><span class="line">        在windows下</span><br><span class="line">            mysqldump -uroot -p1234 dbgirl &gt; d:/dbgirl1103.sql</span><br><span class="line">        将dbgirl1103.sql上传 root目录</span><br><span class="line">        通过远程工具还原数据库</span><br><span class="line">            先登录mysql</span><br><span class="line">            创建数据库 dbgirl</span><br><span class="line">            进入dbgirl</span><br><span class="line">                <span class="built_in">source</span> /root/dbgirl1103.sql</span><br><span class="line">        </span><br><span class="line">b.项目</span><br><span class="line">        将项目打包 war</span><br><span class="line">        war包的特点:</span><br><span class="line">            在tomcat/webapps目录下 只要tomcat启动 war会自动解压</span><br><span class="line">        将dbgirl.war上传到虚拟机的root目录下</span><br><span class="line">        将dbgirl.war移动到tomcat/webapps下即可</span><br></pre></td></tr></table></figure>    
+
+  </div>  
+ 
+
+  <div class="post-bottom">
+		<div class="meta-info">
+
+	
+			<ul class="ul">
+				<li class="li iconfont icon-category"></li>
+				<a class="category-link" href="/categories/运维-测试/">运维&测试</a>
+			</ul>
+			
+
+
+	
+			<ul class="ul">
+				<li class="li iconfont icon-tag"></li>
+				<a class="tag-link" href="/tags/Linux/">Linux</a>
+			</ul>
+			
+</div> 
+		
+	
+<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
+
+	<div class="-mob-share-list">
+
+		                  
+            <span class="iconfont icon-share-qq -mob-share-qq"></span>
+     	                  
+            <span class="iconfont icon-share-weixin -mob-share-weixin"></span>
+     	                  
+            <span class="iconfont icon-share-weibo -mob-share-weibo"></span>
+     	                  
+            <span class="iconfont icon-share-douban -mob-share-douban"></span>
+     	                  
+            <span class="iconfont icon-share-facebook -mob-share-facebook"></span>
+     	                  
+            <span class="iconfont icon-share-twitter -mob-share-twitter"></span>
+     	                  
+            <span class="iconfont icon-share-tumblr -mob-share-tumblr"></span>
+     	                  
+            <span class="iconfont icon-share-google -mob-share-google"></span>
+     	  
+	</div>    
+
+  </div>
+
+
+
+
+ <nav class="nav">
+
+  
+     
+      <div class="nav-prev">
+        <a class="nav-link" href="/2017/11/20/2017-11-20-后端开发/">  
+           <li class="li iconfont icon-left"></li>         
+              
+          <span class="nav-title">【索引】后端开发从基础到进阶</span>
+        </a>
+      </div>
+    
+
+
+
+    
+       <div class="nav-next">      
+        <a  class="nav-link" href="/2017/11/20/2017-11-20-运维&测试-nginx-2/">      
+
+             
+         <span class="nav-title">【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群</span>
+          <li class="li iconfont icon-right"></li>
+        </a>
+        </div>
+    
+
+</nav>   
+
+
+
+
+<div class="donate-btn iconfont icon-donate"></div>
+
+<div id="donate-box">
+
+	<span class="donate-cancel iconfont icon-cancel"></span>
+
+	<div class="donate-img-box">
+		<img id="donate-qr-wechat" class="donate-img no-gallery" src="/img/r1.png" alt="No donate img !">	
+		<img id="donate-qr-alipay" class="donate-img no-gallery" src="/img/r2.png" alt="No donate img !">				
+	</div>
+
+	<span class="donate-word">emm...请赐一包辣条可好..</span>
+
+	<div class="donate-list">
+		<span class="iconfont icon-donate-wechat fadeIn"></span>
+		<span class="iconfont icon-donate-alipay fadeIn"></span>
+	</div>
+
+</div>
+
+ 
+
+
+
+
+	
+
+
+  
+
+  <div class="post-widget">
+    
+    <a class="post-widget-title iconfont icon-category" href="/categories">
+    分类</a>
+
+
+    <div class="small-tag">
+         
+          <a href="/categories/后端开发/">后端开发</a>     
+         
+          <a href="/categories/前端开发/">前端开发</a>     
+         
+          <a href="/categories/博文索引/">博文索引</a>     
+         
+          <a href="/categories/运维-测试/">运维&测试</a>     
+         
+          <a href="/categories/迷你小技能/">迷你小技能</a>     
+        
+    </div>
+
+  </div>
+
+  
+
+
+  
+  <div class="post-widget">
+    
+    <a class="post-widget-title iconfont icon-tag" href="/tags"> 标签</a>
+
+
+    <div class="small-tag">
+
+      <a href="/tags/Bootstrap/" style="font-size: 13px;">Bootstrap</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 13px;">IntelliJ IDEA</a> <a href="/tags/Java/" style="font-size: 13px;">Java</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/Nginx/" style="font-size: 13px;">Nginx</a> <a href="/tags/Spring/" style="font-size: 13px;">Spring</a> <a href="/tags/XX-Net/" style="font-size: 13px;">XX-Net</a> <a href="/tags/博文索引/" style="font-size: 13px;">博文索引</a>
+
+    </div>
+  </div>
+
+  
+ 
+
+
+
+</article>
+
+
+<div id="toc" class="slideRIn">		
+
+	<div class="toc-container">	
+
+	<span class="toc-contents iconfont icon-open" onclick="change()"> 目录 </span>
+
+	<ul class="toc-list"></ul>
+
+	</div>
+
+</div>
+
+
+<script src="/js/toc.js"></script>
+
+<script src="/js/post.js"></script>
+</section>
+
+     
+    
+    </div>        
+    
+    <div class="mask"> </div>
+    <div class="back-to-top iconfont icon-backtotop fadeIn"></div> 
+
+    
+
+
+
+      
+
+             
+              
+      
+
+      
+
+      
+
+      
+
+      
+
+
+
+
+
+
+
+<script src="/js/search.js"></script>     
+          
+          <div class="search-container">
+            <input type="text" placeholder="搜索点什么吧..." id="search-input" class="search-input">  
+              <span class="search-cancel iconfont icon-cancel"></span>
+              <div id="search-result" class="search-result"></div>
+          </div>
+ 
+
+     <div class="mobile-menu">      
+
+      
+      <img class="slide-icon" src= /img/favicon.png >   
+      
+
+         
+            
+
+            <a class="mobile-menu-link"  href="/">首页
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link"  href="/archives">归档
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link"  href="/categories">分类
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link"  href="/tags">标签
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link"  href="/about">关于
+            </a>
+            
+         
+                          
+
+            <a class="mobile-menu-link mobile-menu-search">搜索 </a>                 
+            
+         
+</div>     
+    
+
+<footer id="footer">
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMTk3NS84NTM5">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+
+    
+   	 <div class="foot-busuanzi">	
+
+     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+   
+     <span class="iconfont icon-pv"></span>
+     <span id="busuanzi_value_site_pv"></span>
+ 
+     <span class="iconfont icon-uv"></span>
+     <span id="busuanzi_value_site_uv"></span>
+
+   	 </div>
+    
+
+    	
+	<div class="foot-link">
+	
+	 <a href="http://hexo.io/" target="_blank">Hexo</a>
+
+	 Theme
+
+	 <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a> 
+
+	 </div>	
+
+	 <div class="foot-copyright">
+	  &copy; 
+	 
+
+	 2017
+	 吴里庆庆	 
+
+	 </div>
+</footer>
+ 
+    
+
+<!-- Baidu Analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c308290134e6d5242e273a2dc60778a1"; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+ 
+  </body>   
+  <script src="/js/animation.js"></script>   
+</html>
