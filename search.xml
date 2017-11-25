@@ -49,43 +49,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群]]></title>
-      <url>/2017/11/20/2017-11-20-%E8%BF%90%E7%BB%B4&amp;%E6%B5%8B%E8%AF%95-nginx-2/</url>
-      <content type="html"><![CDATA[<p>本文是我的「Nginx学习笔记」第一篇,主要介绍了如何在window上搭建一个集群。<br><a id="more"></a></p>
-<h2 id="Nginx在windows上搭建集群"><a href="#Nginx在windows上搭建集群" class="headerlink" title="Nginx在windows上搭建集群"></a>Nginx在windows上搭建集群</h2><ul>
-<li>1.先将 nginx上传到linux上</li>
-<li>2.解压nginx</li>
-<li><p>3.先编译nginx</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">安装依赖包</span><br><span class="line">         yum install gcc-c++</span><br><span class="line">         yum install -y pcre pcre-devel</span><br><span class="line">         yum install -y zlib zlib-devel</span><br><span class="line">         yum install -y openssl openssl-devel</span><br><span class="line">执行编译</span><br><span class="line">         先进入 nginx的目录</span><br><span class="line">         执行</span><br><span class="line">             ./configure</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4.安装nginx</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">    执行 </span><br><span class="line">           make</span><br><span class="line">           make install</span><br><span class="line">``` </span><br><span class="line">	</span><br><span class="line">- 5.启动nginx</span><br><span class="line">  ``` bash</span><br><span class="line">        <span class="built_in">cd</span> nginx目录下</span><br><span class="line">                配置文件 conf</span><br><span class="line">                启动nginx </span><br><span class="line">                    ./nginx</span><br><span class="line">  ``` </span><br><span class="line">- 6.将端口号80 放行</span><br><span class="line">  ``` bash</span><br><span class="line">		/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line">		将该设置添加到防火墙的规则中</span><br><span class="line">		/etc/rc.d/init.d/iptables save</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>7.修改conf文件 和window下一样</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">配置集群</span><br></pre></td></tr></table></figure>
-<ul>
-<li>可以参考<a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-1/">【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群</a></li>
-</ul>
-</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 运维&amp;测试 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Nginx </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群]]></title>
       <url>/2017/11/20/2017-11-20-%E8%BF%90%E7%BB%B4&amp;%E6%B5%8B%E8%AF%95-nginx-1/</url>
       <content type="html"><![CDATA[<p>本文是我的「Nginx学习笔记」第一篇,主要介绍了Nginx相关特点以及如何在window上搭建一个集群。<br><a id="more"></a></p>
@@ -168,6 +131,71 @@
         <tags>
             
             <tag> Linux </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群]]></title>
+      <url>/2017/11/20/2017-11-20-%E8%BF%90%E7%BB%B4&amp;%E6%B5%8B%E8%AF%95-nginx-2/</url>
+      <content type="html"><![CDATA[<p>本文是我的「Nginx学习笔记」第一篇,主要介绍了如何在window上搭建一个集群。<br><a id="more"></a></p>
+<h2 id="Nginx在windows上搭建集群"><a href="#Nginx在windows上搭建集群" class="headerlink" title="Nginx在windows上搭建集群"></a>Nginx在windows上搭建集群</h2><ul>
+<li>1.先将 nginx上传到linux上</li>
+<li>2.解压nginx</li>
+<li><p>3.先编译nginx</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">安装依赖包</span><br><span class="line">         yum install gcc-c++</span><br><span class="line">         yum install -y pcre pcre-devel</span><br><span class="line">         yum install -y zlib zlib-devel</span><br><span class="line">         yum install -y openssl openssl-devel</span><br><span class="line">执行编译</span><br><span class="line">         先进入 nginx的目录</span><br><span class="line">         执行</span><br><span class="line">             ./configure</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.安装nginx</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">    执行 </span><br><span class="line">           make</span><br><span class="line">           make install</span><br><span class="line">``` </span><br><span class="line">	</span><br><span class="line">- 5.启动nginx</span><br><span class="line">  ``` bash</span><br><span class="line">        <span class="built_in">cd</span> nginx目录下</span><br><span class="line">                配置文件 conf</span><br><span class="line">                启动nginx </span><br><span class="line">                    ./nginx</span><br><span class="line">  ``` </span><br><span class="line">- 6.将端口号80 放行</span><br><span class="line">  ``` bash</span><br><span class="line">		/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line">		将该设置添加到防火墙的规则中</span><br><span class="line">		/etc/rc.d/init.d/iptables save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>7.修改conf文件 和window下一样</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">配置集群</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以参考<a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-1/">【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群</a></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 运维&amp;测试 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Nginx </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[【索引】运维&测试从基础到进阶]]></title>
+      <url>/2017/11/19/2017-11-19-%E8%BF%90%E7%BB%B4&amp;%E6%B5%8B%E8%AF%95/</url>
+      <content type="html"><![CDATA[<p>这篇文章汇总了本站中所有与「Linux」「Nginx」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
+<a id="more"></a>
+<h2 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h2><h3 id="一、Linux篇"><a href="#一、Linux篇" class="headerlink" title="一、Linux篇"></a>一、Linux篇</h3><ul>
+<li><a href="https://wuqingvika.github.io/2017/11/19/运维&amp;测试-linux-1/">【笔记】Linux(一)基础篇之「命令学习」</a></li>
+<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-linux-2/">【笔记】Linux(二)基础篇之「在Linux发布一个简单的web项目」</a><h3 id="二、Nginx篇"><a href="#二、Nginx篇" class="headerlink" title="二、Nginx篇"></a>二、Nginx篇</h3></li>
+<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-1/">【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群</a></li>
+<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-2/">【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 博文索引 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 博文索引 </tag>
             
         </tags>
         
@@ -418,28 +446,21 @@ chown 更改文件的归属者
     </entry>
     
     <entry>
-      <title><![CDATA[【索引】运维&测试从基础到进阶]]></title>
-      <url>/2017/11/19/2017-11-19-%E8%BF%90%E7%BB%B4&amp;%E6%B5%8B%E8%AF%95/</url>
-      <content type="html"><![CDATA[<p>这篇文章汇总了本站中所有与「Linux」「Nginx」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
-<a id="more"></a>
-<h2 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h2><h3 id="一、Linux篇"><a href="#一、Linux篇" class="headerlink" title="一、Linux篇"></a>一、Linux篇</h3><ul>
-<li><a href="https://wuqingvika.github.io/2017/11/19/运维&amp;测试-linux-1/">【笔记】Linux(一)基础篇之「命令学习」</a></li>
-<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-linux-2/">【笔记】Linux(二)基础篇之「在Linux发布一个简单的web项目」</a><h3 id="二、Nginx篇"><a href="#二、Nginx篇" class="headerlink" title="二、Nginx篇"></a>二、Nginx篇</h3></li>
-<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-1/">【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群</a></li>
-<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-2/">【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群</a></li>
-</ul>
+      <title><![CDATA[【笔记】Bootstrap基础篇（一）test1]]></title>
+      <url>/2017/11/19/2017-11-19-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-bootstrap-1/</url>
+      <content type="html"><![CDATA[<p>本文是我的「Bootstrap学习笔记」第一篇。<br><a id="more"></a></p>
 ]]></content>
       
         <categories>
             
-            <category> 博文索引 </category>
+            <category> 前端开发 </category>
             
         </categories>
         
         
         <tags>
             
-            <tag> 博文索引 </tag>
+            <tag> Bootstrap </tag>
             
         </tags>
         
@@ -477,53 +498,6 @@ chown 更改文件的归属者
 <li><a href="https://wuqingvika.github.io/2017/11/20/迷你小技能-idea/">【工具】idea下载安装注册使用</a></li>
 </ul>
 ]]></content>
-      
-        <categories>
-            
-            <category> 博文索引 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 博文索引 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[【笔记】Bootstrap基础篇（一）test1]]></title>
-      <url>/2017/11/19/2017-11-19-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-bootstrap-1/</url>
-      <content type="html"><![CDATA[<p>本文是我的「Bootstrap学习笔记」第一篇。<br><a id="more"></a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 前端开发 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Bootstrap </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[【索引】前端开发从基础到进阶]]></title>
-      <url>/2017/11/19/2017-11-19-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</url>
-      <content type="html"><![CDATA[<p>这篇文章汇总了本站中所有与「Bootstrap」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
-<a id="more"></a>
-<h2 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h2><h3 id="一、BootStrap篇"><a href="#一、BootStrap篇" class="headerlink" title="一、BootStrap篇"></a>一、BootStrap篇</h3><ul>
-<li><a href="https://wuqingvika.github.io/2017/11/19/前端开发-bootstrap-1/">【笔记】Bootstrap基础篇（一）test1</a></li>
-<li><a href="https://wuqingvika.github.io/2017/11/19/前端开发-bootstrap-2/">【笔记】Bootstrap基础篇（二）test2</a></li>
-</ul>
-<h2 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h2>]]></content>
       
         <categories>
             
@@ -601,6 +575,32 @@ chown 更改文件的归属者
         <tags>
             
             <tag> XX-Net </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[【索引】前端开发从基础到进阶]]></title>
+      <url>/2017/11/19/2017-11-19-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</url>
+      <content type="html"><![CDATA[<p>这篇文章汇总了本站中所有与「Bootstrap」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
+<a id="more"></a>
+<h2 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h2><h3 id="一、BootStrap篇"><a href="#一、BootStrap篇" class="headerlink" title="一、BootStrap篇"></a>一、BootStrap篇</h3><ul>
+<li><a href="https://wuqingvika.github.io/2017/11/19/前端开发-bootstrap-1/">【笔记】Bootstrap基础篇（一）test1</a></li>
+<li><a href="https://wuqingvika.github.io/2017/11/19/前端开发-bootstrap-2/">【笔记】Bootstrap基础篇（二）test2</a></li>
+</ul>
+<h2 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h2>]]></content>
+      
+        <categories>
+            
+            <category> 博文索引 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 博文索引 </tag>
             
         </tags>
         

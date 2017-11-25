@@ -238,6 +238,7 @@ AV.init({
      	  
 	</div>    
 
+
   </div>
 
 
@@ -248,10 +249,10 @@ AV.init({
   
      
       <div class="nav-prev">
-        <a class="nav-link" href="/2017/11/19/2017-11-19-前端开发/">  
+        <a class="nav-link" href="/2017/11/19/2017-11-19-迷你小技能/">  
            <li class="li iconfont icon-left"></li>         
               
-          <span class="nav-title">【索引】前端开发从基础到进阶</span>
+          <span class="nav-title">【索引】你值得拥有的一些迷你小技能</span>
         </a>
       </div>
     
@@ -260,10 +261,10 @@ AV.init({
 
     
        <div class="nav-next">      
-        <a  class="nav-link" href="/2016/06/23/2016-06-20-后端开发-java-1/">      
+        <a  class="nav-link" href="/2017/11/19/2017-11-19-前端开发/">      
 
              
-         <span class="nav-title">【笔记】Java基础知识(一)「文件基本操作」</span>
+         <span class="nav-title">【索引】前端开发从基础到进阶</span>
           <li class="li iconfont icon-right"></li>
         </a>
         </div>
@@ -275,7 +276,24 @@ AV.init({
 
 
 <div class="donate-btn iconfont icon-donate"></div>
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMTk3NS84NTM5">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
 
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
 <div id="donate-box">
 
 	<span class="donate-cancel iconfont icon-cancel"></span>
@@ -299,48 +317,6 @@ AV.init({
 
 
 
-<div id="comment"></div>
-
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine@v1.1.8-beta/dist/Valine.min.js'></script>
-
-
-<script>
-    new Valine({
-    el: '#comment',
-    notify:false, 
-    verify:false, 
-    app_id: 'wC9kYyneYKu5htgJLbot3CBB-gzGzoHsz',
-    app_key: 'MdomImvLQLvTHqn5fS2QBfWK',  
-    path:window.location.pathname, 
-    avatar:'mm' ,
-    guest_info:['nick','mail']
-    });
-</script>
-
-
-
-
-
-<style type="text/css">
-#comment .wrap{
-    margin: 2px auto;
-}
-#comment input{
-    font-size: 16px;
-}
-</style>
-<script>
-//set the placeholder
-$(function(){
-    $('.vnick').attr('placeholder','昵称');
-    $('.veditor').attr('placeholder','说点什么吧...');
-    $('.vmail').attr('placeholder','邮箱');   
-})
-</script>
-
-
-
 	
 
 
@@ -354,9 +330,9 @@ $(function(){
 
     <div class="small-tag">
          
-          <a href="/categories/前端开发/">前端开发</a>     
-         
           <a href="/categories/后端开发/">后端开发</a>     
+         
+          <a href="/categories/前端开发/">前端开发</a>     
          
           <a href="/categories/博文索引/">博文索引</a>     
          
@@ -496,25 +472,6 @@ $(function(){
     
 
 <footer id="footer">
-<!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="MTAyMC8zMTk3NS84NTM5">
-	<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-	</script>
-<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
-
     
    	 <div class="foot-busuanzi">	
 
@@ -545,7 +502,7 @@ $(function(){
 	 
 
 	 2017
-	 吴里庆庆	 
+	 吴里庆庆
 
 	 </div>
 </footer>
