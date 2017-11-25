@@ -120,54 +120,8 @@
   
 
   	<p>本文是我的「迷你小技能」第一篇,主要作一些技能知识的扩充，你懂的。</p>
-<!--content-->
-<h2 id="XX-Net"><a href="#XX-Net" class="headerlink" title="XX-Net"></a>XX-Net</h2><h3 id="首先去Github下载"><a href="#首先去Github下载" class="headerlink" title="首先去Github下载"></a><a href="https://github.com/XX-net/XX-Net" target="_blank" rel="noopener">首先去Github下载</a><br></h3><h3 id="解压到本地-双击运行start-vbs"><a href="#解压到本地-双击运行start-vbs" class="headerlink" title="解压到本地 双击运行start.vbs"></a>解压到本地 双击运行start.vbs</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-1.jpg" alt=""></p>
-<h3 id="高级-gt-开启ipv6"><a href="#高级-gt-开启ipv6" class="headerlink" title="高级-&gt;开启ipv6"></a>高级-&gt;开启ipv6</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-2.jpg" alt=""></p>
-<h3 id="部署服务端-gt-填入googleappid，部署"><a href="#部署服务端-gt-填入googleappid，部署" class="headerlink" title="部署服务端-&gt;填入googleappid，部署"></a>部署服务端-&gt;填入googleappid，部署</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-3.jpg" alt=""></p>
-<h3 id="在部署成功的基础上填入googleappid，保存"><a href="#在部署成功的基础上填入googleappid，保存" class="headerlink" title="在部署成功的基础上填入googleappid，保存"></a>在部署成功的基础上填入googleappid，保存</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-4.jpg" alt=""></p>
-<h3 id="查看状态，出现如下，恭喜你，可以出去啦"><a href="#查看状态，出现如下，恭喜你，可以出去啦" class="headerlink" title="查看状态，出现如下，恭喜你，可以出去啦"></a>查看状态，出现如下，恭喜你，可以出去啦</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-5.jpg" alt=""></p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><h3 id="关于ipv6开启如何解决-请升级至最新版本。-详情可见官方教程"><a href="#关于ipv6开启如何解决-请升级至最新版本。-详情可见官方教程" class="headerlink" title="关于ipv6开启如何解决 请升级至最新版本。 详情可见官方教程"></a>关于ipv6开启如何解决 请升级至最新版本。 <a href="https://github.com/XX-net/XX-Net/wiki/IPv6-Win10" target="_blank" rel="noopener">详情可见官方教程</a></h3><h2 id="家庭版"><a href="#家庭版" class="headerlink" title="家庭版"></a>家庭版</h2><ol>
-<li>命令行</li>
-</ol>
-<ul>
-<li><p>以管理员权限打开命令提示符（右键单击“开始”图标，然后选择“命令提示符(管理员)”），输入命令</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 设置 Teredo 服务器，默认为：win10.ipv6.microsoft.com</span><br><span class="line">netsh interface teredo <span class="built_in">set</span> state enterpriseclient server=default</span><br><span class="line"></span><br><span class="line">// 重置 IPv6 配置</span><br><span class="line">netsh interface ipv6 reset</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重启系统</p>
-</li>
-<li><p>打开命令提示符，通过 <code>ipconfig /all</code> 命令查看当前网络信息，看到 <code>Teredo Tunneling Pseudo-Interface</code> 有以 2001 开头的地址即可。<br>启动IE浏览器，访问 <a href="http://test-ipv6.com" target="_blank" rel="noopener">http://test-ipv6.com</a>，如果选项卡 “<strong>测试项目</strong>” 下面的 “<strong>不使用域名的 IPv6 测试</strong>” 显示成功，则隧道建立成功。chrome浏览器的测试结果可能和IE不一样，请注意</p>
-</li>
-<li><p>如上面操作后仍无法启用 IPv6，可能是 Teredo 服务器无法正常连接，也可能是 Windows 自身配置问题，可尝试以下两种方法</p>
-<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 第一种：修改 Teredo 服务器为 teredo.remlab.<span class="built_in">net</span></span><br><span class="line">netsh interface teredo <span class="built_in">set</span> state server=teredo.remlab.<span class="built_in">net</span></span><br><span class="line"></span><br><span class="line">// 第二种：先卸载当前 Teredo 适配器再重新启用</span><br><span class="line">netsh interface Teredo <span class="built_in">set</span> state disable</span><br><span class="line">netsh interface Teredo <span class="built_in">set</span> state <span class="built_in">type</span>=default</span><br></pre></td></tr></table></figure>
-<ul>
-<li>其他参考<ul>
-<li><a href="https://support.xbox.com/zh-CN/xbox-on-windows/social/troubleshoot-party-chat" target="_blank" rel="noopener">https://support.xbox.com/zh-CN/xbox-on-windows/social/troubleshoot-party-chat</a></li>
-<li><a href="http://www.windows7en.com/jiaocheng/26518.html" target="_blank" rel="noopener">http://www.windows7en.com/jiaocheng/26518.html</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="专业版"><a href="#专业版" class="headerlink" title="专业版"></a>专业版</h2><h3 id="命令行方法："><a href="#命令行方法：" class="headerlink" title="命令行方法："></a>命令行方法：</h3><p> 以管理员权限运行 XX-Net\code\default\gae_proxy\local\ipv6_tunnel\enable_ipv6.bat  </p>
-<h3 id="组策略方法"><a href="#组策略方法" class="headerlink" title="组策略方法"></a>组策略方法</h3><ul>
-<li><p>win+R打开gpedit.msc<br>1.png   </p>
-</li>
-<li><p>依顺序打开“计算机配置”——&gt;“管理模板”——&gt;“网络”——&gt;“TCPIP 设置”——&gt;“IPv6 转换技术”<br>2.png   </p>
-</li>
-<li><p>“6to4 状态” 和 “ISATAP 状态” 都配置为 “已禁用状态”<br>3.PNG<br>3.1.png<br>3.2.png   </p>
-</li>
-<li><p>重头戏，配置Teredo  </p>
-<ol>
-<li><p>“Teredo 状态” 配置为 “企业客户端”<br>4.1.png   </p>
-</li>
-<li><p>“Teredo 默认限定” 配置为 “已启用状态”   </p>
-</li>
-</ol>
-</li>
-</ul>
- 
 
-    
+     
 
 </div>		
 
@@ -195,10 +149,9 @@
 
   
 
-  	<p>本文是我的「迷你小技能」第二篇,主要对IntelliJ IDEA安装与使用作一些说明。<br><!--content--></p>
-<h2 id="IntelliJ-IDEA"><a href="#IntelliJ-IDEA" class="headerlink" title="IntelliJ IDEA"></a>IntelliJ IDEA</h2> 
+  	<p>本文是我的「迷你小技能」第二篇,主要对IntelliJ IDEA安装与使用作一些说明。<br>
 
-    
+     
 
 </div>		
 
@@ -288,15 +241,6 @@
 
         	
 
-            <a class="recent-post slideDownMin animation-border-item" href="/2017/11/25/2017-11-19-前端开发/">
-
-            【索引】前端开发从基础到进阶
-
-            </a>          
-                
-
-        	
-
             <a class="recent-post slideDownMin animation-border-item" href="/2017/11/25/2017-11-20-运维&测试-nginx-1/">
 
             【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群
@@ -336,6 +280,15 @@
             <a class="recent-post slideDownMin animation-border-item" href="/2017/11/25/2017-11-19-运维&测试/">
 
             【索引】运维&amp;测试从基础到进阶
+
+            </a>          
+                
+
+        	
+
+            <a class="recent-post slideDownMin animation-border-item" href="/2017/11/25/2017-11-20-运维&测试-nginx-2/">
+
+            【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群
 
             </a>          
              
@@ -407,13 +360,13 @@
     	
 	   
 
-        	<a class="meta-item slideDownMin" href="/tags/Bootstrap/">Bootstrap
+        	<a class="meta-item slideDownMin" href="/tags/Spring/">Spring
         	<span class="meta-count">2</span>
         	</a>    		
     	
 	   
 
-        	<a class="meta-item slideDownMin" href="/tags/Spring/">Spring
+        	<a class="meta-item slideDownMin" href="/tags/Bootstrap/">Bootstrap
         	<span class="meta-count">2</span>
         	</a>    		
     	
