@@ -110,7 +110,7 @@
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		23884
+		23743
 		</span>
 
 
@@ -149,9 +149,9 @@ AV.init({
 <h1 id="1、HelloWorld程序"><a href="#1、HelloWorld程序" class="headerlink" title="1、HelloWorld程序"></a>1、HelloWorld程序</h1><blockquote>
 <p>注：导入Jar包（commons-logging.jar 和spring.jar）</p>
 </blockquote>
-<h2 id="1-1HelloWorld-java"><a href="#1-1HelloWorld-java" class="headerlink" title="1.1HelloWorld.java"></a>1.1HelloWorld.java</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">    <span class="keyword">package</span> com.wq.createobject;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		System.out.println(<span class="string">"Hello wuqingvika"</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">``` </span><br><span class="line"><span class="number">1.2</span>applicationContext.xml</span><br><span class="line">--------</span><br><span class="line">&gt;放在src目录下。</span><br><span class="line">```java</span><br><span class="line">    &lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">    &lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span></span><br><span class="line">           xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">           xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans</span></span><br><span class="line"><span class="string">               http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"</span>&gt;</span><br><span class="line">    	&lt;bean id="HelloWorld" class="com.wq.createobject.HelloWorld"&gt;&lt;/bean&gt;</span><br><span class="line">    &lt;/beans&gt;</span><br><span class="line">``` </span><br><span class="line"><span class="number">1.3</span>HelloWorldTest.java</span><br><span class="line">----------------------</span><br><span class="line"></span><br><span class="line">&gt;一个测试类。</span><br><span class="line">```java</span><br><span class="line">    <span class="keyword">package</span> com.xzit.test;</span><br><span class="line">    <span class="keyword">import</span> org.junit.Test;</span><br><span class="line">    <span class="keyword">import</span> org.springframework.context.ApplicationContext;</span><br><span class="line">    <span class="keyword">import</span> org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line">    <span class="keyword">import</span> com.wq.createobject.HelloWorld;</span><br><span class="line">    <span class="keyword">import</span> junit.framework.TestCase;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldTest</span> <span class="keyword">extends</span> <span class="title">TestCase</span> </span>&#123;</span><br><span class="line">    	<span class="meta">@Test</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHelloWorld</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		</span><br><span class="line">    		ApplicationContext context=<span class="keyword">new</span> </span><br><span class="line">    			ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">    		HelloWorld wq=(HelloWorld)context.getBean(<span class="string">"HelloWorld"</span>);</span><br><span class="line">    		wq.sayHello();</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">``` </span><br><span class="line"><span class="number">2</span>、Spring创建对象的方式</span><br><span class="line">===============</span><br><span class="line"></span><br><span class="line"><span class="number">2.1</span>默认的构造函数创建对象</span><br><span class="line">--------------</span><br><span class="line">```java</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 在spring容器中，默认情况下调用了一个类的默认的构造函数创建对象</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">    	 </span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="title">HelloWorld</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		System.out.println(<span class="string">"hello wucan"</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		System.out.println(<span class="string">"Hello wuqingvika"</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">```     </span><br><span class="line">&gt;配置文件</span><br><span class="line"> </span><br><span class="line">```java</span><br><span class="line">       &lt;!-- 第<span class="number">1</span>种方式 --&gt;</span><br><span class="line">        	&lt;bean id="HelloWorld" class="com.wq.createobject.method.HelloWorld"&gt;&lt;/bean&gt;</span><br><span class="line">``` </span><br><span class="line">&gt;测试方法</span><br><span class="line">```java</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHelloWorld_Default</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		ApplicationContext context=<span class="keyword">new</span> </span><br><span class="line">    			ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">    		<span class="comment">//根据id把spring容器中的bean提取出来了</span></span><br><span class="line">    		HelloWorld wq=(HelloWorld)context.getBean(<span class="string">"HelloWorld"</span>);</span><br><span class="line">    		wq.sayHello();</span><br><span class="line">    	&#125;</span><br><span class="line">``` </span><br><span class="line"><span class="number">2.2</span>利用静态工厂模式创建对象</span><br><span class="line">---------------</span><br><span class="line">&gt;静态工厂类：</span><br><span class="line">```java</span><br><span class="line">    <span class="keyword">package</span> com.wq.createobject.method.factory;</span><br><span class="line">    <span class="keyword">import</span> com.wq.createobject.method.HelloWorld;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldFactory</span> </span>&#123;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> HelloWorld <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		<span class="keyword">return</span> <span class="keyword">new</span> HelloWorld();</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line">&gt;配置文件：</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">    &lt;!-- 第<span class="number">2</span>种方式 --&gt;</span><br><span class="line">    	&lt;bean id=<span class="string">"helloWorld2"</span> </span><br><span class="line">    	<span class="class"><span class="keyword">class</span></span>=<span class="string">"com.wq.createobject.method.factory.HelloWorldFactory"</span> </span><br><span class="line">    	factory-method="getInstance"&gt;&lt;/bean&gt;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">&gt;测试方法：</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    	 * 利用静态工厂模式创建对象</span></span><br><span class="line"><span class="comment">    	 * &lt;bean id="helloWorld2" </span></span><br><span class="line"><span class="comment">    		class="com.itheima12.spring.createobject.method.factory.HelloWorldFactory"</span></span><br><span class="line"><span class="comment">    		factory-method="getInstance"&gt;&lt;/bean&gt;</span></span><br><span class="line"><span class="comment">    		  spring容器内部调用了HelloWorldFactory中的getInstance方法创建对象</span></span><br><span class="line"><span class="comment">    		      而具体的new对象的过程是由程序员来完成的。</span></span><br><span class="line"><span class="comment">    	 */</span></span><br><span class="line">    	<span class="meta">@Test</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHelloWorldFactory</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		</span><br><span class="line">    		ApplicationContext context=<span class="keyword">new</span> </span><br><span class="line">    			ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">    		HelloWorld wq=(HelloWorld)context.getBean(<span class="string">"helloWorld2"</span>);</span><br><span class="line">    		wq.sayHello();</span><br><span class="line">    	&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2-3实例工厂方法"><a href="#2-3实例工厂方法" class="headerlink" title="2.3实例工厂方法"></a>2.3实例工厂方法</h2><blockquote>
-<p>工厂类：</p>
+<h2 id="1-1HelloWorld-java"><a href="#1-1HelloWorld-java" class="headerlink" title="1.1HelloWorld.java"></a>1.1HelloWorld.java</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">    <span class="keyword">package</span> com.wq.createobject;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		System.out.println(<span class="string">"Hello wuqingvika"</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="number">1.2</span>applicationContext.xml</span><br><span class="line">--------</span><br><span class="line">* 放在src目录下。</span><br><span class="line">```java</span><br><span class="line"></span><br><span class="line">    &lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">    &lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span></span><br><span class="line">           xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">           xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans</span></span><br><span class="line"><span class="string">               http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"</span>&gt;</span><br><span class="line">    	&lt;bean id="HelloWorld" class="com.wq.createobject.HelloWorld"&gt;&lt;/bean&gt;</span><br><span class="line">    &lt;/beans&gt;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="number">1.3</span>HelloWorldTest.java</span><br><span class="line">----------------------</span><br><span class="line"></span><br><span class="line">* 一个测试类。</span><br><span class="line">```java</span><br><span class="line">    <span class="keyword">package</span> com.xzit.test;</span><br><span class="line">    <span class="keyword">import</span> org.junit.Test;</span><br><span class="line">    <span class="keyword">import</span> org.springframework.context.ApplicationContext;</span><br><span class="line">    <span class="keyword">import</span> org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line">    <span class="keyword">import</span> com.wq.createobject.HelloWorld;</span><br><span class="line">    <span class="keyword">import</span> junit.framework.TestCase;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldTest</span> <span class="keyword">extends</span> <span class="title">TestCase</span> </span>&#123;</span><br><span class="line">    	<span class="meta">@Test</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHelloWorld</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		</span><br><span class="line">    		ApplicationContext context=<span class="keyword">new</span> </span><br><span class="line">    			ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">    		HelloWorld wq=(HelloWorld)context.getBean(<span class="string">"HelloWorld"</span>);</span><br><span class="line">    		wq.sayHello();</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、Spring创建对象的方式</span><br><span class="line">===============</span><br><span class="line"></span><br><span class="line"><span class="number">2.1</span>默认的构造函数创建对象</span><br><span class="line">--------------</span><br><span class="line">```java</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 在spring容器中，默认情况下调用了一个类的默认的构造函数创建对象</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">    	 </span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="title">HelloWorld</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		System.out.println(<span class="string">"hello wucan"</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		System.out.println(<span class="string">"Hello wuqingvika"</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">```     </span><br><span class="line">* 配置文件</span><br><span class="line"> </span><br><span class="line">```java</span><br><span class="line">       &lt;!-- 第<span class="number">1</span>种方式 --&gt;</span><br><span class="line">        	&lt;bean id="HelloWorld" class="com.wq.createobject.method.HelloWorld"&gt;&lt;/bean&gt;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">* 测试方法</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHelloWorld_Default</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		ApplicationContext context=<span class="keyword">new</span> </span><br><span class="line">    			ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">    		<span class="comment">//根据id把spring容器中的bean提取出来了</span></span><br><span class="line">    		HelloWorld wq=(HelloWorld)context.getBean(<span class="string">"HelloWorld"</span>);</span><br><span class="line">    		wq.sayHello();</span><br><span class="line">    	&#125;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">2.2</span>利用静态工厂模式创建对象</span><br><span class="line">---------------</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">* 静态工厂类：</span><br><span class="line">```java</span><br><span class="line">    <span class="keyword">package</span> com.wq.createobject.method.factory;</span><br><span class="line">    <span class="keyword">import</span> com.wq.createobject.method.HelloWorld;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldFactory</span> </span>&#123;</span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> HelloWorld <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		<span class="keyword">return</span> <span class="keyword">new</span> HelloWorld();</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">```    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">* 配置文件：</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">    &lt;!-- 第<span class="number">2</span>种方式 --&gt;</span><br><span class="line">    	&lt;bean id=<span class="string">"helloWorld2"</span> </span><br><span class="line">    	<span class="class"><span class="keyword">class</span></span>=<span class="string">"com.wq.createobject.method.factory.HelloWorldFactory"</span> </span><br><span class="line">    	factory-method="getInstance"&gt;&lt;/bean&gt;</span><br><span class="line">``` </span><br><span class="line">&lt;br&gt;</span><br><span class="line"></span><br><span class="line">* 测试方法：</span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">    	 * 利用静态工厂模式创建对象</span></span><br><span class="line"><span class="comment">    	 * &lt;bean id="helloWorld2" </span></span><br><span class="line"><span class="comment">    		class="com.itheima12.spring.createobject.method.factory.HelloWorldFactory"</span></span><br><span class="line"><span class="comment">    		factory-method="getInstance"&gt;&lt;/bean&gt;</span></span><br><span class="line"><span class="comment">    		  spring容器内部调用了HelloWorldFactory中的getInstance方法创建对象</span></span><br><span class="line"><span class="comment">    		      而具体的new对象的过程是由程序员来完成的。</span></span><br><span class="line"><span class="comment">    	 */</span></span><br><span class="line">    	<span class="meta">@Test</span></span><br><span class="line">    	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHelloWorldFactory</span><span class="params">()</span></span>&#123;</span><br><span class="line">    		</span><br><span class="line">    		ApplicationContext context=<span class="keyword">new</span> </span><br><span class="line">    			ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);</span><br><span class="line">    		HelloWorld wq=(HelloWorld)context.getBean(<span class="string">"helloWorld2"</span>);</span><br><span class="line">    		wq.sayHello();</span><br><span class="line">    	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-3实例工厂方法"><a href="#2-3实例工厂方法" class="headerlink" title="2.3实例工厂方法"></a>2.3实例工厂方法</h2><ul>
+<li><p>工厂类：</p>
 <pre><code class="java"><span class="keyword">package</span> com.wq.createobject.method.factory;
 <span class="keyword">import</span> com.wq.createobject.method.HelloWorld;
 <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldFactory2</span> </span>{
@@ -160,20 +160,22 @@ AV.init({
     }
 }
 </code></pre>
-<p>配置文件</p>
-<pre><code class="java">    &lt;!-- 第<span class="number">3</span>种方式 wqwqwq--&gt;
-        &lt;bean id=<span class="string">"helloWorldFactory"</span> 
-        <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.wq.createobject.method.factory.HelloWorldFactory2"</span> 
-&lt;/bean&gt;
-        &lt;!-- 
-            factory-bean是一个工厂bean
-            factory-method是一个工厂方法
-         --&gt;
-        &lt;bean id=<span class="string">"helloWorld3"</span> 
-        factory-bean=<span class="string">"helloWorldFactory"</span>
-        factory-method="getInstance"&gt;&lt;/bean&gt;
+</li>
+<li><p>配置文件</p>
+<pre><code class="java">&lt;!-- 第<span class="number">3</span>种方式 wqwqwq--&gt;
+    &lt;bean id=<span class="string">"helloWorldFactory"</span> 
+    <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.wq.createobject.method.factory.HelloWorldFactory2"</span> 
+    &gt;&lt;/bean&gt;
+    &lt;!-- 
+        factory-bean是一个工厂bean
+        factory-method是一个工厂方法
+     --&gt;
+    &lt;bean id=<span class="string">"helloWorld3"</span> 
+    factory-bean=<span class="string">"helloWorldFactory"</span>
+    factory-method="getInstance"&gt;&lt;/bean&gt;
 </code></pre>
-<p>测试方法：</p>
+</li>
+<li><p>测试方法：</p>
 <pre><code class="java"><span class="comment">/**</span>
 <span class="comment">     * 实例工厂方法</span>
 <span class="comment">     */</span>
@@ -186,7 +188,8 @@ AV.init({
         helloWorld.sayHello();
     }
 </code></pre>
-</blockquote>
+</li>
+</ul>
 <h1 id="3、Spring别名"><a href="#3、Spring别名" class="headerlink" title="3、Spring别名"></a>3、Spring别名</h1><h2 id="3-1HelloWorld-java"><a href="#3-1HelloWorld-java" class="headerlink" title="3.1HelloWorld.java"></a>3.1HelloWorld.java</h2><pre><code class="java"><span class="keyword">package</span> com.wq.alias;
 <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>{
     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span></span>{
@@ -646,54 +649,63 @@ AV.init({
     }
 }
 </code></pre>
-<h1 id="10、spring容器的DI-构造器注入"><a href="#10、spring容器的DI-构造器注入" class="headerlink" title="10、spring容器的DI-构造器注入"></a>10、spring容器的DI-构造器注入</h1><h2 id="10-1Person-java"><a href="#10-1Person-java" class="headerlink" title="10.1Person.java"></a>10.1Person.java</h2><blockquote>
-<p>也可同时给出所有属性的set方法。（可以同时使用）<br>```java<br>    public class Person {<br>        private Long pid;<br>        private String pname;<br>        private Student student;<br>        private List lists;<br>        private Set sets;<br>        private Map maps;<br>        private Properties properties;</p>
-</blockquote>
-<pre><code>    public Person(){
+<h1 id="10、spring容器的DI-构造器注入"><a href="#10、spring容器的DI-构造器注入" class="headerlink" title="10、spring容器的DI-构造器注入"></a>10、spring容器的DI-构造器注入</h1><h2 id="10-1Person-java"><a href="#10-1Person-java" class="headerlink" title="10.1Person.java"></a>10.1Person.java</h2><ul>
+<li><p>也可同时给出所有属性的set方法。（可以同时使用）</p>
+<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>{
+    <span class="keyword">private</span> Long pid;
+    <span class="keyword">private</span> String pname;
+    <span class="keyword">private</span> Student student;
+    <span class="keyword">private</span> List lists;
+    <span class="keyword">private</span> Set sets;
+    <span class="keyword">private</span> Map maps;
+    <span class="keyword">private</span> Properties properties;
+
+    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span></span>{
 
     }
-    public Person(String pname) {
-        super();
-        this.pname = pname;
+    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String pname)</span> </span>{
+        <span class="keyword">super</span>();
+        <span class="keyword">this</span>.pname = pname;
     }
 
-    public Person(String pname, Student student) {
-        super();
-        this.pname = pname;
-        this.student = student;
+    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String pname, Student student)</span> </span>{
+        <span class="keyword">super</span>();
+        <span class="keyword">this</span>.pname = pname;
+        <span class="keyword">this</span>.student = student;
     }
-    public Long getPid() {
-        return pid;
+    <span class="function"><span class="keyword">public</span> Long <span class="title">getPid</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> pid;
     }
-    public String getPname() {
-        return pname;
+    <span class="function"><span class="keyword">public</span> String <span class="title">getPname</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> pname;
     }
-    public Student getStudent() {
-        return student;
+    <span class="function"><span class="keyword">public</span> Student <span class="title">getStudent</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> student;
     }
-    public List getLists() {
-        return lists;
+    <span class="function"><span class="keyword">public</span> List <span class="title">getLists</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> lists;
     }
-    public Set getSets() {
-        return sets;
+    <span class="function"><span class="keyword">public</span> Set <span class="title">getSets</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> sets;
     }
-    public Map getMaps() {
-        return maps;
+    <span class="function"><span class="keyword">public</span> Map <span class="title">getMaps</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> maps;
     }
-    public Properties getProperties() {
-        return properties;
+    <span class="function"><span class="keyword">public</span> Properties <span class="title">getProperties</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> properties;
     }
 
 }
-</code></pre><pre><code>10.2Student.java
-----------------
-```java
-    public class Student {
-        public void say(){
-            System.out.println(&quot;Student...&quot;);
-        }
+</code></pre>
+</li>
+</ul>
+<h2 id="10-2Student-java"><a href="#10-2Student-java" class="headerlink" title="10.2Student.java"></a>10.2Student.java</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">say</span><span class="params">()</span></span>{
+        System.out.println(<span class="string">"Student..."</span>);
     }
-</code></pre><h2 id="10-3applicationContext-xml"><a href="#10-3applicationContext-xml" class="headerlink" title="10.3applicationContext.xml"></a>10.3applicationContext.xml</h2><pre><code class="java">&lt;bean id=<span class="string">"person"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.wq.di.xml.constructor.Person"</span>&gt;
+}
+</code></pre>
+<h2 id="10-3applicationContext-xml"><a href="#10-3applicationContext-xml" class="headerlink" title="10.3applicationContext.xml"></a>10.3applicationContext.xml</h2><pre><code class="java">&lt;bean id=<span class="string">"person"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.wq.di.xml.constructor.Person"</span>&gt;
         &lt;!-- 
                constructor-arg指的是构造器中的参数
                 index 角标  从<span class="number">0</span>开始
@@ -906,7 +918,8 @@ parent="person"&gt;&lt;/bean&gt;
 
     }
 }
-</code></pre><pre><code>14、spring容器的类扫描注解
+</code></pre><pre><code>
+14、spring容器的类扫描注解
 =================
 
 14.1Student.java
@@ -961,40 +974,36 @@ parent="person"&gt;&lt;/bean&gt;
   }
 &lt;bean id=<span class="string">"personDao"</span>  <span class="class"><span class="keyword">class</span></span>=<span class="string">".."</span>/&gt;
 </code></pre>
-<p>4、按照@Resource注解的规则进行赋值*/<br>```java</p>
+<p>4、按照@Resource注解的规则进行赋值*/</p>
 </blockquote>
-<pre><code>public class ScanTest extends TestCase {
+<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScanTest</span> <span class="keyword">extends</span> <span class="title">TestCase</span> </span>{
 
-    @Test
-    public void testHelloWorld_di_scan(){
-        //启动spring容器
-        ApplicationContext context=new 
-            ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
-        Person p=(Person)context.getBean(&quot;person&quot;);
+    <span class="meta">@Test</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHelloWorld_di_scan</span><span class="params">()</span></span>{
+        <span class="comment">//启动spring容器</span>
+        ApplicationContext context=<span class="keyword">new</span> 
+            ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);
+        Person p=(Person)context.getBean(<span class="string">"person"</span>);
         p.getStudent().say();
 
     }
 }
-</code></pre><pre><code>15、spring容器的类扫描实现document
-=========================
+</code></pre>
+<h1 id="15、spring容器的类扫描实现document"><a href="#15、spring容器的类扫描实现document" class="headerlink" title="15、spring容器的类扫描实现document"></a>15、spring容器的类扫描实现document</h1><h2 id="15-1DocumentManager-java"><a href="#15-1DocumentManager-java" class="headerlink" title="15.1DocumentManager.java"></a>15.1DocumentManager.java</h2><pre><code class="java"><span class="meta">@Component</span>(<span class="string">"documentManager"</span>)
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DocumentManager</span> </span>{
+    <span class="meta">@Resource</span>(name=<span class="string">"wordDocument"</span>)<span class="comment">//这里赋值为wordDocument哦。</span>
+    <span class="keyword">private</span> Document document;
 
-15.1DocumentManager.java
-------------------------
-```java
-    @Component(&quot;documentManager&quot;)
-    public class DocumentManager {
-        @Resource(name=&quot;wordDocument&quot;)//这里赋值为wordDocument哦。
-        private Document document;
-
-        public void readDocument(){
-            this.document.readDocument();
-        }
-
-        public void writeDocument(){
-            this.document.writeDocument();
-        }
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readDocument</span><span class="params">()</span></span>{
+        <span class="keyword">this</span>.document.readDocument();
     }
-</code></pre><h2 id="15-2WordDucument-java"><a href="#15-2WordDucument-java" class="headerlink" title="15.2WordDucument.java"></a>15.2WordDucument.java</h2><pre><code class="java"><span class="meta">@Component</span>(<span class="string">"wordDocument"</span>)
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writeDocument</span><span class="params">()</span></span>{
+        <span class="keyword">this</span>.document.writeDocument();
+    }
+}
+</code></pre>
+<h2 id="15-2WordDucument-java"><a href="#15-2WordDucument-java" class="headerlink" title="15.2WordDucument.java"></a>15.2WordDucument.java</h2><pre><code class="java"><span class="meta">@Component</span>(<span class="string">"wordDocument"</span>)
 <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WordDocument</span> <span class="keyword">implements</span> <span class="title">Document</span> </span>{
     <span class="meta">@Override</span>
     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">writeDocument</span><span class="params">()</span> </span>{
