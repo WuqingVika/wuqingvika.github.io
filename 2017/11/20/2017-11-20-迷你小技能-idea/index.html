@@ -114,6 +114,26 @@
 		</span>
 
 
+		
+		
+
+<span class="post-visitor">
+		<span class="iconfont icon-eye"></span>
+		<span class="post-count" id="post-leancloud-count"></span>
+</span>
+
+<script src="//cdn1.lncld.net/static/js/3.3.0/av-min.js"></script>
+<script>
+var app_id = 'wC9kYyneYKu5htgJLbot3CBB-gzGzoHsz';
+var app_key = 'MdomImvLQLvTHqn5fS2QBfWK';
+AV.init({
+  appId: app_id,
+  appKey: app_key
+});
+</script>
+<script src="/js/leancloud.js"></script>
+
+ 	
 			
 		
 	</div>
@@ -195,10 +215,10 @@
 
     
        <div class="nav-next">      
-        <a  class="nav-link" href="/2017/11/20/2017-11-20-运维&测试-nginx-1/">      
+        <a  class="nav-link" href="/2017/11/20/2017-11-20-运维&测试-nginx-2/">      
 
              
-         <span class="nav-title">【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群</span>
+         <span class="nav-title">【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群</span>
           <li class="li iconfont icon-right"></li>
         </a>
         </div>
@@ -234,6 +254,48 @@
 
 
 
+<div id="comment"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine@v1.1.8-beta/dist/Valine.min.js'></script>
+
+
+<script>
+    new Valine({
+    el: '#comment',
+    notify:false, 
+    verify:false, 
+    app_id: 'wC9kYyneYKu5htgJLbot3CBB-gzGzoHsz',
+    app_key: 'MdomImvLQLvTHqn5fS2QBfWK',  
+    path:window.location.pathname, 
+    avatar:'mm' ,
+    guest_info:['nick','mail']
+    });
+</script>
+
+
+
+
+
+<style type="text/css">
+#comment .wrap{
+    margin: 2px auto;
+}
+#comment input{
+    font-size: 16px;
+}
+</style>
+<script>
+//set the placeholder
+$(function(){
+    $('.vnick').attr('placeholder','昵称');
+    $('.veditor').attr('placeholder','说点什么吧...');
+    $('.vmail').attr('placeholder','邮箱');   
+})
+</script>
+
+
+
 	
 
 
@@ -247,9 +309,9 @@
 
     <div class="small-tag">
          
-          <a href="/categories/后端开发/">后端开发</a>     
-         
           <a href="/categories/前端开发/">前端开发</a>     
+         
+          <a href="/categories/后端开发/">后端开发</a>     
          
           <a href="/categories/博文索引/">博文索引</a>     
          
