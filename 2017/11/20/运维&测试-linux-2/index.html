@@ -91,7 +91,7 @@
         
         
 
-         <article class="post slideLIn">
+         <article class="post">
 
 <div class="post-head">
 
@@ -142,7 +142,7 @@ AV.init({
  
 
 
-  <div class="post-content">
+  <div class="post-content slideDownMin">
    
     <script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Linux学习笔记」第二篇,主要学习了如何在Linux发布一个web项目(包括：安装Jdk、安装Mysql、安装Tomcat、发布项目直至访问成功)。<br><a id="more"></a></p>
 <h2 id="在linux发布一个简单的Web项目"><a href="#在linux发布一个简单的Web项目" class="headerlink" title="在linux发布一个简单的Web项目"></a>在linux发布一个简单的Web项目</h2><h3 id="1-安装jdk"><a href="#1-安装jdk" class="headerlink" title="1.安装jdk:"></a>1.安装jdk:</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">a.检测是否安装了jdk  运行java -version</span><br><span class="line">b.若有需要将其卸载</span><br><span class="line">c.查看安装那些jdk</span><br><span class="line">       rpm -qa | grep java</span><br><span class="line">d.卸载</span><br><span class="line">     先卸载 openjdk <span class="number">1.7</span></span><br><span class="line">           rpm -e --nodeps 卸载的包</span><br><span class="line">            rpm -e --nodeps java-<span class="number">1.7</span>.0-openjdk-<span class="number">1.7</span>.0.45-<span class="number">2.4</span>.3.3.el6.i686</span><br><span class="line">     再卸载 openjdk <span class="number">1.6</span>		</span><br><span class="line">               rpm -e --nodeps java-<span class="number">1.6</span>.0-openjdk-<span class="number">1.6</span>.0.0-<span class="number">1.66</span>.1.13.0.el6.i686</span><br><span class="line">e.安装jdk</span><br><span class="line">           上传jdk 通过ftp软件上传(上传到root目录下)</span><br><span class="line">           在 /usr/local创建一个 java目录</span><br><span class="line">               mkdir java</span><br><span class="line">           将上传的jdk复制到 java目录下</span><br><span class="line">               cp /root/jdk.xxxxx.tar /usr/local/java</span><br><span class="line">           将其解压</span><br><span class="line">               tar -xvf jdk.xxx.tar</span><br><span class="line">f.安装依赖</span><br><span class="line">           yum install glibc.i686</span><br><span class="line">g.配置环境变量</span><br><span class="line">      编辑  vi /etc/profile</span><br><span class="line">      在文件最后添加一下信息</span><br><span class="line">          #set java environment</span><br><span class="line">           JAVA_HOME=/usr/local/java/jdk1.7.0_72</span><br><span class="line">           CLASSPATH=.:$JAVA_HOME/lib.tools.jar</span><br><span class="line">           PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">           export JAVA_HOME CLASSPATH PATH</span><br><span class="line">           保存退出</span><br><span class="line">           source /etc/profile  使更改的配置立即生效</span><br></pre></td></tr></table></figure>
@@ -195,7 +195,6 @@ AV.init({
      	  
 	</div>    
 
-
   </div>
 
 
@@ -206,10 +205,10 @@ AV.init({
   
      
       <div class="nav-prev">
-        <a class="nav-link" href="/2017/11/20/后端开发/">  
+        <a class="nav-link" href="/2017/11/23/hello-world/">  
            <li class="li iconfont icon-left"></li>         
               
-          <span class="nav-title">【索引】后端开发从基础到进阶</span>
+          <span class="nav-title">欢迎来到吴庆的博客</span>
         </a>
       </div>
     
@@ -218,10 +217,10 @@ AV.init({
 
     
        <div class="nav-next">      
-        <a  class="nav-link" href="/2017/11/19/前端开发/">      
+        <a  class="nav-link" href="/2017/11/20/迷你小技能-idea/">      
 
              
-         <span class="nav-title">【索引】前端开发从基础到进阶</span>
+         <span class="nav-title">【工具】idea下载安装注册使用</span>
           <li class="li iconfont icon-right"></li>
         </a>
         </div>
@@ -256,15 +255,15 @@ AV.init({
 	<span class="donate-cancel iconfont icon-cancel"></span>
 
 	<div class="donate-img-box">
-		<img id="donate-qr-wechat" class="donate-img no-gallery" src="/img/r1.png" alt="No donate img !">	
-		<img id="donate-qr-alipay" class="donate-img no-gallery" src="/img/r2.png" alt="No donate img !">				
+		<img id="donate-qr-wechat" class="donate-img no-gallery" src="/img/donate1.png" alt="No donate img !">	
+		<img id="donate-qr-alipay" class="donate-img no-gallery" src="/img/donate2.png" alt="No donate img !">				
 	</div>
 
-	<span class="donate-word">emm...请赐一包辣条可好..</span>
+	<span class="donate-word slideDownMin">emm...请赐一包辣条可好..</span>
 
-	<div class="donate-list">
-		<span class="iconfont icon-donate-wechat fadeIn"></span>
-		<span class="iconfont icon-donate-alipay fadeIn"></span>
+	<div class="donate-list fadeIn">
+		<span class="iconfont icon-donate-wechat"></span>
+		<span class="iconfont icon-donate-alipay"></span>
 	</div>
 
 </div>
@@ -287,9 +286,9 @@ AV.init({
 
     <div class="small-tag">
          
-          <a href="/categories/博文索引/">博文索引</a>     
-         
           <a href="/categories/前端开发/">前端开发</a>     
+         
+          <a href="/categories/博文索引/">博文索引</a>     
          
           <a href="/categories/后端开发/">后端开发</a>     
          
@@ -325,7 +324,7 @@ AV.init({
 </article>
 
 
-<div id="toc" class="slideRIn">		
+<div id="toc" class="fadeIn">		
 
 	<div class="toc-container">	
 
@@ -386,49 +385,50 @@ AV.init({
      <div class="mobile-menu">      
 
       
-      <img class="slide-icon" src= /img/favicon.png >   
+      <img class="slide-icon no-gallery" src= /img/favicon.png >   
       
 
          
             
 
-            <a class="mobile-menu-link"  href="/">首页
+            <a class="mobile-menu-link" href="/">首页
             </a>
             
          
             
 
-            <a class="mobile-menu-link"  href="/archives">归档
+            <a class="mobile-menu-link" href="/archives">归档
             </a>
             
          
             
 
-            <a class="mobile-menu-link"  href="/categories">分类
+            <a class="mobile-menu-link" href="/categories">分类
             </a>
             
          
             
 
-            <a class="mobile-menu-link"  href="/tags">标签
+            <a class="mobile-menu-link" href="/tags">标签
             </a>
             
          
             
 
-            <a class="mobile-menu-link"  href="/about">关于
+            <a class="mobile-menu-link" href="/about">关于
             </a>
             
          
                           
 
-            <a class="mobile-menu-link mobile-menu-search">搜索 </a>                 
+            <a class="mobile-menu-link mobile-menu-search" href="#">搜索 </a>                 
             
          
 </div>     
     
 
 <footer id="footer">
+
     
    	 <div class="foot-busuanzi">	
 
@@ -459,11 +459,10 @@ AV.init({
 	 
 
 	 2017
-	 吴里庆庆
+	 吴里庆庆	 
 
 	 </div>
-</footer>
- 
+</footer> 
     
 
 <!-- Baidu Analytics -->

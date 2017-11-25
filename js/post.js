@@ -37,7 +37,7 @@ function setTitle(){
 	//获取post标题
 	var postTitle = $('.post-title').text();
 
-	postTitle = cutString(postTitle , 38);
+	postTitle = cutString(postTitle , 36);
 
 	$('.header-logo').text(postTitle);		
 	

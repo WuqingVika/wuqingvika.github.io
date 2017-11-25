@@ -91,7 +91,7 @@
         
         
 
-         <article class="post slideLIn">
+         <article class="post">
 
 <div class="post-head">
 
@@ -142,7 +142,7 @@ AV.init({
  
 
 
-  <div class="post-content">
+  <div class="post-content slideDownMin">
    
     <script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Spring学习笔记」第二篇,具体内容可见右侧内容概要，<font color="red">【本文长期更新】</font>。</p>
 <a id="more"></a>
@@ -153,30 +153,30 @@ AV.init({
   }
 </code></pre>
 <p>PersonDaoImpl(实现类)</p>
-<pre><code class="bash">public class PersonDaoImpl implements PersonDao {
-    @Override
-    public void <span class="function"><span class="title">savePerson</span></span>() {
-        // TODO Auto-generated method stub
+<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonDaoImpl</span> <span class="keyword">implements</span> <span class="title">PersonDao</span> </span>{
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">savePerson</span><span class="params">()</span> </span>{
+        <span class="comment">// TODO Auto-generated method stub</span>
         System.out.println(<span class="string">"save Person()..."</span>);
     }
 }
 </code></pre>
 <p>PersonDaoProxy.java</p>
-<pre><code class="bash">public class PersonDaoProxy implements PersonDao {
+<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonDaoProxy</span> <span class="keyword">implements</span> <span class="title">PersonDao</span> </span>{
     PersonDao personDao;
     Transaction transaction;
-    public PersonDaoProxy(PersonDao personDao, Transaction transaction) {
-        super();
-        this.personDao = personDao;
-        this.transaction = transaction;
+    <span class="function"><span class="keyword">public</span> <span class="title">PersonDaoProxy</span><span class="params">(PersonDao personDao, Transaction transaction)</span> </span>{
+        <span class="keyword">super</span>();
+        <span class="keyword">this</span>.personDao = personDao;
+        <span class="keyword">this</span>.transaction = transaction;
     }
-    @Override
-    public void <span class="function"><span class="title">savePerson</span></span>() {
-        /**
-         * 1、开启事务
-         * 2、执行目标方法
-         * 3、事务提交
-         */
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">savePerson</span><span class="params">()</span> </span>{
+        <span class="comment">/**</span>
+<span class="comment">         * 1、开启事务</span>
+<span class="comment">         * 2、执行目标方法</span>
+<span class="comment">         * 3、事务提交</span>
+<span class="comment">         */</span>
         transaction.beginTransaction();
         personDao.savePerson();
         transaction.commit();
@@ -184,155 +184,155 @@ AV.init({
 }
 </code></pre>
 <p>Transaction</p>
-<pre><code class="bash">public class Transaction {
-    public void <span class="function"><span class="title">beginTransaction</span></span>(){
+<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Transaction</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beginTransaction</span><span class="params">()</span></span>{
         System.out.println(<span class="string">"begin transaction"</span>);
     }
-    public void <span class="function"><span class="title">commit</span></span>(){
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">commit</span><span class="params">()</span></span>{
         System.out.println(<span class="string">"commit.."</span>);
     }
 }
 </code></pre>
 <p>ProxyTest</p>
-<pre><code class="bash">public class ProxyTest {
-    @Test
-    public void <span class="function"><span class="title">testProxy</span></span>(){
-        PersonDao personDao=new PersonDaoImpl();
-        Transaction transaction=new Transaction();
-        PersonDaoProxy proxy=new PersonDaoProxy(personDao, transaction);
+<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProxyTest</span> </span>{
+    <span class="meta">@Test</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testProxy</span><span class="params">()</span></span>{
+        PersonDao personDao=<span class="keyword">new</span> PersonDaoImpl();
+        Transaction transaction=<span class="keyword">new</span> Transaction();
+        PersonDaoProxy proxy=<span class="keyword">new</span> PersonDaoProxy(personDao, transaction);
         proxy.savePerson();
     }
 }
 </code></pre>
 <h1 id="2、jdk的动态代理"><a href="#2、jdk的动态代理" class="headerlink" title="2、jdk的动态代理"></a>2、jdk的动态代理</h1></blockquote>
-<h2 id="2-1PersonDao-java-接口"><a href="#2-1PersonDao-java-接口" class="headerlink" title="2.1PersonDao.java(接口)"></a>2.1PersonDao.java(接口)</h2><pre><code class="bash">public interface PersonDao {
-    public void savePerson();
-    public void updatePerson();
+<h2 id="2-1PersonDao-java-接口"><a href="#2-1PersonDao-java-接口" class="headerlink" title="2.1PersonDao.java(接口)"></a>2.1PersonDao.java(接口)</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">PersonDao</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">savePerson</span><span class="params">()</span></span>;
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updatePerson</span><span class="params">()</span></span>;
 }
 </code></pre>
-<h2 id="2-2PersonDaoImpl-java-实现类"><a href="#2-2PersonDaoImpl-java-实现类" class="headerlink" title="2.2PersonDaoImpl.java(实现类)"></a>2.2PersonDaoImpl.java(实现类)</h2><pre><code class="bash">public class PersonDaoImpl implements PersonDao {
-    @Override
-    public void <span class="function"><span class="title">savePerson</span></span>() {
+<h2 id="2-2PersonDaoImpl-java-实现类"><a href="#2-2PersonDaoImpl-java-实现类" class="headerlink" title="2.2PersonDaoImpl.java(实现类)"></a>2.2PersonDaoImpl.java(实现类)</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonDaoImpl</span> <span class="keyword">implements</span> <span class="title">PersonDao</span> </span>{
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">savePerson</span><span class="params">()</span> </span>{
         System.out.println(<span class="string">"save Person()..."</span>);
     }
 
-    @Override
-    public void <span class="function"><span class="title">updatePerson</span></span>() {
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updatePerson</span><span class="params">()</span> </span>{
         System.out.println(<span class="string">"update Person()..."</span>);
     }
 }
 </code></pre>
-<h2 id="2-3Transaction"><a href="#2-3Transaction" class="headerlink" title="2.3Transaction"></a>2.3Transaction</h2><pre><code class="bash">public class Transaction {
-    public void <span class="function"><span class="title">beginTransaction</span></span>(){
+<h2 id="2-3Transaction"><a href="#2-3Transaction" class="headerlink" title="2.3Transaction"></a>2.3Transaction</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Transaction</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beginTransaction</span><span class="params">()</span></span>{
         System.out.println(<span class="string">"begin transaction"</span>);
     }
-    public void <span class="function"><span class="title">commit</span></span>(){
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">commit</span><span class="params">()</span></span>{
         System.out.println(<span class="string">"commit.."</span>);
     }
 }
 </code></pre>
-<h2 id="2-4MyInterceptor"><a href="#2-4MyInterceptor" class="headerlink" title="2.4MyInterceptor"></a>2.4MyInterceptor</h2><pre><code class="bash">public class MyInterceptor implements InvocationHandler {
+<h2 id="2-4MyInterceptor"><a href="#2-4MyInterceptor" class="headerlink" title="2.4MyInterceptor"></a>2.4MyInterceptor</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterceptor</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>{
 
-    private Transaction transation;
-    private Object target;//目标类
+    <span class="keyword">private</span> Transaction transation;
+    <span class="keyword">private</span> Object target;<span class="comment">//目标类</span>
 
-    public MyInterceptor(Transaction transation, Object target) {
-        super();
-        this.transation = transation;
-        this.target = target;
+    <span class="function"><span class="keyword">public</span> <span class="title">MyInterceptor</span><span class="params">(Transaction transation, Object target)</span> </span>{
+        <span class="keyword">super</span>();
+        <span class="keyword">this</span>.transation = transation;
+        <span class="keyword">this</span>.target = target;
     }
 
-    @Override
-    public Object invoke(Object proxy, Method method, Object[] args)
-            throws Throwable {
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span></span>
+<span class="function">            <span class="keyword">throws</span> Throwable </span>{
         String methodName=method.getName();
         <span class="keyword">if</span>(<span class="string">"savePerson"</span>.equals(methodName)||<span class="string">"updatePerson"</span>.equals(methodName)
                 ||<span class="string">"deletePerson"</span>.equals(methodName)){
-            //开启事务
-            this.transation.beginTransaction();
-            method.invoke(target);//调用目标方法
-            this.transation.commit();
+            <span class="comment">//开启事务</span>
+            <span class="keyword">this</span>.transation.beginTransaction();
+            method.invoke(target);<span class="comment">//调用目标方法</span>
+            <span class="keyword">this</span>.transation.commit();
         }<span class="keyword">else</span>{
             method.invoke(target);
         }
-        <span class="built_in">return</span> null;
+        <span class="keyword">return</span> <span class="keyword">null</span>;
     }
 }
 </code></pre>
-<h2 id="2-5测试方法"><a href="#2-5测试方法" class="headerlink" title="2.5测试方法"></a>2.5测试方法</h2><pre><code class="bash">@Test
-public void <span class="function"><span class="title">testJdkProxy</span></span>(){
-    /**
-     * 1、创建一个目标对象
-     */
-    Object target=new PersonDaoImpl();
-    Transaction transaction=new Transaction();
-    MyInterceptor interceptor=new MyInterceptor(transaction, target);
+<h2 id="2-5测试方法"><a href="#2-5测试方法" class="headerlink" title="2.5测试方法"></a>2.5测试方法</h2><pre><code class="java"><span class="meta">@Test</span>
+<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testJdkProxy</span><span class="params">()</span></span>{
+    <span class="comment">/**</span>
+<span class="comment">     * 1、创建一个目标对象</span>
+<span class="comment">     */</span>
+    Object target=<span class="keyword">new</span> PersonDaoImpl();
+    Transaction transaction=<span class="keyword">new</span> Transaction();
+    MyInterceptor interceptor=<span class="keyword">new</span> MyInterceptor(transaction, target);
     PersonDao personDao=(PersonDao) Proxy.newProxyInstance(
             target.getClass().getClassLoader(), 
             target.getClass().getInterfaces(), interceptor);
     personDao.savePerson();
 }
 </code></pre>
-<h1 id="3、项目二的优化。"><a href="#3、项目二的优化。" class="headerlink" title="3、项目二的优化。"></a>3、项目二的优化。</h1><h2 id="3-1PersonDao"><a href="#3-1PersonDao" class="headerlink" title="3.1PersonDao"></a>3.1PersonDao</h2><pre><code class="bash">public interface PersonDao {
-    public void savePerson();
-    public void updatePerson();
+<h1 id="3、项目二的优化。"><a href="#3、项目二的优化。" class="headerlink" title="3、项目二的优化。"></a>3、项目二的优化。</h1><h2 id="3-1PersonDao"><a href="#3-1PersonDao" class="headerlink" title="3.1PersonDao"></a>3.1PersonDao</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">PersonDao</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">savePerson</span><span class="params">()</span></span>;
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updatePerson</span><span class="params">()</span></span>;
 }
 </code></pre>
-<h2 id="3-2PersonDaoImpl"><a href="#3-2PersonDaoImpl" class="headerlink" title="3.2PersonDaoImpl"></a>3.2PersonDaoImpl</h2><pre><code class="bash">public class PersonDaoImpl implements PersonDao {
-    @Override
-    public void <span class="function"><span class="title">savePerson</span></span>() {
+<h2 id="3-2PersonDaoImpl"><a href="#3-2PersonDaoImpl" class="headerlink" title="3.2PersonDaoImpl"></a>3.2PersonDaoImpl</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonDaoImpl</span> <span class="keyword">implements</span> <span class="title">PersonDao</span> </span>{
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">savePerson</span><span class="params">()</span> </span>{
         System.out.println(<span class="string">"save Person()..."</span>);
     }
 
-    @Override
-    public void <span class="function"><span class="title">updatePerson</span></span>() {
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updatePerson</span><span class="params">()</span> </span>{
         System.out.println(<span class="string">"update Person()..."</span>);
     }
 }
 </code></pre>
-<h2 id="3-3Transaction"><a href="#3-3Transaction" class="headerlink" title="3.3Transaction"></a>3.3Transaction</h2><pre><code class="bash">public class Transaction  implements Interceptor{
-    public void <span class="function"><span class="title">interceptor</span></span>() {
+<h2 id="3-3Transaction"><a href="#3-3Transaction" class="headerlink" title="3.3Transaction"></a>3.3Transaction</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Transaction</span>  <span class="keyword">implements</span> <span class="title">Interceptor</span></span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">interceptor</span><span class="params">()</span> </span>{
         System.out.println(<span class="string">"transaction"</span>);
     }
 }
 </code></pre>
-<h2 id="3-4MyInterceptor"><a href="#3-4MyInterceptor" class="headerlink" title="3.4MyInterceptor"></a>3.4MyInterceptor</h2><pre><code class="bash">public class MyInterceptor implements InvocationHandler {
+<h2 id="3-4MyInterceptor"><a href="#3-4MyInterceptor" class="headerlink" title="3.4MyInterceptor"></a>3.4MyInterceptor</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterceptor</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>{
 
-    private List&lt;Interceptor&gt; interceptors;
-    private Object target;//目标类
+    <span class="keyword">private</span> List&lt;Interceptor&gt; interceptors;
+    <span class="keyword">private</span> Object target;<span class="comment">//目标类</span>
 
-    public MyInterceptor(Object target,  List&lt;Interceptor&gt; interceptors) {
-        super();
-        this.interceptors = interceptors;
-        this.target = target;
+    <span class="function"><span class="keyword">public</span> <span class="title">MyInterceptor</span><span class="params">(Object target,  List&lt;Interceptor&gt; interceptors)</span> </span>{
+        <span class="keyword">super</span>();
+        <span class="keyword">this</span>.interceptors = interceptors;
+        <span class="keyword">this</span>.target = target;
     }
 
-    @Override
-    public Object invoke(Object proxy, Method method, Object[] args)
-            throws Throwable {
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span></span>
+<span class="function">            <span class="keyword">throws</span> Throwable </span>{
         <span class="keyword">for</span> (Interceptor interceptor : interceptors) {
             interceptor.interceptor();
         }
         method.invoke(target);
-        <span class="built_in">return</span> null;
+        <span class="keyword">return</span> <span class="keyword">null</span>;
     }
 }
 </code></pre>
-<h2 id="3-5Interceptor"><a href="#3-5Interceptor" class="headerlink" title="3.5Interceptor"></a>3.5Interceptor</h2><pre><code class="bash">public interface Interceptor {
-    public void interceptor();
+<h2 id="3-5Interceptor"><a href="#3-5Interceptor" class="headerlink" title="3.5Interceptor"></a>3.5Interceptor</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Interceptor</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">interceptor</span><span class="params">()</span></span>;
 }
 </code></pre>
-<h2 id="3-6测试类"><a href="#3-6测试类" class="headerlink" title="3.6测试类"></a>3.6测试类</h2><pre><code class="bash">public class JdkProxyTest {
-    @Test
-    public void <span class="function"><span class="title">testJdkProxy</span></span>(){
-        /**
-         * 1、创建一个目标对象
-         */
-        Object target=new PersonDaoImpl();
-        Transaction transaction=new Transaction();
-        List&lt;Interceptor&gt; interceptors = new ArrayList&lt;Interceptor&gt;();
+<h2 id="3-6测试类"><a href="#3-6测试类" class="headerlink" title="3.6测试类"></a>3.6测试类</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JdkProxyTest</span> </span>{
+    <span class="meta">@Test</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testJdkProxy</span><span class="params">()</span></span>{
+        <span class="comment">/**</span>
+<span class="comment">         * 1、创建一个目标对象</span>
+<span class="comment">         */</span>
+        Object target=<span class="keyword">new</span> PersonDaoImpl();
+        Transaction transaction=<span class="keyword">new</span> Transaction();
+        List&lt;Interceptor&gt; interceptors = <span class="keyword">new</span> ArrayList&lt;Interceptor&gt;();
         interceptors.add(transaction);
-        MyInterceptor interceptor=new MyInterceptor(target, interceptors);
+        MyInterceptor interceptor=<span class="keyword">new</span> MyInterceptor(target, interceptors);
         PersonDao personDao=(PersonDao) Proxy.newProxyInstance(
                 target.getClass().getClassLoader(), 
                 target.getClass().getInterfaces(), interceptor);
@@ -340,8 +340,8 @@ public void <span class="function"><span class="title">testJdkProxy</span></span
     }
 }
 </code></pre>
-<h1 id="4、jdkproxy-salary"><a href="#4、jdkproxy-salary" class="headerlink" title="4、jdkproxy-salary"></a>4、jdkproxy-salary</h1><h2 id="4-1SalaryManager"><a href="#4-1SalaryManager" class="headerlink" title="4.1SalaryManager"></a>4.1SalaryManager</h2><pre><code class="bash">public interface SalaryManager {
-    public void showSalary();
+<h1 id="4、jdkproxy-salary"><a href="#4、jdkproxy-salary" class="headerlink" title="4、jdkproxy-salary"></a>4、jdkproxy-salary</h1><h2 id="4-1SalaryManager"><a href="#4-1SalaryManager" class="headerlink" title="4.1SalaryManager"></a>4.1SalaryManager</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">SalaryManager</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">showSalary</span><span class="params">()</span></span>;
 }
 </code></pre>
 <h2 id="4-2SalaryManagerImpl"><a href="#4-2SalaryManagerImpl" class="headerlink" title="4.2SalaryManagerImpl"></a>4.2SalaryManagerImpl</h2><pre><code>public class SalaryManagerImpl implements SalaryManager {
@@ -351,72 +351,72 @@ public void <span class="function"><span class="title">testJdkProxy</span></span
         System.out.println(&quot;您的工资为10W&quot;);
     }
 }
-</code></pre><h2 id="4-3Logger"><a href="#4-3Logger" class="headerlink" title="4.3Logger"></a>4.3Logger</h2><pre><code class="bash">    public class Logger {
-    public void <span class="function"><span class="title">Logging</span></span>(){
+</code></pre><h2 id="4-3Logger"><a href="#4-3Logger" class="headerlink" title="4.3Logger"></a>4.3Logger</h2><pre><code class="java">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Logger</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Logging</span><span class="params">()</span></span>{
         System.out.println(<span class="string">"日志信息。。。"</span>);
     }
 }
 </code></pre>
-<h2 id="4-4Security"><a href="#4-4Security" class="headerlink" title="4.4Security"></a>4.4Security</h2><pre><code class="bash">public class Security {
-    public void <span class="function"><span class="title">security</span></span>(){
+<h2 id="4-4Security"><a href="#4-4Security" class="headerlink" title="4.4Security"></a>4.4Security</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Security</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">security</span><span class="params">()</span></span>{
         System.out.println(<span class="string">"security"</span>);
     }
 }
 </code></pre>
-<h2 id="4-5Privilege"><a href="#4-5Privilege" class="headerlink" title="4.5Privilege"></a>4.5Privilege</h2><pre><code class="bash">public class Privilege {
-    private String access;//权限
-    public String <span class="function"><span class="title">getAccess</span></span>() {
-        <span class="built_in">return</span> access;
+<h2 id="4-5Privilege"><a href="#4-5Privilege" class="headerlink" title="4.5Privilege"></a>4.5Privilege</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Privilege</span> </span>{
+    <span class="keyword">private</span> String access;<span class="comment">//权限</span>
+    <span class="function"><span class="keyword">public</span> String <span class="title">getAccess</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> access;
     }
-    public void setAccess(String access) {
-        this.access = access;
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAccess</span><span class="params">(String access)</span> </span>{
+        <span class="keyword">this</span>.access = access;
     }
 }
 </code></pre>
-<h2 id="4-6MyInterceptor"><a href="#4-6MyInterceptor" class="headerlink" title="4.6MyInterceptor"></a>4.6MyInterceptor</h2><pre><code class="bash">public class MyInterceptor implements InvocationHandler {
+<h2 id="4-6MyInterceptor"><a href="#4-6MyInterceptor" class="headerlink" title="4.6MyInterceptor"></a>4.6MyInterceptor</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterceptor</span> <span class="keyword">implements</span> <span class="title">InvocationHandler</span> </span>{
 
-    private Object target;
-    private Logger logger;
-    private Privilege privilege;
-    private Security security;
+    <span class="keyword">private</span> Object target;
+    <span class="keyword">private</span> Logger logger;
+    <span class="keyword">private</span> Privilege privilege;
+    <span class="keyword">private</span> Security security;
 
-    public MyInterceptor(Object target, Logger logger, Privilege privilege,
-            Security security) {
-        super();
-        this.target = target;
-        this.logger = logger;
-        this.privilege = privilege;
-        this.security = security;
+    <span class="function"><span class="keyword">public</span> <span class="title">MyInterceptor</span><span class="params">(Object target, Logger logger, Privilege privilege,</span></span>
+<span class="function"><span class="params">            Security security)</span> </span>{
+        <span class="keyword">super</span>();
+        <span class="keyword">this</span>.target = target;
+        <span class="keyword">this</span>.logger = logger;
+        <span class="keyword">this</span>.privilege = privilege;
+        <span class="keyword">this</span>.security = security;
     }
 
-    @Override
-    public Object invoke(Object proxy, Method method, Object[] args)
-            throws Throwable {
-        /**
-         * 1、启动日志
-         * 2、启动安全性的类
-         * 3、验证权限
-         *      调用目标对象的目标方法
-         */
-        this.logger.Logging();
-        this.security.security();
-        <span class="keyword">if</span>(<span class="string">"wuqingvika"</span>.equals(this.privilege.getAccess())){
-            method.invoke(target);//执行目标方法
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> Object <span class="title">invoke</span><span class="params">(Object proxy, Method method, Object[] args)</span></span>
+<span class="function">            <span class="keyword">throws</span> Throwable </span>{
+        <span class="comment">/**</span>
+<span class="comment">         * 1、启动日志</span>
+<span class="comment">         * 2、启动安全性的类</span>
+<span class="comment">         * 3、验证权限</span>
+<span class="comment">         *      调用目标对象的目标方法</span>
+<span class="comment">         */</span>
+        <span class="keyword">this</span>.logger.Logging();
+        <span class="keyword">this</span>.security.security();
+        <span class="keyword">if</span>(<span class="string">"wuqingvika"</span>.equals(<span class="keyword">this</span>.privilege.getAccess())){
+            method.invoke(target);<span class="comment">//执行目标方法</span>
         }<span class="keyword">else</span>{
             System.out.println(<span class="string">"no access!"</span>);
         }
-        <span class="built_in">return</span> null;
+        <span class="keyword">return</span> <span class="keyword">null</span>;
     }
 }
 </code></pre>
-<h2 id="4-7测试方法"><a href="#4-7测试方法" class="headerlink" title="4.7测试方法"></a>4.7测试方法</h2><pre><code class="bash">@Test
-public void <span class="function"><span class="title">testSalary</span></span>(){
-     Object target=new SalaryManagerImpl();
-     Logger logger=new Logger();
-     Privilege privilege=new Privilege();
+<h2 id="4-7测试方法"><a href="#4-7测试方法" class="headerlink" title="4.7测试方法"></a>4.7测试方法</h2><pre><code class="java"><span class="meta">@Test</span>
+<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSalary</span><span class="params">()</span></span>{
+     Object target=<span class="keyword">new</span> SalaryManagerImpl();
+     Logger logger=<span class="keyword">new</span> Logger();
+     Privilege privilege=<span class="keyword">new</span> Privilege();
      privilege.setAccess(<span class="string">"wuqingvika"</span>);
-     Security security=new Security();
-     MyInterceptor interceptor=new MyInterceptor
+     Security security=<span class="keyword">new</span> Security();
+     MyInterceptor interceptor=<span class="keyword">new</span> MyInterceptor
              (target, logger, privilege, security);
     SalaryManager sm= (SalaryManager) Proxy.newProxyInstance(target.getClass().getClassLoader(), 
              target.getClass().getInterfaces(), interceptor);
@@ -426,67 +426,67 @@ public void <span class="function"><span class="title">testSalary</span></span>(
 <h1 id="5、spring-cglibproxy"><a href="#5、spring-cglibproxy" class="headerlink" title="5、spring-cglibproxy"></a>5、spring-cglibproxy</h1><blockquote>
 <p>注：<br>要导入Jar包哦。cglib-nodep-2.1_3.jar包。</p>
 </blockquote>
-<h2 id="5-1PersonDaoImpl"><a href="#5-1PersonDaoImpl" class="headerlink" title="5.1PersonDaoImpl"></a>5.1PersonDaoImpl</h2><pre><code class="bash">public class PersonDaoImpl  {
+<h2 id="5-1PersonDaoImpl"><a href="#5-1PersonDaoImpl" class="headerlink" title="5.1PersonDaoImpl"></a>5.1PersonDaoImpl</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonDaoImpl</span>  </span>{
 
-    public void <span class="function"><span class="title">savePerson</span></span>() {
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">savePerson</span><span class="params">()</span> </span>{
         System.out.println(<span class="string">"save Person()..."</span>);
     }
 
-    public void <span class="function"><span class="title">updatePerson</span></span>() {
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updatePerson</span><span class="params">()</span> </span>{
         System.out.println(<span class="string">"update Person()..."</span>);
     }
 }
 </code></pre>
-<h2 id="5-2Transaction"><a href="#5-2Transaction" class="headerlink" title="5.2Transaction"></a>5.2Transaction</h2><pre><code class="bash">public class Transaction {
-    public void <span class="function"><span class="title">beginTransaction</span></span>(){
+<h2 id="5-2Transaction"><a href="#5-2Transaction" class="headerlink" title="5.2Transaction"></a>5.2Transaction</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Transaction</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beginTransaction</span><span class="params">()</span></span>{
         System.out.println(<span class="string">"begin transaction"</span>);
     }
-    public void <span class="function"><span class="title">commit</span></span>(){
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">commit</span><span class="params">()</span></span>{
         System.out.println(<span class="string">"commit.."</span>);
     }
 }
 </code></pre>
-<h2 id="5-3MyInterceptor"><a href="#5-3MyInterceptor" class="headerlink" title="5.3MyInterceptor"></a>5.3MyInterceptor</h2><pre><code class="bash">public class MyInterceptor implements MethodInterceptor {
+<h2 id="5-3MyInterceptor"><a href="#5-3MyInterceptor" class="headerlink" title="5.3MyInterceptor"></a>5.3MyInterceptor</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterceptor</span> <span class="keyword">implements</span> <span class="title">MethodInterceptor</span> </span>{
 
-    private Transaction transation;
-    private Object target;//目标类
+    <span class="keyword">private</span> Transaction transation;
+    <span class="keyword">private</span> Object target;<span class="comment">//目标类</span>
 
-    public MyInterceptor(Transaction transation, Object target) {
-        super();
-        this.transation = transation;
-        this.target = target;
+    <span class="function"><span class="keyword">public</span> <span class="title">MyInterceptor</span><span class="params">(Transaction transation, Object target)</span> </span>{
+        <span class="keyword">super</span>();
+        <span class="keyword">this</span>.transation = transation;
+        <span class="keyword">this</span>.target = target;
     }
 
-    /**
-     * 代码增强类
-     * @<span class="built_in">return</span>
-     */
-    public Object <span class="function"><span class="title">createProxy</span></span>(){
-        Enhancer enhancer=new Enhancer();
-        enhancer.setCallback(this);//参数为拦截器
+    <span class="comment">/**</span>
+<span class="comment">     * 代码增强类</span>
+<span class="comment">     * <span class="doctag">@return</span></span>
+<span class="comment">     */</span>
+    <span class="function"><span class="keyword">public</span> Object <span class="title">createProxy</span><span class="params">()</span></span>{
+        Enhancer enhancer=<span class="keyword">new</span> Enhancer();
+        enhancer.setCallback(<span class="keyword">this</span>);<span class="comment">//参数为拦截器</span>
         enhancer.setSuperclass(target.getClass());
-        <span class="built_in">return</span> enhancer.create();
+        <span class="keyword">return</span> enhancer.create();
     }
 
-    @Override
-    public Object intercept(Object arg0, Method method, Object[] arg2,
-            MethodProxy arg3) throws Throwable {
-        this.transation.beginTransaction();
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> Object <span class="title">intercept</span><span class="params">(Object arg0, Method method, Object[] arg2,</span></span>
+<span class="function"><span class="params">            MethodProxy arg3)</span> <span class="keyword">throws</span> Throwable </span>{
+        <span class="keyword">this</span>.transation.beginTransaction();
         method.invoke(target);
-        this.transation.commit();
-        <span class="built_in">return</span> null;
+        <span class="keyword">this</span>.transation.commit();
+        <span class="keyword">return</span> <span class="keyword">null</span>;
     }
 }
 </code></pre>
 <h2 id="5-4CglibProxyTest"><a href="#5-4CglibProxyTest" class="headerlink" title="5.4CglibProxyTest"></a>5.4CglibProxyTest</h2><blockquote>
 <p>通过cglib产生的代理对象，代理类是目标类的子类</p>
-<pre><code class="bash">public class CglibProxyTest {
-    @Test
-    public void <span class="function"><span class="title">testCglibProxy</span></span>(){
-         Transaction transation=new Transaction();
-         Object target=new PersonDaoImpl();//目标类
+<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CglibProxyTest</span> </span>{
+    <span class="meta">@Test</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCglibProxy</span><span class="params">()</span></span>{
+         Transaction transation=<span class="keyword">new</span> Transaction();
+         Object target=<span class="keyword">new</span> PersonDaoImpl();<span class="comment">//目标类</span>
          MyInterceptor interceptor=
-             new MyInterceptor(transation, target);
+             <span class="keyword">new</span> MyInterceptor(transation, target);
          PersonDaoImpl personDaoImpl=
              (PersonDaoImpl) interceptor.createProxy();
          personDaoImpl.savePerson();
@@ -496,12 +496,12 @@ public void <span class="function"><span class="title">testSalary</span></span>(
 <h1 id="6、springAOP的第一个例子"><a href="#6、springAOP的第一个例子" class="headerlink" title="6、springAOP的第一个例子"></a>6、springAOP的第一个例子</h1><p>注：</p>
 <blockquote>
 <p>此例是需要新添加两个jar包。<br>aspectjrt.jar和aspectjweaver.jar。<br>另外：配置文件也要更改哦。</p>
-<h2 id="6-1PersonDao"><a href="#6-1PersonDao" class="headerlink" title="6.1PersonDao"></a>6.1PersonDao</h2><pre><code class="bash">public interface PersonDao {
-    public void savePerson();
-    public void updatePerson();
+<h2 id="6-1PersonDao"><a href="#6-1PersonDao" class="headerlink" title="6.1PersonDao"></a>6.1PersonDao</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">PersonDao</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">savePerson</span><span class="params">()</span></span>;
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updatePerson</span><span class="params">()</span></span>;
 }
 </code></pre>
-<h2 id="6-2PersonDaoImpl"><a href="#6-2PersonDaoImpl" class="headerlink" title="6.2PersonDaoImpl"></a>6.2PersonDaoImpl</h2><p>``` bash<br>    public class PersonDaoImpl implements PersonDao {</p>
+<h2 id="6-2PersonDaoImpl"><a href="#6-2PersonDaoImpl" class="headerlink" title="6.2PersonDaoImpl"></a>6.2PersonDaoImpl</h2><p>```java<br>    public class PersonDaoImpl implements PersonDao {</p>
 </blockquote>
 </blockquote>
 <pre><code>    @Override
@@ -517,7 +517,7 @@ public void <span class="function"><span class="title">testSalary</span></span>(
 }
 </code></pre><pre><code>6.3Transaction
 --------------
-``` bash
+```java
      public class Transaction {
         public void beginTransaction(){
             System.out.println(&quot;begin transaction&quot;);
@@ -549,71 +549,71 @@ public void <span class="function"><span class="title">testSalary</span></span>(
                     &lt;aop:after-returning method=&quot;commit&quot; pointcut-ref=&quot;perform&quot;/&gt;
             &lt;/aop:aspect&gt;
     &lt;/aop:config&gt;
-</code></pre><h2 id="6-5测试类"><a href="#6-5测试类" class="headerlink" title="6.5测试类"></a>6.5测试类</h2><pre><code class="bash">public class TransactionTest {
-    @Test
-    public void <span class="function"><span class="title">testTransaction</span></span>(){
+</code></pre><h2 id="6-5测试类"><a href="#6-5测试类" class="headerlink" title="6.5测试类"></a>6.5测试类</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TransactionTest</span> </span>{
+    <span class="meta">@Test</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testTransaction</span><span class="params">()</span></span>{
         ApplicationContext context=
-            new ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);
+            <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);
         PersonDao personDao=(PersonDao) context.getBean(<span class="string">"personDao"</span>);
         personDao.savePerson();
     }
 }
 </code></pre>
-<h1 id="7、Spring通知aop-xml-advise"><a href="#7、Spring通知aop-xml-advise" class="headerlink" title="7、Spring通知aop-xml-advise"></a>7、Spring通知aop-xml-advise</h1><h2 id="7-1PersonDao"><a href="#7-1PersonDao" class="headerlink" title="7.1PersonDao"></a>7.1PersonDao</h2><pre><code class="bash">public interface PersonDao {
-    public String savePerson();
-    public void updatePerson();
+<h1 id="7、Spring通知aop-xml-advise"><a href="#7、Spring通知aop-xml-advise" class="headerlink" title="7、Spring通知aop-xml-advise"></a>7、Spring通知aop-xml-advise</h1><h2 id="7-1PersonDao"><a href="#7-1PersonDao" class="headerlink" title="7.1PersonDao"></a>7.1PersonDao</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">PersonDao</span> </span>{
+    <span class="function"><span class="keyword">public</span> String <span class="title">savePerson</span><span class="params">()</span></span>;
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updatePerson</span><span class="params">()</span></span>;
 }
 </code></pre>
-<h2 id="7-2PersonDaoImpl"><a href="#7-2PersonDaoImpl" class="headerlink" title="7.2PersonDaoImpl"></a>7.2PersonDaoImpl</h2><pre><code class="bash">public class PersonDaoImpl implements PersonDao {
-    @Override
-    public String <span class="function"><span class="title">savePerson</span></span>() {
-//        int i=1/0;
+<h2 id="7-2PersonDaoImpl"><a href="#7-2PersonDaoImpl" class="headerlink" title="7.2PersonDaoImpl"></a>7.2PersonDaoImpl</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonDaoImpl</span> <span class="keyword">implements</span> <span class="title">PersonDao</span> </span>{
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> String <span class="title">savePerson</span><span class="params">()</span> </span>{
+<span class="comment">//        int i=1/0;</span>
         System.out.println(<span class="string">"save Person()..."</span>);
-        <span class="built_in">return</span> <span class="string">"吴庆加油"</span>;
+        <span class="keyword">return</span> <span class="string">"吴庆加油"</span>;
     }
-    @Override
-    public void <span class="function"><span class="title">updatePerson</span></span>() {
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updatePerson</span><span class="params">()</span> </span>{
         System.out.println(<span class="string">"update Person()..."</span>);
     }
 }
 </code></pre>
-<h2 id="7-3Transaction"><a href="#7-3Transaction" class="headerlink" title="7.3Transaction"></a>7.3Transaction</h2><pre><code class="bash">public class Transaction {
-    /**
-     * 前置通知
-     *  在目标方法执行之前
-     * 参数：连接点(joinpoint)
-     * 
-     */
-    public void beginTransaction(JoinPoint joinPoint){
+<h2 id="7-3Transaction"><a href="#7-3Transaction" class="headerlink" title="7.3Transaction"></a>7.3Transaction</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Transaction</span> </span>{
+    <span class="comment">/**</span>
+<span class="comment">     * 前置通知</span>
+<span class="comment">     *  在目标方法执行之前</span>
+<span class="comment">     * 参数：连接点(joinpoint)</span>
+<span class="comment">     * </span>
+<span class="comment">     */</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beginTransaction</span><span class="params">(JoinPoint joinPoint)</span></span>{
         String methodName=joinPoint.getSignature().getName();
         System.out.println(<span class="string">"连接点的名称:"</span>+methodName);
         System.out.println(<span class="string">"目标类:"</span>+joinPoint.getTarget().getClass());
         System.out.println(<span class="string">"begin transaction"</span>);
     }
-    public void commit(JoinPoint joinPoint,Object val){
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">commit</span><span class="params">(JoinPoint joinPoint,Object val)</span></span>{
         System.out.println(<span class="string">"目标方法的返回值:"</span>+val);
         System.out.println(<span class="string">"commit.."</span>);
     }
 
-    public void <span class="function"><span class="title">finallyMethod</span></span>(){
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">finallyMethod</span><span class="params">()</span></span>{
         System.out.println(<span class="string">"final.."</span>);
     }
-    public void throwsMethod(JoinPoint joinPoint,Throwable ex){
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">throwsMethod</span><span class="params">(JoinPoint joinPoint,Throwable ex)</span></span>{
         System.out.println(ex.getMessage());
     }
-    /**
-     * 环绕通知
-     *   joinPoint.proceed();这个代码如果在环绕通知中不写，则目标方法不再执行
-     * @throws Throwable 
-     */
-    public void aroundMethod(ProceedingJoinPoint joinPoint) throws Throwable{
+    <span class="comment">/**</span>
+<span class="comment">     * 环绕通知</span>
+<span class="comment">     *   joinPoint.proceed();这个代码如果在环绕通知中不写，则目标方法不再执行</span>
+<span class="comment">     * <span class="doctag">@throws</span> Throwable </span>
+<span class="comment">     */</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">aroundMethod</span><span class="params">(ProceedingJoinPoint joinPoint)</span> <span class="keyword">throws</span> Throwable</span>{
         System.out.println(<span class="string">"wquqiqiqi"</span>);
         joinPoint.proceed();
     }
 }
 </code></pre>
-<h2 id="7-4配置文件"><a href="#7-4配置文件" class="headerlink" title="7.4配置文件"></a>7.4配置文件</h2><pre><code class="bash">&lt;bean id=<span class="string">"personDao"</span> class=<span class="string">"com.wq.aop.xml.PersonDaoImpl"</span>&gt;&lt;/bean&gt;
-    &lt;bean id=<span class="string">"transaction"</span> class=<span class="string">"com.wq.aop.xml.Transaction"</span>&gt;&lt;/bean&gt;
+<h2 id="7-4配置文件"><a href="#7-4配置文件" class="headerlink" title="7.4配置文件"></a>7.4配置文件</h2><pre><code class="java">&lt;bean id="personDao" class="com.wq.aop.xml.PersonDaoImpl"&gt;&lt;/bean&gt;
+    &lt;bean id="transaction" class="com.wq.aop.xml.Transaction"&gt;&lt;/bean&gt;
     &lt;aop:config&gt;
         &lt;!-- 
               切入点表达式  确定目标类
@@ -626,14 +626,14 @@ public void <span class="function"><span class="title">testSalary</span></span>(
             &lt;aop:aspect ref=<span class="string">"transaction"</span>&gt;
             &lt;!-- 
                   前置通知
-                     1、在目标方法执行之前
-                     2、获取不到目标方法的返回值
+                     <span class="number">1</span>、在目标方法执行之前
+                     <span class="number">2</span>、获取不到目标方法的返回值
                --&gt;
                     &lt;aop:before method=<span class="string">"beginTransaction"</span> pointcut-ref=<span class="string">"perform"</span>/&gt;
                 &lt;!-- 
                   后置通知
-                     1、后置通知可以获取到目标方法的返回值
-                     2、当目标方法抛出异常，后置通知将不再执行
+                     <span class="number">1</span>、后置通知可以获取到目标方法的返回值
+                     <span class="number">2</span>、当目标方法抛出异常，后置通知将不再执行
                --&gt;    
                     &lt;aop:after-returning method=<span class="string">"commit"</span> pointcut-ref=<span class="string">"perform"</span> returning=<span class="string">"val"</span>/&gt;
                     &lt;aop:after method=<span class="string">"finallyMethod"</span> pointcut-ref=<span class="string">"perform"</span>/&gt;
@@ -643,77 +643,77 @@ public void <span class="function"><span class="title">testSalary</span></span>(
 
     &lt;/aop:config&gt;
 </code></pre>
-<h2 id="7-5测试方法"><a href="#7-5测试方法" class="headerlink" title="7.5测试方法"></a>7.5测试方法</h2><pre><code class="bash">@Test
-public void <span class="function"><span class="title">testTransaction</span></span>(){
+<h2 id="7-5测试方法"><a href="#7-5测试方法" class="headerlink" title="7.5测试方法"></a>7.5测试方法</h2><pre><code class="java"><span class="meta">@Test</span>
+<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testTransaction</span><span class="params">()</span></span>{
     ApplicationContext context=
-        new ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);
+        <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);
     PersonDao personDao=(PersonDao) context.getBean(<span class="string">"personDao"</span>);
     personDao.savePerson();
 }
 </code></pre>
-<h1 id="8、利用springAOP捕捉异常"><a href="#8、利用springAOP捕捉异常" class="headerlink" title="8、利用springAOP捕捉异常"></a>8、利用springAOP捕捉异常</h1><h2 id="8-1PersonDao"><a href="#8-1PersonDao" class="headerlink" title="8.1PersonDao"></a>8.1PersonDao</h2><pre><code class="bash">public interface PersonDao {
-    public String savePerson();
-    public void updatePerson();
+<h1 id="8、利用springAOP捕捉异常"><a href="#8、利用springAOP捕捉异常" class="headerlink" title="8、利用springAOP捕捉异常"></a>8、利用springAOP捕捉异常</h1><h2 id="8-1PersonDao"><a href="#8-1PersonDao" class="headerlink" title="8.1PersonDao"></a>8.1PersonDao</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">PersonDao</span> </span>{
+    <span class="function"><span class="keyword">public</span> String <span class="title">savePerson</span><span class="params">()</span></span>;
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updatePerson</span><span class="params">()</span></span>;
 }
 </code></pre>
-<h2 id="8-2PersonDaoImpl"><a href="#8-2PersonDaoImpl" class="headerlink" title="8.2PersonDaoImpl"></a>8.2PersonDaoImpl</h2><pre><code class="bash">public class PersonDaoImpl implements PersonDao {
+<h2 id="8-2PersonDaoImpl"><a href="#8-2PersonDaoImpl" class="headerlink" title="8.2PersonDaoImpl"></a>8.2PersonDaoImpl</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonDaoImpl</span> <span class="keyword">implements</span> <span class="title">PersonDao</span> </span>{
 
-    @Override
-    public String <span class="function"><span class="title">savePerson</span></span>() {
-        int i=1/0;
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> String <span class="title">savePerson</span><span class="params">()</span> </span>{
+        <span class="keyword">int</span> i=<span class="number">1</span>/<span class="number">0</span>;
         System.out.println(<span class="string">"save Person()..."</span>);
-        <span class="built_in">return</span> <span class="string">"吴庆加油"</span>;
+        <span class="keyword">return</span> <span class="string">"吴庆加油"</span>;
     }
 
-    @Override
-    public void <span class="function"><span class="title">updatePerson</span></span>() {
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updatePerson</span><span class="params">()</span> </span>{
         System.out.println(<span class="string">"update Person()..."</span>);
         Long.parseLong(<span class="string">"aaa"</span>);
     }
 }
 </code></pre>
-<h2 id="8-3PersonService"><a href="#8-3PersonService" class="headerlink" title="8.3PersonService"></a>8.3PersonService</h2><pre><code class="bash">public interface PersonService {
-    public void savePerson();
-    public void updatePerson();
+<h2 id="8-3PersonService"><a href="#8-3PersonService" class="headerlink" title="8.3PersonService"></a>8.3PersonService</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">PersonService</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">savePerson</span><span class="params">()</span></span>;
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updatePerson</span><span class="params">()</span></span>;
 }
 </code></pre>
-<h2 id="8-4PersonServiceImpl"><a href="#8-4PersonServiceImpl" class="headerlink" title="8.4PersonServiceImpl"></a>8.4PersonServiceImpl</h2><pre><code class="bash">public class PersonServiceImpl implements PersonService {
+<h2 id="8-4PersonServiceImpl"><a href="#8-4PersonServiceImpl" class="headerlink" title="8.4PersonServiceImpl"></a>8.4PersonServiceImpl</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonServiceImpl</span> <span class="keyword">implements</span> <span class="title">PersonService</span> </span>{
 
-    private PersonDao personDao;
-    public PersonDao <span class="function"><span class="title">getPersonDao</span></span>() {
-        <span class="built_in">return</span> personDao;
+    <span class="keyword">private</span> PersonDao personDao;
+    <span class="function"><span class="keyword">public</span> PersonDao <span class="title">getPersonDao</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> personDao;
     }
 
-    public void setPersonDao(PersonDao personDao) {
-        this.personDao = personDao;
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPersonDao</span><span class="params">(PersonDao personDao)</span> </span>{
+        <span class="keyword">this</span>.personDao = personDao;
     }
 
-    @Override
-    public void <span class="function"><span class="title">savePerson</span></span>() {
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">savePerson</span><span class="params">()</span> </span>{
         personDao.savePerson();
     }
 
-    @Override
-    public void <span class="function"><span class="title">updatePerson</span></span>() {
+    <span class="meta">@Override</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updatePerson</span><span class="params">()</span> </span>{
         personDao.updatePerson();
     }
 
 }
 </code></pre>
-<h2 id="8-5ExceptionAspect"><a href="#8-5ExceptionAspect" class="headerlink" title="8.5ExceptionAspect"></a>8.5ExceptionAspect</h2><pre><code class="bash">public class ExceptionAspect {
+<h2 id="8-5ExceptionAspect"><a href="#8-5ExceptionAspect" class="headerlink" title="8.5ExceptionAspect"></a>8.5ExceptionAspect</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExceptionAspect</span> </span>{
 
-    public void throwException(JoinPoint joinPoint,Throwable ex){
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">throwException</span><span class="params">(JoinPoint joinPoint,Throwable ex)</span></span>{
         System.out.println(ex.getMessage());
     }
 }
 </code></pre>
-<h2 id="8-6配置文件"><a href="#8-6配置文件" class="headerlink" title="8.6配置文件"></a>8.6配置文件</h2><pre><code class="bash">&lt;bean id=<span class="string">"personDao"</span> class=<span class="string">"com.wq.aop.xml.exception.dao.impl.PersonDaoImpl"</span>&gt;&lt;/bean&gt;
-    &lt;bean id=<span class="string">"personService"</span> class=<span class="string">"com.wq.aop.xml.exception.service.impl.PersonServiceImpl"</span>&gt;
+<h2 id="8-6配置文件"><a href="#8-6配置文件" class="headerlink" title="8.6配置文件"></a>8.6配置文件</h2><pre><code class="java">&lt;bean id="personDao" class="com.wq.aop.xml.exception.dao.impl.PersonDaoImpl"&gt;&lt;/bean&gt;
+    &lt;bean id=<span class="string">"personService"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.wq.aop.xml.exception.service.impl.PersonServiceImpl"</span>&gt;
         &lt;property name=<span class="string">"personDao"</span>&gt;
             &lt;ref bean=<span class="string">"personDao"</span>/&gt;
         &lt;/property&gt;
     &lt;/bean&gt;
-    &lt;bean id=<span class="string">"exceptionAspect"</span> class=<span class="string">"com.wq.aop.xml.exception.except.ExceptionAspect"</span>&gt;&lt;/bean&gt;
+    &lt;bean id="exceptionAspect" class="com.wq.aop.xml.exception.except.ExceptionAspect"&gt;&lt;/bean&gt;
     &lt;aop:config&gt;
         &lt;aop:pointcut expression=<span class="string">"execution(* com.wq.aop.xml.exception.service.impl.*.*(..))"</span> 
             id=<span class="string">"perform"</span>/&gt;
@@ -722,99 +722,99 @@ public void <span class="function"><span class="title">testTransaction</span></s
         &lt;/aop:aspect&gt;    
     &lt;/aop:config&gt;
 </code></pre>
-<h2 id="8-7测试方法"><a href="#8-7测试方法" class="headerlink" title="8.7测试方法"></a>8.7测试方法</h2><pre><code class="bash">@Test
-public void <span class="function"><span class="title">testException</span></span>(){
+<h2 id="8-7测试方法"><a href="#8-7测试方法" class="headerlink" title="8.7测试方法"></a>8.7测试方法</h2><pre><code class="java"><span class="meta">@Test</span>
+<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testException</span><span class="params">()</span></span>{
     ApplicationContext context=
-        new ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);
+        <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);
     PersonService ps=(PersonService) context.getBean(<span class="string">"personService"</span>);
     ps.updatePerson();
 }
 </code></pre>
-<h1 id="9、利用springAOP处理权限"><a href="#9、利用springAOP处理权限" class="headerlink" title="9、利用springAOP处理权限"></a>9、利用springAOP处理权限</h1><h2 id="9-1PersonService"><a href="#9-1PersonService" class="headerlink" title="9.1PersonService"></a>9.1PersonService</h2><pre><code class="bash">public interface PersonService {
-    public void savePerson();
-    public void updatePerson();
+<h1 id="9、利用springAOP处理权限"><a href="#9、利用springAOP处理权限" class="headerlink" title="9、利用springAOP处理权限"></a>9、利用springAOP处理权限</h1><h2 id="9-1PersonService"><a href="#9-1PersonService" class="headerlink" title="9.1PersonService"></a>9.1PersonService</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">PersonService</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">savePerson</span><span class="params">()</span></span>;
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updatePerson</span><span class="params">()</span></span>;
 }
 </code></pre>
-<h2 id="9-2PersonServiceImpl"><a href="#9-2PersonServiceImpl" class="headerlink" title="9.2PersonServiceImpl"></a>9.2PersonServiceImpl</h2><pre><code class="bash">public class PersonServiceImpl implements PersonService{
+<h2 id="9-2PersonServiceImpl"><a href="#9-2PersonServiceImpl" class="headerlink" title="9.2PersonServiceImpl"></a>9.2PersonServiceImpl</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonServiceImpl</span> <span class="keyword">implements</span> <span class="title">PersonService</span></span>{
 
-    @PrivilegeInfo(name=<span class="string">"savePerson"</span>)
-    public void <span class="function"><span class="title">savePerson</span></span>() {
+    <span class="meta">@PrivilegeInfo</span>(name=<span class="string">"savePerson"</span>)
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">savePerson</span><span class="params">()</span> </span>{
         System.out.println(<span class="string">"save person中。。。"</span>);
     }
 
-    @PrivilegeInfo(name=<span class="string">"updatePerson"</span>)
-    public void <span class="function"><span class="title">updatePerson</span></span>() {
+    <span class="meta">@PrivilegeInfo</span>(name=<span class="string">"updatePerson"</span>)
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updatePerson</span><span class="params">()</span> </span>{
         System.out.println(<span class="string">"update person中。。。"</span>);
     }
 
 }
 </code></pre>
-<h2 id="9-3Privilege"><a href="#9-3Privilege" class="headerlink" title="9.3Privilege"></a>9.3Privilege</h2><pre><code class="bash">public class Privilege {
-    private String name;
+<h2 id="9-3Privilege"><a href="#9-3Privilege" class="headerlink" title="9.3Privilege"></a>9.3Privilege</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Privilege</span> </span>{
+    <span class="keyword">private</span> String name;
 
-    public String <span class="function"><span class="title">getName</span></span>() {
-        <span class="built_in">return</span> name;
+    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>{
+        <span class="keyword">this</span>.name = name;
     }
 
 }
 </code></pre>
-<h2 id="9-4PrivilegeInfo自定义注解"><a href="#9-4PrivilegeInfo自定义注解" class="headerlink" title="9.4PrivilegeInfo自定义注解"></a>9.4PrivilegeInfo自定义注解</h2><pre><code class="bash">@Target(ElementType.METHOD)
-@Retention(RetentionPolicy.RUNTIME)
-public @interface PrivilegeInfo {
-    String name() default <span class="string">""</span>;
+<h2 id="9-4PrivilegeInfo自定义注解"><a href="#9-4PrivilegeInfo自定义注解" class="headerlink" title="9.4PrivilegeInfo自定义注解"></a>9.4PrivilegeInfo自定义注解</h2><pre><code class="java"><span class="meta">@Target</span>(ElementType.METHOD)
+<span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)
+<span class="keyword">public</span> <span class="meta">@interface</span> PrivilegeInfo {
+    <span class="function">String <span class="title">name</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;
 }
 </code></pre>
-<h2 id="9-5注解解析器"><a href="#9-5注解解析器" class="headerlink" title="9.5注解解析器"></a>9.5注解解析器</h2><pre><code class="bash">public class AnnotationParse {
-    /*
-     * targetClass  目标类的class形式
-     * methodName  在客户端调用哪个方法，methodName就代表哪个方法
-     */
-    public static String parse(Class targetClass,String methodName) throws Exception{
+<h2 id="9-5注解解析器"><a href="#9-5注解解析器" class="headerlink" title="9.5注解解析器"></a>9.5注解解析器</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AnnotationParse</span> </span>{
+    <span class="comment">/*</span>
+<span class="comment">     * targetClass  目标类的class形式</span>
+<span class="comment">     * methodName  在客户端调用哪个方法，methodName就代表哪个方法</span>
+<span class="comment">     */</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">parse</span><span class="params">(Class targetClass,String methodName)</span> <span class="keyword">throws</span> Exception</span>{
         String methodAccess=<span class="string">""</span>;
         Method method=targetClass.getMethod(methodName);
-        //判断方法上面是否存在PrivilegeInfo注解
+        <span class="comment">//判断方法上面是否存在PrivilegeInfo注解</span>
         <span class="keyword">if</span>(method.isAnnotationPresent(PrivilegeInfo.class)){
             PrivilegeInfo privilegeInfo=method.getAnnotation(PrivilegeInfo.class);
             methodAccess=privilegeInfo.name();
         }
-        <span class="built_in">return</span> methodAccess;
+        <span class="keyword">return</span> methodAccess;
     }
 
 }
 </code></pre>
-<h2 id="9-6环绕通知PrivilegeAspect"><a href="#9-6环绕通知PrivilegeAspect" class="headerlink" title="9.6环绕通知PrivilegeAspect"></a>9.6环绕通知PrivilegeAspect</h2><pre><code class="bash">public class PrivilegeAspect {
-    /**
-     * 用户拥有的权限
-     */
-    private List&lt;Privilege&gt; privileges=new ArrayList&lt;Privilege&gt;();
+<h2 id="9-6环绕通知PrivilegeAspect"><a href="#9-6环绕通知PrivilegeAspect" class="headerlink" title="9.6环绕通知PrivilegeAspect"></a>9.6环绕通知PrivilegeAspect</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrivilegeAspect</span> </span>{
+    <span class="comment">/**</span>
+<span class="comment">     * 用户拥有的权限</span>
+<span class="comment">     */</span>
+    <span class="keyword">private</span> List&lt;Privilege&gt; privileges=<span class="keyword">new</span> ArrayList&lt;Privilege&gt;();
 
-    public List&lt;Privilege&gt; <span class="function"><span class="title">getPrivileges</span></span>() {
-        <span class="built_in">return</span> privileges;
+    <span class="function"><span class="keyword">public</span> List&lt;Privilege&gt; <span class="title">getPrivileges</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> privileges;
     }
 
-    public void setPrivileges(List&lt;Privilege&gt; privileges) {
-        this.privileges = privileges;
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPrivileges</span><span class="params">(List&lt;Privilege&gt; privileges)</span> </span>{
+        <span class="keyword">this</span>.privileges = privileges;
     }
 
-    public void isAccessMethod(ProceedingJoinPoint joinpoint) throws Throwable{
-        /**
-         * 1、获取访问目标方法应该具备的权限
-         *     得到
-         *        1、目标类的class形式
-         *        2、方法的名称
-         */
-        boolean flag=<span class="literal">false</span>;
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">isAccessMethod</span><span class="params">(ProceedingJoinPoint joinpoint)</span> <span class="keyword">throws</span> Throwable</span>{
+        <span class="comment">/**</span>
+<span class="comment">         * 1、获取访问目标方法应该具备的权限</span>
+<span class="comment">         *     得到</span>
+<span class="comment">         *        1、目标类的class形式</span>
+<span class="comment">         *        2、方法的名称</span>
+<span class="comment">         */</span>
+        <span class="keyword">boolean</span> flag=<span class="keyword">false</span>;
         Class targetClass=joinpoint.getTarget().getClass();
         String methodName=joinpoint.getSignature().getName();
-        //得到访问该方法的权限
+        <span class="comment">//得到访问该方法的权限</span>
         String methodAccess=AnnotationParse.parse(targetClass, methodName);
         <span class="keyword">for</span> (Privilege p : privileges) {
             <span class="keyword">if</span>((p.getName()).equals(methodAccess)){
-                flag=<span class="literal">true</span>;
+                flag=<span class="keyword">true</span>;
             }
         }
         <span class="keyword">if</span>(flag){
@@ -826,8 +826,8 @@ public @interface PrivilegeInfo {
 
 }
 </code></pre>
-<h2 id="9-7配置文件"><a href="#9-7配置文件" class="headerlink" title="9.7配置文件"></a>9.7配置文件</h2><pre><code class="bash">&lt;bean id=<span class="string">"personService"</span> class=<span class="string">"com.wq.privilege.service.impl.PersonServiceImpl"</span>&gt;&lt;/bean&gt;
-    &lt;bean id=<span class="string">"privilegeAspect"</span> class=<span class="string">"com.wq.privilege.aspect.PrivilegeAspect"</span>&gt;&lt;/bean&gt;
+<h2 id="9-7配置文件"><a href="#9-7配置文件" class="headerlink" title="9.7配置文件"></a>9.7配置文件</h2><pre><code class="java">&lt;bean id="personService" class="com.wq.privilege.service.impl.PersonServiceImpl"&gt;&lt;/bean&gt;
+    &lt;bean id="privilegeAspect" class="com.wq.privilege.aspect.PrivilegeAspect"&gt;&lt;/bean&gt;
    &lt;aop:config&gt;
        &lt;aop:pointcut 
        expression=<span class="string">"execution(* com.wq.privilege.service.impl.*.*(..))"</span> 
@@ -837,14 +837,14 @@ public @interface PrivilegeInfo {
        &lt;/aop:aspect&gt;
    &lt;/aop:config&gt;
 </code></pre>
-<h2 id="9-8测试类"><a href="#9-8测试类" class="headerlink" title="9.8测试类"></a>9.8测试类</h2><pre><code class="bash">@Test
-public void <span class="function"><span class="title">testPrivilege</span></span>(){
+<h2 id="9-8测试类"><a href="#9-8测试类" class="headerlink" title="9.8测试类"></a>9.8测试类</h2><pre><code class="java"><span class="meta">@Test</span>
+<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPrivilege</span><span class="params">()</span></span>{
     ApplicationContext context=
-        new ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);
+        <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);
     PrivilegeAspect pa=(PrivilegeAspect) context.getBean(<span class="string">"privilegeAspect"</span>);
-    Privilege p1=new Privilege();
+    Privilege p1=<span class="keyword">new</span> Privilege();
     p1.setName(<span class="string">"savePerson"</span>);
-    Privilege p2=new Privilege();
+    Privilege p2=<span class="keyword">new</span> Privilege();
     p2.setName(<span class="string">"updatePerson"</span>);
     pa.getPrivileges().add(p1);
     pa.getPrivileges().add(p2);
@@ -853,7 +853,7 @@ public void <span class="function"><span class="title">testPrivilege</span></spa
 }
 </code></pre>
 <h1 id="10、springAOP计算每一层方法的调用次数"><a href="#10、springAOP计算每一层方法的调用次数" class="headerlink" title="10、springAOP计算每一层方法的调用次数"></a>10、springAOP计算每一层方法的调用次数</h1><h2 id="10-1PersonDaoImpl"><a href="#10-1PersonDaoImpl" class="headerlink" title="10.1PersonDaoImpl"></a>10.1PersonDaoImpl</h2><blockquote>
-<p>personDao省略。<br>``` bash<br>    @Override<br>    public void savePerson() {</p>
+<p>personDao省略。<br>```java<br>    @Override<br>    public void savePerson() {</p>
 </blockquote>
 <pre><code>    try {
         Thread.sleep(3000L);
@@ -867,7 +867,7 @@ public void <span class="function"><span class="title">testPrivilege</span></spa
 --------------------
 
 PersonService省略。
-``` bash
+```java
     public class PersonServiceImpl implements PersonService {
 
         private PersonDao personDao;
@@ -886,24 +886,24 @@ PersonService省略。
         }
 
     }
-</code></pre><h2 id="10-3PersonAction"><a href="#10-3PersonAction" class="headerlink" title="10.3PersonAction"></a>10.3PersonAction</h2><pre><code class="bash">public class PersonAction {
-    private PersonService personService;
+</code></pre><h2 id="10-3PersonAction"><a href="#10-3PersonAction" class="headerlink" title="10.3PersonAction"></a>10.3PersonAction</h2><pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonAction</span> </span>{
+    <span class="keyword">private</span> PersonService personService;
 
-    public PersonService <span class="function"><span class="title">getPersonService</span></span>() {
-        <span class="built_in">return</span> personService;
+    <span class="function"><span class="keyword">public</span> PersonService <span class="title">getPersonService</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> personService;
     }
 
-    public void setPersonService(PersonService personService) {
-        this.personService = personService;
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPersonService</span><span class="params">(PersonService personService)</span> </span>{
+        <span class="keyword">this</span>.personService = personService;
     }
 
-    public void <span class="function"><span class="title">savePerson</span></span>(){
-        this.personService.savePerson();
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">savePerson</span><span class="params">()</span></span>{
+        <span class="keyword">this</span>.personService.savePerson();
     }
 }
 </code></pre>
-<h2 id="10-4TimeAspect"><a href="#10-4TimeAspect" class="headerlink" title="10.4TimeAspect"></a>10.4TimeAspect</h2><pre><code class="bash">    public class TimeAspect {
-    public void ExcutionTime(ProceedingJoinPoint joinPoint) throws Throwable{
+<h2 id="10-4TimeAspect"><a href="#10-4TimeAspect" class="headerlink" title="10.4TimeAspect"></a>10.4TimeAspect</h2><pre><code class="java">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimeAspect</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ExcutionTime</span><span class="params">(ProceedingJoinPoint joinPoint)</span> <span class="keyword">throws</span> Throwable</span>{
         String targetClassName=joinPoint.getTarget().getClass().getName();
         String methodName=joinPoint.getSignature().getName();
         Long preTime=System.currentTimeMillis();
@@ -918,19 +918,19 @@ PersonService省略。
     }
 }
 </code></pre>
-<h2 id="10-5配置文件"><a href="#10-5配置文件" class="headerlink" title="10.5配置文件"></a>10.5配置文件</h2><pre><code class="bash">
-&lt;bean id=<span class="string">"personDao"</span> class=<span class="string">"com.wq.dao.impl.PersonDaoImpl"</span>&gt;&lt;/bean&gt;
-      &lt;bean id=<span class="string">"personService"</span> class=<span class="string">"com.wq.service.impl.PersonServiceImpl"</span>&gt;
+<h2 id="10-5配置文件"><a href="#10-5配置文件" class="headerlink" title="10.5配置文件"></a>10.5配置文件</h2><pre><code class="java">
+&lt;bean id="personDao" class="com.wq.dao.impl.PersonDaoImpl"&gt;&lt;/bean&gt;
+      &lt;bean id=<span class="string">"personService"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.wq.service.impl.PersonServiceImpl"</span>&gt;
            &lt;property name=<span class="string">"personDao"</span>&gt;
                &lt;ref bean=<span class="string">"personDao"</span>/&gt;
            &lt;/property&gt;
       &lt;/bean&gt;
-      &lt;bean id=<span class="string">"personAction"</span> class=<span class="string">"com.wq.action.PersonAction"</span>&gt;
+      &lt;bean id=<span class="string">"personAction"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.wq.action.PersonAction"</span>&gt;
           &lt;property name=<span class="string">"personService"</span>&gt;
               &lt;ref bean=<span class="string">"personService"</span>/&gt;
           &lt;/property&gt;
       &lt;/bean&gt;
-      &lt;bean id=<span class="string">"timeAspect"</span> class=<span class="string">"com.wq.aspect.TimeAspect"</span>&gt;&lt;/bean&gt;
+      &lt;bean id="timeAspect" class="com.wq.aspect.TimeAspect"&gt;&lt;/bean&gt;
       &lt;aop:config&gt;
           &lt;aop:pointcut expression=<span class="string">"execution(* com.wq..*.*(..))"</span> id=<span class="string">"perform"</span>/&gt;
           &lt;aop:aspect ref=<span class="string">"timeAspect"</span>&gt;
@@ -938,10 +938,10 @@ PersonService省略。
           &lt;/aop:aspect&gt;
       &lt;/aop:config&gt;
 </code></pre>
-<h2 id="10-6测试方法"><a href="#10-6测试方法" class="headerlink" title="10.6测试方法"></a>10.6测试方法</h2><pre><code class="bash">@Test
-    public void <span class="function"><span class="title">testExecutionTime</span></span>(){
+<h2 id="10-6测试方法"><a href="#10-6测试方法" class="headerlink" title="10.6测试方法"></a>10.6测试方法</h2><pre><code class="java"><span class="meta">@Test</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testExecutionTime</span><span class="params">()</span></span>{
         ApplicationContext context=
-            new ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);
+            <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"applicationContext.xml"</span>);
         PersonAction personAction=(PersonAction) context.getBean(<span class="string">"personAction"</span>);
         personAction.savePerson();
     }
@@ -993,7 +993,6 @@ PersonService省略。
             <span class="iconfont icon-share-google -mob-share-google"></span>
      	  
 	</div>    
-
 
   </div>
 
@@ -1055,15 +1054,15 @@ PersonService省略。
 	<span class="donate-cancel iconfont icon-cancel"></span>
 
 	<div class="donate-img-box">
-		<img id="donate-qr-wechat" class="donate-img no-gallery" src="/img/r1.png" alt="No donate img !">	
-		<img id="donate-qr-alipay" class="donate-img no-gallery" src="/img/r2.png" alt="No donate img !">				
+		<img id="donate-qr-wechat" class="donate-img no-gallery" src="/img/donate1.png" alt="No donate img !">	
+		<img id="donate-qr-alipay" class="donate-img no-gallery" src="/img/donate2.png" alt="No donate img !">				
 	</div>
 
-	<span class="donate-word">emm...请赐一包辣条可好..</span>
+	<span class="donate-word slideDownMin">emm...请赐一包辣条可好..</span>
 
-	<div class="donate-list">
-		<span class="iconfont icon-donate-wechat fadeIn"></span>
-		<span class="iconfont icon-donate-alipay fadeIn"></span>
+	<div class="donate-list fadeIn">
+		<span class="iconfont icon-donate-wechat"></span>
+		<span class="iconfont icon-donate-alipay"></span>
 	</div>
 
 </div>
@@ -1086,9 +1085,9 @@ PersonService省略。
 
     <div class="small-tag">
          
-          <a href="/categories/博文索引/">博文索引</a>     
-         
           <a href="/categories/前端开发/">前端开发</a>     
+         
+          <a href="/categories/博文索引/">博文索引</a>     
          
           <a href="/categories/后端开发/">后端开发</a>     
          
@@ -1124,7 +1123,7 @@ PersonService省略。
 </article>
 
 
-<div id="toc" class="slideRIn">		
+<div id="toc" class="fadeIn">		
 
 	<div class="toc-container">	
 
@@ -1185,49 +1184,50 @@ PersonService省略。
      <div class="mobile-menu">      
 
       
-      <img class="slide-icon" src= /img/favicon.png >   
+      <img class="slide-icon no-gallery" src= /img/favicon.png >   
       
 
          
             
 
-            <a class="mobile-menu-link"  href="/">首页
+            <a class="mobile-menu-link" href="/">首页
             </a>
             
          
             
 
-            <a class="mobile-menu-link"  href="/archives">归档
+            <a class="mobile-menu-link" href="/archives">归档
             </a>
             
          
             
 
-            <a class="mobile-menu-link"  href="/categories">分类
+            <a class="mobile-menu-link" href="/categories">分类
             </a>
             
          
             
 
-            <a class="mobile-menu-link"  href="/tags">标签
+            <a class="mobile-menu-link" href="/tags">标签
             </a>
             
          
             
 
-            <a class="mobile-menu-link"  href="/about">关于
+            <a class="mobile-menu-link" href="/about">关于
             </a>
             
          
                           
 
-            <a class="mobile-menu-link mobile-menu-search">搜索 </a>                 
+            <a class="mobile-menu-link mobile-menu-search" href="#">搜索 </a>                 
             
          
 </div>     
     
 
 <footer id="footer">
+
     
    	 <div class="foot-busuanzi">	
 
@@ -1258,11 +1258,10 @@ PersonService省略。
 	 
 
 	 2017
-	 吴里庆庆
+	 吴里庆庆	 
 
 	 </div>
-</footer>
- 
+</footer> 
     
 
 <!-- Baidu Analytics -->
