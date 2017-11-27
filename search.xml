@@ -249,6 +249,27 @@
     </entry>
     
     <entry>
+      <title><![CDATA[【笔记】Bootstrap基础篇（二）test2]]></title>
+      <url>/2017/11/19/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-bootstrap-2/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Bootstrap学习笔记」第二篇。<br><a id="more"></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 前端开发 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Bootstrap </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[【索引】你值得拥有的一些迷你小技能]]></title>
       <url>/2017/11/19/%E8%BF%B7%E4%BD%A0%E5%B0%8F%E6%8A%80%E8%83%BD/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>这篇文章汇总了本站中所有与「小技能」、常用工具下载安装有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font><br><a id="more"></a></p>
@@ -270,27 +291,6 @@
         <tags>
             
             <tag> 博文索引 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[【笔记】Bootstrap基础篇（二）test2]]></title>
-      <url>/2017/11/19/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-bootstrap-2/</url>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Bootstrap学习笔记」第二篇。<br><a id="more"></a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 前端开发 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Bootstrap </tag>
             
         </tags>
         
