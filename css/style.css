@@ -254,8 +254,8 @@ pre,
   margin: 20px 0;
   padding: 0;
   font-size: 15px;
-  color: #4d4d4c;
-  background: #eee;
+  color: #ccc;
+  background: #3a3a3a;
   line-height: 0.9;
 }
 pre,
@@ -275,7 +275,7 @@ pre {
 }
 pre code {
   padding: 0;
-  color: #4d4d4c;
+  color: #ccc;
   background: none;
   text-shadow: none;
 }
@@ -298,29 +298,29 @@ pre code {
 }
 .highlight figcaption {
   font-size: 1em;
-  color: #4d4d4c;
+  color: #ccc;
   line-height: 1em;
   margin-bottom: 1em;
 }
 .highlight figcaption a {
   float: right;
-  color: #4d4d4c;
+  color: #ccc;
 }
 .highlight figcaption a:hover {
-  border-bottom-color: #4d4d4c;
+  border-bottom-color: #ccc;
 }
 .highlight .gutter pre {
   padding-left: 10px;
   padding-right: 10px;
-  color: #869194;
+  color: #999;
   text-align: right;
-  background-color: #eee;
+  background-color: #3a3a3a;
 }
 .highlight .code pre {
   width: 100%;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #eee;
+  background-color: #3a3a3a;
 }
 .highlight .line {
   height: 20px;
@@ -345,16 +345,16 @@ pre code {
   border: none;
 }
 pre .deletion {
-  background: #fdd;
+  background: $highlight-deletion;
 }
 pre .addition {
-  background: #dfd;
+  background: $highlight-addition;
 }
 pre .meta {
-  color: #c397d8;
+  color: #c9c;
 }
 pre .comment {
-  color: #8e908c;
+  color: #999;
 }
 pre .variable,
 pre .attribute,
@@ -368,7 +368,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #e24c38;
+  color: #f2777a;
 }
 pre .number,
 pre .preprocessor,
@@ -377,7 +377,7 @@ pre .literal,
 pre .params,
 pre .constant,
 pre .command {
-  color: #e78c45;
+  color: #f99157;
 }
 pre .ruby .class .title,
 pre .css .rules .attribute,
@@ -390,11 +390,11 @@ pre .xml .cdata,
 pre .special,
 pre .number,
 pre .formula {
-  color: #360;
+  color: #9c9;
 }
 pre .title,
 pre .css .hexcolor {
-  color: #70c0b1;
+  color: #6cc;
 }
 pre .function,
 pre .python .decorator,
@@ -404,11 +404,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #7aa6da;
+  color: #69c;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #e24c38;
+  color: #f2777a;
 }
 html,
 body {
