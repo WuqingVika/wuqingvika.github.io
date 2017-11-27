@@ -37,15 +37,13 @@ function setTitle(){
 	//获取post标题
 	var postTitle = $('.post-title').text();
 
-	postTitle = cutString(postTitle , 36);
-
-	$('.header-logo').text(postTitle);		
+	$('.header-logo').addClass('header-title').text(postTitle);		
 	
 }
 //还原logo
 function setLogo(){
 	
-	$('.header-logo').text(logoTitle);	
+	$('.header-logo').removeClass('header-title').text(logoTitle);	
 
 }
 //-----------

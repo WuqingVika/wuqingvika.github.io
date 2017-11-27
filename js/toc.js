@@ -15,7 +15,10 @@ function change(){
 	$('.toc-list').show();
 	$a.removeClass("icon-close").addClass("icon-open");
 	}
+
 }
+
+
 $(function(){
 	//获取第一级目录	
 	var $level  =  $('h1');	
@@ -101,8 +104,10 @@ function tocPosition(){
 		//获取 toc 容器 到 document 的 距离
         var a = $(".toc-container").offset().top;      
                           
-        if ( a < $(window).scrollTop()) {
-            fixlayout($(".toc-container"));                    
+        if ( a < $(window).scrollTop() ) {
+
+            fixlayout($(".toc-container"));  
+
         }
           		
         if($(window).scrollTop() < 90){
@@ -117,7 +122,10 @@ function tocPosition(){
 
 // 更换到绝对布局
 function fixlayout( $obj){	
-	$obj.addClass('toc-fixed');
+
+	//if(overflowCheck()){
+	$obj.addClass('toc-fixed');		
+	//}
 }
 // 清空之前的绝对布局
 function removelayout( $obj ){	

@@ -49,6 +49,42 @@
     </entry>
     
     <entry>
+      <title><![CDATA[【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群]]></title>
+      <url>/2017/11/20/%E8%BF%90%E7%BB%B4&amp;%E6%B5%8B%E8%AF%95-nginx-1/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Nginx学习笔记」第一篇,主要介绍了Nginx相关特点以及如何在window上搭建一个集群。<br><a id="more"></a></p>
+<h2 id="Nginx介绍："><a href="#Nginx介绍：" class="headerlink" title="Nginx介绍："></a>Nginx介绍：</h2><ul>
+<li>是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器<h3 id="特点"><a href="#特点" class="headerlink" title="特点:"></a>特点:</h3></li>
+</ul>
+<ul>
+<li><p>反向代理 :</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">        先来了解正向代理:需要我们用户,手动的设置代理服务器的ip和端口号</span><br><span class="line">		反向代理:代理服务器的,用户不需要设置.</span><br><span class="line">``` </span><br><span class="line">			</span><br><span class="line">- 负载均衡:</span><br><span class="line">``` bash 	</span><br><span class="line">		原理就是数据流量分摊到多个服务器上执行，减轻每台服务器的压力，</span><br><span class="line">		多台服务器共同完成工作任务，从而提高了数据的吞吐量。</span><br><span class="line">``` </span><br><span class="line">		</span><br><span class="line">- 动静分离:</span><br><span class="line">``` bash 	</span><br><span class="line">		将静态的资源放到反向服务器,节省用户的访问时间.</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="comment">## Nginx在windows上搭建集群</span></span><br><span class="line">- 1.在g盘新建两个目录 tomcat1 tomcat2</span><br><span class="line">- 2.修改tomcat2的端口 在tomcat1的端口上+10</span><br><span class="line">- 3.解压nginx</span><br><span class="line">``` bash</span><br><span class="line">            修改nginx的 nginx.conf文件</span><br><span class="line">            在locatioin / 下添加了反向代理</span><br><span class="line">                proxy_pass 代理服务器</span><br><span class="line">            这里只是代理一台服务器</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.代理集群</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">            需要在http节点上添加一个</span><br><span class="line">                upstream server_wq&#123;</span><br><span class="line">                    server 127.0.0.1:8080;</span><br><span class="line">                    server 127.0.0.1:8090;</span><br><span class="line">                &#125;</span><br><span class="line">            修改location /下的反向代理 </span><br><span class="line">                proxy_pass http://server_wq</span><br><span class="line">``` </span><br><span class="line">	</span><br><span class="line">- 5.session共享问题</span><br><span class="line">  -  解决方式1:只能在window下好使</span><br><span class="line">  ``` bash</span><br><span class="line">         web服务器解决(广播机制)</span><br><span class="line">                注意:tomcat下性能低</span><br><span class="line">                修改两个地方:</span><br><span class="line">                    1.修改tomcat的server.xml 支持共享</span><br><span class="line">                        将 引擎标签下的 </span><br><span class="line">                            &lt;Cluster className=<span class="string">"org.apache.catalina.ha.tcp.SimpleTcpCluster"</span>/&gt;</span><br><span class="line">                        注释去掉</span><br><span class="line">                    2.修改项目的配置文件 web.xml中添加一个节点&lt;distributable/&gt; </span><br><span class="line">  ``` </span><br><span class="line">  -  解决方式2:</span><br><span class="line">  ``` bash</span><br><span class="line">   可以将session的id放入redis中</span><br></pre></td></tr></table></figure>
+<ul>
+<li>解决方式3:<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">保证一个ip地址永远的访问一台web服务器,就不存在session共享问题了,在linux</span><br><span class="line">在nginx的配置文件中</span><br><span class="line">	upstream中添加 ip_hash;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 运维&amp;测试 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Nginx </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[【索引】后端开发从基础到进阶]]></title>
       <url>/2017/11/20/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>这篇文章汇总了本站中所有与「Java」「Spring」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
@@ -101,42 +137,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群]]></title>
-      <url>/2017/11/20/%E8%BF%90%E7%BB%B4&amp;%E6%B5%8B%E8%AF%95-nginx-1/</url>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Nginx学习笔记」第一篇,主要介绍了Nginx相关特点以及如何在window上搭建一个集群。<br><a id="more"></a></p>
-<h2 id="Nginx介绍："><a href="#Nginx介绍：" class="headerlink" title="Nginx介绍："></a>Nginx介绍：</h2><ul>
-<li>是一款轻量级的Web 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器<h3 id="特点"><a href="#特点" class="headerlink" title="特点:"></a>特点:</h3></li>
-</ul>
-<ul>
-<li><p>反向代理 :</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">        先来了解正向代理:需要我们用户,手动的设置代理服务器的ip和端口号</span><br><span class="line">		反向代理:代理服务器的,用户不需要设置.</span><br><span class="line">``` </span><br><span class="line">			</span><br><span class="line">- 负载均衡:</span><br><span class="line">``` bash 	</span><br><span class="line">		原理就是数据流量分摊到多个服务器上执行，减轻每台服务器的压力，</span><br><span class="line">		多台服务器共同完成工作任务，从而提高了数据的吞吐量。</span><br><span class="line">``` </span><br><span class="line">		</span><br><span class="line">- 动静分离:</span><br><span class="line">``` bash 	</span><br><span class="line">		将静态的资源放到反向服务器,节省用户的访问时间.</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="comment">## Nginx在windows上搭建集群</span></span><br><span class="line">- 1.在g盘新建两个目录 tomcat1 tomcat2</span><br><span class="line">- 2.修改tomcat2的端口 在tomcat1的端口上+10</span><br><span class="line">- 3.解压nginx</span><br><span class="line">``` bash</span><br><span class="line">            修改nginx的 nginx.conf文件</span><br><span class="line">            在locatioin / 下添加了反向代理</span><br><span class="line">                proxy_pass 代理服务器</span><br><span class="line">            这里只是代理一台服务器</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4.代理集群</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">            需要在http节点上添加一个</span><br><span class="line">                upstream server_wq&#123;</span><br><span class="line">                    server 127.0.0.1:8080;</span><br><span class="line">                    server 127.0.0.1:8090;</span><br><span class="line">                &#125;</span><br><span class="line">            修改location /下的反向代理 </span><br><span class="line">                proxy_pass http://server_wq</span><br><span class="line">``` </span><br><span class="line">	</span><br><span class="line">- 5.session共享问题</span><br><span class="line">  -  解决方式1:只能在window下好使</span><br><span class="line">  ``` bash</span><br><span class="line">         web服务器解决(广播机制)</span><br><span class="line">                注意:tomcat下性能低</span><br><span class="line">                修改两个地方:</span><br><span class="line">                    1.修改tomcat的server.xml 支持共享</span><br><span class="line">                        将 引擎标签下的 </span><br><span class="line">                            &lt;Cluster className=<span class="string">"org.apache.catalina.ha.tcp.SimpleTcpCluster"</span>/&gt;</span><br><span class="line">                        注释去掉</span><br><span class="line">                    2.修改项目的配置文件 web.xml中添加一个节点&lt;distributable/&gt; </span><br><span class="line">  ``` </span><br><span class="line">  -  解决方式2:</span><br><span class="line">  ``` bash</span><br><span class="line">   可以将session的id放入redis中</span><br></pre></td></tr></table></figure>
-<ul>
-<li>解决方式3:<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">保证一个ip地址永远的访问一台web服务器,就不存在session共享问题了,在linux</span><br><span class="line">在nginx的配置文件中</span><br><span class="line">	upstream中添加 ip_hash;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 运维&amp;测试 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Nginx </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群]]></title>
       <url>/2017/11/20/%E8%BF%90%E7%BB%B4&amp;%E6%B5%8B%E8%AF%95-nginx-2/</url>
       <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Nginx学习笔记」第一篇,主要介绍了如何在window上搭建一个集群。<br><a id="more"></a></p>
@@ -168,195 +168,6 @@
         <tags>
             
             <tag> Nginx </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[【工具】XX-Net「带你出去看看」]]></title>
-      <url>/2017/11/19/%E8%BF%B7%E4%BD%A0%E5%B0%8F%E6%8A%80%E8%83%BD-XX-Net/</url>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「迷你小技能」第一篇,主要作一些技能知识的扩充，你懂的。</p>
-<a id="more"></a>
-<h2 id="XX-Net"><a href="#XX-Net" class="headerlink" title="XX-Net"></a>XX-Net</h2><h3 id="首先去Github下载"><a href="#首先去Github下载" class="headerlink" title="首先去Github下载"></a><a href="https://github.com/XX-net/XX-Net" target="_blank" rel="noopener">首先去Github下载</a><br></h3><h3 id="解压到本地-双击运行start-vbs"><a href="#解压到本地-双击运行start-vbs" class="headerlink" title="解压到本地 双击运行start.vbs"></a>解压到本地 双击运行start.vbs</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-1.jpg" alt=""></p>
-<h3 id="高级-gt-开启ipv6"><a href="#高级-gt-开启ipv6" class="headerlink" title="高级-&gt;开启ipv6"></a>高级-&gt;开启ipv6</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-2.jpg" alt=""></p>
-<h3 id="部署服务端-gt-填入googleappid，部署"><a href="#部署服务端-gt-填入googleappid，部署" class="headerlink" title="部署服务端-&gt;填入googleappid，部署"></a>部署服务端-&gt;填入googleappid，部署</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-3.jpg" alt=""></p>
-<h3 id="在部署成功的基础上填入googleappid，保存"><a href="#在部署成功的基础上填入googleappid，保存" class="headerlink" title="在部署成功的基础上填入googleappid，保存"></a>在部署成功的基础上填入googleappid，保存</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-4.jpg" alt=""></p>
-<h3 id="查看状态，出现如下，恭喜你，可以出去啦"><a href="#查看状态，出现如下，恭喜你，可以出去啦" class="headerlink" title="查看状态，出现如下，恭喜你，可以出去啦"></a>查看状态，出现如下，恭喜你，可以出去啦</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-5.jpg" alt=""></p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><h3 id="关于ipv6开启如何解决-请升级至最新版本。-详情可见官方教程"><a href="#关于ipv6开启如何解决-请升级至最新版本。-详情可见官方教程" class="headerlink" title="关于ipv6开启如何解决 请升级至最新版本。 详情可见官方教程"></a>关于ipv6开启如何解决 请升级至最新版本。 <a href="https://github.com/XX-net/XX-Net/wiki/IPv6-Win10" target="_blank" rel="noopener">详情可见官方教程</a></h3><h2 id="家庭版"><a href="#家庭版" class="headerlink" title="家庭版"></a>家庭版</h2><ol>
-<li>命令行</li>
-</ol>
-<ul>
-<li><p>以管理员权限打开命令提示符（右键单击“开始”图标，然后选择“命令提示符(管理员)”），输入命令</p>
-<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">// 设置 Teredo 服务器，默认为：win10.ipv6.microsoft.com</span><br><span class="line">netsh interface teredo <span class="built_in">set</span> state enterpriseclient server=default</span><br><span class="line"></span><br><span class="line">// 重置 IPv6 配置</span><br><span class="line">netsh interface ipv6 reset</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重启系统</p>
-</li>
-<li><p>打开命令提示符，通过 <code>ipconfig /all</code> 命令查看当前网络信息，看到 <code>Teredo Tunneling Pseudo-Interface</code> 有以 2001 开头的地址即可。<br>启动IE浏览器，访问 <a href="http://test-ipv6.com" target="_blank" rel="noopener">http://test-ipv6.com</a>，如果选项卡 “<strong>测试项目</strong>” 下面的 “<strong>不使用域名的 IPv6 测试</strong>” 显示成功，则隧道建立成功。chrome浏览器的测试结果可能和IE不一样，请注意</p>
-</li>
-<li><p>如上面操作后仍无法启用 IPv6，可能是 Teredo 服务器无法正常连接，也可能是 Windows 自身配置问题，可尝试以下两种方法</p>
-<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">// 第一种：修改 Teredo 服务器为 teredo.remlab.<span class="built_in">net</span></span><br><span class="line">netsh interface teredo <span class="built_in">set</span> state server=teredo.remlab.<span class="built_in">net</span></span><br><span class="line"></span><br><span class="line">// 第二种：先卸载当前 Teredo 适配器再重新启用</span><br><span class="line">netsh interface Teredo <span class="built_in">set</span> state disable</span><br><span class="line">netsh interface Teredo <span class="built_in">set</span> state <span class="built_in">type</span>=default</span><br></pre></td></tr></table></figure>
-<ul>
-<li>其他参考<ul>
-<li><a href="https://support.xbox.com/zh-CN/xbox-on-windows/social/troubleshoot-party-chat" target="_blank" rel="noopener">https://support.xbox.com/zh-CN/xbox-on-windows/social/troubleshoot-party-chat</a></li>
-<li><a href="http://www.windows7en.com/jiaocheng/26518.html" target="_blank" rel="noopener">http://www.windows7en.com/jiaocheng/26518.html</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="专业版"><a href="#专业版" class="headerlink" title="专业版"></a>专业版</h2><h3 id="命令行方法："><a href="#命令行方法：" class="headerlink" title="命令行方法："></a>命令行方法：</h3><p> 以管理员权限运行 XX-Net\code\default\gae_proxy\local\ipv6_tunnel\enable_ipv6.bat  </p>
-<h3 id="组策略方法"><a href="#组策略方法" class="headerlink" title="组策略方法"></a>组策略方法</h3><ul>
-<li><p>win+R打开gpedit.msc<br>1.png   </p>
-</li>
-<li><p>依顺序打开“计算机配置”——&gt;“管理模板”——&gt;“网络”——&gt;“TCPIP 设置”——&gt;“IPv6 转换技术”<br>2.png   </p>
-</li>
-<li><p>“6to4 状态” 和 “ISATAP 状态” 都配置为 “已禁用状态”<br>3.PNG<br>3.1.png<br>3.2.png   </p>
-</li>
-<li><p>重头戏，配置Teredo  </p>
-<ol>
-<li><p>“Teredo 状态” 配置为 “企业客户端”<br>4.1.png   </p>
-</li>
-<li><p>“Teredo 默认限定” 配置为 “已启用状态”   </p>
-</li>
-</ol>
-</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 迷你小技能 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> XX-Net </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[【笔记】Bootstrap基础篇（一）test1]]></title>
-      <url>/2017/11/19/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-bootstrap-1/</url>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Bootstrap学习笔记」第一篇。<br><a id="more"></a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 前端开发 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Bootstrap </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[【笔记】Bootstrap基础篇（二）test2]]></title>
-      <url>/2017/11/19/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-bootstrap-2/</url>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Bootstrap学习笔记」第二篇。<br><a id="more"></a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> 前端开发 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Bootstrap </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[【索引】前端开发从基础到进阶]]></title>
-      <url>/2017/11/19/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</url>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>这篇文章汇总了本站中所有与「Bootstrap」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
-<a id="more"></a>
-<h2 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h2><h3 id="一、BootStrap篇"><a href="#一、BootStrap篇" class="headerlink" title="一、BootStrap篇"></a>一、BootStrap篇</h3><ul>
-<li><a href="https://wuqingvika.github.io/2017/11/19/前端开发-bootstrap-1/">【笔记】Bootstrap基础篇（一）test1</a></li>
-<li><a href="https://wuqingvika.github.io/2017/11/19/前端开发-bootstrap-2/">【笔记】Bootstrap基础篇（二）test2</a></li>
-</ul>
-<h2 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h2>]]></content>
-      
-        <categories>
-            
-            <category> 博文索引 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 博文索引 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[【索引】你值得拥有的一些迷你小技能]]></title>
-      <url>/2017/11/19/%E8%BF%B7%E4%BD%A0%E5%B0%8F%E6%8A%80%E8%83%BD/</url>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>这篇文章汇总了本站中所有与「小技能」、常用工具下载安装有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font><br><a id="more"></a></p>
-<h2 id="核心篇"><a href="#核心篇" class="headerlink" title="核心篇"></a>核心篇</h2><h3 id="一、XX-Net下载与安装"><a href="#一、XX-Net下载与安装" class="headerlink" title="一、XX-Net下载与安装"></a>一、XX-Net下载与安装</h3><ul>
-<li><a href="https://wuqingvika.github.io/2017/11/19/迷你小技能-XX-Net/">【工具】XX-Net「带你出去看看」</a></li>
-</ul>
-<h3 id="二、idea下载与安装"><a href="#二、idea下载与安装" class="headerlink" title="二、idea下载与安装"></a>二、idea下载与安装</h3><ul>
-<li><a href="https://wuqingvika.github.io/2017/11/20/迷你小技能-idea/">【工具】idea下载安装注册使用</a></li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 博文索引 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 博文索引 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[【索引】运维&测试从基础到进阶]]></title>
-      <url>/2017/11/19/%E8%BF%90%E7%BB%B4&amp;%E6%B5%8B%E8%AF%95/</url>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>这篇文章汇总了本站中所有与「Linux」「Nginx」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
-<a id="more"></a>
-<h2 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h2><h3 id="一、Linux篇"><a href="#一、Linux篇" class="headerlink" title="一、Linux篇"></a>一、Linux篇</h3><ul>
-<li><a href="https://wuqingvika.github.io/2017/11/19/运维&amp;测试-linux-1/">【笔记】Linux(一)基础篇之「命令学习」</a></li>
-<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-linux-2/">【笔记】Linux(二)基础篇之「在Linux发布一个简单的web项目」</a><h3 id="二、Nginx篇"><a href="#二、Nginx篇" class="headerlink" title="二、Nginx篇"></a>二、Nginx篇</h3></li>
-<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-1/">【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群</a></li>
-<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-2/">【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群</a></li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 博文索引 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 博文索引 </tag>
             
         </tags>
         
@@ -601,6 +412,195 @@ chown 更改文件的归属者
         <tags>
             
             <tag> Linux </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[【笔记】Bootstrap基础篇（二）test2]]></title>
+      <url>/2017/11/19/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-bootstrap-2/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Bootstrap学习笔记」第二篇。<br><a id="more"></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 前端开发 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Bootstrap </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[【索引】前端开发从基础到进阶]]></title>
+      <url>/2017/11/19/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>这篇文章汇总了本站中所有与「Bootstrap」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
+<a id="more"></a>
+<h2 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h2><h3 id="一、BootStrap篇"><a href="#一、BootStrap篇" class="headerlink" title="一、BootStrap篇"></a>一、BootStrap篇</h3><ul>
+<li><a href="https://wuqingvika.github.io/2017/11/19/前端开发-bootstrap-1/">【笔记】Bootstrap基础篇（一）test1</a></li>
+<li><a href="https://wuqingvika.github.io/2017/11/19/前端开发-bootstrap-2/">【笔记】Bootstrap基础篇（二）test2</a></li>
+</ul>
+<h2 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h2>]]></content>
+      
+        <categories>
+            
+            <category> 博文索引 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 博文索引 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[【工具】XX-Net「带你出去看看」]]></title>
+      <url>/2017/11/19/%E8%BF%B7%E4%BD%A0%E5%B0%8F%E6%8A%80%E8%83%BD-XX-Net/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「迷你小技能」第一篇,主要作一些技能知识的扩充，你懂的。</p>
+<a id="more"></a>
+<h2 id="XX-Net"><a href="#XX-Net" class="headerlink" title="XX-Net"></a>XX-Net</h2><h3 id="首先去Github下载"><a href="#首先去Github下载" class="headerlink" title="首先去Github下载"></a><a href="https://github.com/XX-net/XX-Net" target="_blank" rel="noopener">首先去Github下载</a><br></h3><h3 id="解压到本地-双击运行start-vbs"><a href="#解压到本地-双击运行start-vbs" class="headerlink" title="解压到本地 双击运行start.vbs"></a>解压到本地 双击运行start.vbs</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-1.jpg" alt=""></p>
+<h3 id="高级-gt-开启ipv6"><a href="#高级-gt-开启ipv6" class="headerlink" title="高级-&gt;开启ipv6"></a>高级-&gt;开启ipv6</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-2.jpg" alt=""></p>
+<h3 id="部署服务端-gt-填入googleappid，部署"><a href="#部署服务端-gt-填入googleappid，部署" class="headerlink" title="部署服务端-&gt;填入googleappid，部署"></a>部署服务端-&gt;填入googleappid，部署</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-3.jpg" alt=""></p>
+<h3 id="在部署成功的基础上填入googleappid，保存"><a href="#在部署成功的基础上填入googleappid，保存" class="headerlink" title="在部署成功的基础上填入googleappid，保存"></a>在部署成功的基础上填入googleappid，保存</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-4.jpg" alt=""></p>
+<h3 id="查看状态，出现如下，恭喜你，可以出去啦"><a href="#查看状态，出现如下，恭喜你，可以出去啦" class="headerlink" title="查看状态，出现如下，恭喜你，可以出去啦"></a>查看状态，出现如下，恭喜你，可以出去啦</h3><p><img src="https://raw.githubusercontent.com/wuqingvika/wuqingvika.github.io/master/_posts/Pic/1711/171119-5.jpg" alt=""></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><h3 id="关于ipv6开启如何解决-请升级至最新版本。-详情可见官方教程"><a href="#关于ipv6开启如何解决-请升级至最新版本。-详情可见官方教程" class="headerlink" title="关于ipv6开启如何解决 请升级至最新版本。 详情可见官方教程"></a>关于ipv6开启如何解决 请升级至最新版本。 <a href="https://github.com/XX-net/XX-Net/wiki/IPv6-Win10" target="_blank" rel="noopener">详情可见官方教程</a></h3><h2 id="家庭版"><a href="#家庭版" class="headerlink" title="家庭版"></a>家庭版</h2><ol>
+<li>命令行</li>
+</ol>
+<ul>
+<li><p>以管理员权限打开命令提示符（右键单击“开始”图标，然后选择“命令提示符(管理员)”），输入命令</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">// 设置 Teredo 服务器，默认为：win10.ipv6.microsoft.com</span><br><span class="line">netsh interface teredo <span class="built_in">set</span> state enterpriseclient server=default</span><br><span class="line"></span><br><span class="line">// 重置 IPv6 配置</span><br><span class="line">netsh interface ipv6 reset</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启系统</p>
+</li>
+<li><p>打开命令提示符，通过 <code>ipconfig /all</code> 命令查看当前网络信息，看到 <code>Teredo Tunneling Pseudo-Interface</code> 有以 2001 开头的地址即可。<br>启动IE浏览器，访问 <a href="http://test-ipv6.com" target="_blank" rel="noopener">http://test-ipv6.com</a>，如果选项卡 “<strong>测试项目</strong>” 下面的 “<strong>不使用域名的 IPv6 测试</strong>” 显示成功，则隧道建立成功。chrome浏览器的测试结果可能和IE不一样，请注意</p>
+</li>
+<li><p>如上面操作后仍无法启用 IPv6，可能是 Teredo 服务器无法正常连接，也可能是 Windows 自身配置问题，可尝试以下两种方法</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">// 第一种：修改 Teredo 服务器为 teredo.remlab.<span class="built_in">net</span></span><br><span class="line">netsh interface teredo <span class="built_in">set</span> state server=teredo.remlab.<span class="built_in">net</span></span><br><span class="line"></span><br><span class="line">// 第二种：先卸载当前 Teredo 适配器再重新启用</span><br><span class="line">netsh interface Teredo <span class="built_in">set</span> state disable</span><br><span class="line">netsh interface Teredo <span class="built_in">set</span> state <span class="built_in">type</span>=default</span><br></pre></td></tr></table></figure>
+<ul>
+<li>其他参考<ul>
+<li><a href="https://support.xbox.com/zh-CN/xbox-on-windows/social/troubleshoot-party-chat" target="_blank" rel="noopener">https://support.xbox.com/zh-CN/xbox-on-windows/social/troubleshoot-party-chat</a></li>
+<li><a href="http://www.windows7en.com/jiaocheng/26518.html" target="_blank" rel="noopener">http://www.windows7en.com/jiaocheng/26518.html</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="专业版"><a href="#专业版" class="headerlink" title="专业版"></a>专业版</h2><h3 id="命令行方法："><a href="#命令行方法：" class="headerlink" title="命令行方法："></a>命令行方法：</h3><p> 以管理员权限运行 XX-Net\code\default\gae_proxy\local\ipv6_tunnel\enable_ipv6.bat  </p>
+<h3 id="组策略方法"><a href="#组策略方法" class="headerlink" title="组策略方法"></a>组策略方法</h3><ul>
+<li><p>win+R打开gpedit.msc<br>1.png   </p>
+</li>
+<li><p>依顺序打开“计算机配置”——&gt;“管理模板”——&gt;“网络”——&gt;“TCPIP 设置”——&gt;“IPv6 转换技术”<br>2.png   </p>
+</li>
+<li><p>“6to4 状态” 和 “ISATAP 状态” 都配置为 “已禁用状态”<br>3.PNG<br>3.1.png<br>3.2.png   </p>
+</li>
+<li><p>重头戏，配置Teredo  </p>
+<ol>
+<li><p>“Teredo 状态” 配置为 “企业客户端”<br>4.1.png   </p>
+</li>
+<li><p>“Teredo 默认限定” 配置为 “已启用状态”   </p>
+</li>
+</ol>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 迷你小技能 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> XX-Net </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[【索引】运维&测试从基础到进阶]]></title>
+      <url>/2017/11/19/%E8%BF%90%E7%BB%B4&amp;%E6%B5%8B%E8%AF%95/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>这篇文章汇总了本站中所有与「Linux」「Nginx」有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font></p>
+<a id="more"></a>
+<h2 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h2><h3 id="一、Linux篇"><a href="#一、Linux篇" class="headerlink" title="一、Linux篇"></a>一、Linux篇</h3><ul>
+<li><a href="https://wuqingvika.github.io/2017/11/19/运维&amp;测试-linux-1/">【笔记】Linux(一)基础篇之「命令学习」</a></li>
+<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-linux-2/">【笔记】Linux(二)基础篇之「在Linux发布一个简单的web项目」</a><h3 id="二、Nginx篇"><a href="#二、Nginx篇" class="headerlink" title="二、Nginx篇"></a>二、Nginx篇</h3></li>
+<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-1/">【笔记】Nginx(一)基础篇之在「Windows」上搭建一个集群</a></li>
+<li><a href="https://wuqingvika.github.io/2017/11/20/运维&amp;测试-nginx-2/">【笔记】Nginx(二)基础篇之在「Linux」上搭建一个集群</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 博文索引 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 博文索引 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[【笔记】Bootstrap基础篇（一）test1]]></title>
+      <url>/2017/11/19/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91-bootstrap-1/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「Bootstrap学习笔记」第一篇。<br><a id="more"></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 前端开发 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Bootstrap </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[【索引】你值得拥有的一些迷你小技能]]></title>
+      <url>/2017/11/19/%E8%BF%B7%E4%BD%A0%E5%B0%8F%E6%8A%80%E8%83%BD/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><p>这篇文章汇总了本站中所有与「小技能」、常用工具下载安装有关的博文。<strong>按照学习路线由浅入深排序</strong>，大家可以根据需求点击阅读。<font color="red">【本文长期更新】</font><br><a id="more"></a></p>
+<h2 id="核心篇"><a href="#核心篇" class="headerlink" title="核心篇"></a>核心篇</h2><h3 id="一、XX-Net下载与安装"><a href="#一、XX-Net下载与安装" class="headerlink" title="一、XX-Net下载与安装"></a>一、XX-Net下载与安装</h3><ul>
+<li><a href="https://wuqingvika.github.io/2017/11/19/迷你小技能-XX-Net/">【工具】XX-Net「带你出去看看」</a></li>
+</ul>
+<h3 id="二、idea下载与安装"><a href="#二、idea下载与安装" class="headerlink" title="二、idea下载与安装"></a>二、idea下载与安装</h3><ul>
+<li><a href="https://wuqingvika.github.io/2017/11/20/迷你小技能-idea/">【工具】idea下载安装注册使用</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 博文索引 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 博文索引 </tag>
             
         </tags>
         
