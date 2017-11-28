@@ -323,6 +323,7 @@ pre code {
   background-color: #3a3a3a;
 }
 .highlight .line {
+  display: block;
   height: 20px;
   border: none;
 }
