@@ -1,0 +1,842 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+ <meta name="baidu-site-verification" content="b4m9a9bqCn" />
+
+  
+  
+  <title>  【笔记】Idea常用技巧总结 |   Wuqingvika | 吴里庆庆</title>
+
+ 
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+
+
+  <!-- css -->
+  <link rel="stylesheet" href="/css/style.css">  
+  <!-- Jquery -->
+  <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script> 
+  <!-- Add fancyBox -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script> 
+  <script src="/js/gallery.js"></script>
+  <!-- javascript --> 
+  <script src="/js/mobile.js"></script>  
+  <script src="/js/utils.js"></script>    
+  <script src="/js/script.js"></script>  
+</head> 
+
+  <body> 
+    <header class="header">
+	
+  <nav class="header-nav">       
+	
+  	<span class="iconfont icon-menu mobile-toggle"></span>  
+
+    <a class="header-logo" href="/"><span>Wuqingvika</a>  
+
+    <div class="header-menu">          
+              
+            
+
+              <a class="header-menu-link" id="header-menu-home" href="/">首页
+              </a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-archives" href="/archives">归档
+              </a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-categories" href="/categories">分类
+              </a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-tags" href="/tags">标签
+              </a>     
+
+            
+            
+            
+
+              <a class="header-menu-link" id="header-menu-about" href="/about">关于
+              </a>     
+
+            
+            
+            
+
+              <a class="iconfont icon-menu-search header-menu-link" id="header-menu-search"></a>
+
+            
+        
+        
+    </div>  
+  </nav>
+</header>
+
+     <div class="container">   
+      
+        
+        <section id="post">
+        
+        
+
+         <article class="post">
+
+<div class="post-head">
+
+	<span class="post-title">	
+		【笔记】idea常用技巧总结
+	</span>
+
+
+	<div class="post-info">
+
+		<time class="post-time"><span class="iconfont icon-date"></span>
+		2018/01/21 21:45:41 	
+		</time>
+
+
+		
+
+		<span class="post-words"><span class="iconfont icon-words"></span>
+		5375
+		</span>
+
+
+		
+		
+
+<span class="post-visitor">
+		<span class="iconfont icon-eye"></span>
+		<span class="post-count" id="post-leancloud-count"></span>
+</span>
+
+<script src="//cdn1.lncld.net/static/js/3.3.0/av-min.js"></script>
+<script>
+var app_id = 'wC9kYyneYKu5htgJLbot3CBB-gzGzoHsz';
+var app_key = 'MdomImvLQLvTHqn5fS2QBfWK';
+AV.init({
+  appId: app_id,
+  appKey: app_key
+});
+</script>
+<script src="/js/leancloud.js"></script>
+
+ 	
+			
+		
+	</div>
+
+</div>
+ 
+
+
+  <div class="post-content slideDownMin">
+   
+    <script src="/assets/js/APlayer.min.js"> </script><p>本文是我的「idea学习笔记」第一篇,主要学习了一些常用的idea操作技巧、相关的快捷键等。</p>
+<a id="more"></a>
+<h2 id="Idea常用技巧总结"><a href="#Idea常用技巧总结" class="headerlink" title="Idea常用技巧总结"></a>Idea常用技巧总结</h2><h3 id="1-无处不在的跳转"><a href="#1-无处不在的跳转" class="headerlink" title="1.无处不在的跳转"></a>1.无处不在的跳转</h3><blockquote>
+<p>注：这里的快捷键是自己定义的，并非大家的都一样，可以通过findAction查找相应的快捷键。<br>菜单栏选择”帮助/help”&rarr;FindAction(ctrl+shift+A)快速搜索想要查找命令。<br>我这里只演示windows平台使用的快捷键(eclipse版本KeyMap)。</p>
+<h4 id="1-1-项目窗口间的跳转"><a href="#1-1-项目窗口间的跳转" class="headerlink" title="1.1 项目窗口间的跳转"></a>1.1 项目窗口间的跳转</h4><ul>
+<li>菜单栏选择window &rarr;Previous Project Window(ctrl+alt+左方括号)</li>
+</ul>
+</blockquote>
+<h4 id="1-2-文件之间的跳转"><a href="#1-2-文件之间的跳转" class="headerlink" title="1.2 文件之间的跳转"></a>1.2 文件之间的跳转</h4><ul>
+<li>查看近期浏览文件 findaction(ctrl+shift+A)  &rarr;输入recent files<ul>
+<li>Ctrl+E</li>
+</ul>
+</li>
+<li>查看近期改动文件 recent changed files &hArr; ctrl+shift+e</li>
+<li>修改位置跳转<ul>
+<li>菜单栏”Navigate”&rarr;last edit location(ctrl+Q)</li>
+<li>反之 next edit location 可以自定义快捷键。</li>
+</ul>
+</li>
+<li>浏览位置跳转(光标停留位置) navigate  &rarr;back(alt+向左箭头)</li>
+</ul>
+<h4 id="1-3-项目区与代码编辑区的相应跳转"><a href="#1-3-项目区与代码编辑区的相应跳转" class="headerlink" title="1.3 项目区与代码编辑区的相应跳转"></a>1.3 项目区与代码编辑区的相应跳转</h4><ul>
+<li>项目区跳到右边代码编辑区<ul>
+<li>按ESC键</li>
+</ul>
+</li>
+<li>代码编辑区跳到左边项目区<ul>
+<li>Alt+数字1</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-4-书签之间的跳转"><a href="#1-4-书签之间的跳转" class="headerlink" title="1.4 书签之间的跳转"></a>1.4 书签之间的跳转</h4><ul>
+<li>利用书签跳转<ul>
+<li>findaction&rarr;bookmarks&rarr;toggle bookmark(ctrl+shift+F11)</li>
+<li>带标记书签 bookmarks&rarr;toggle bookmarks with Mnemonic(ctrl+alt+shift+F11)</li>
+<li>标签间跳转 用ctrl+作标记的数字(这里有个坑我按小键盘数字没反应，得按大键盘的数字才行)<h4 id="1-5-收藏夹"><a href="#1-5-收藏夹" class="headerlink" title="1.5 收藏夹"></a>1.5 收藏夹</h4></li>
+</ul>
+</li>
+<li>查看收藏夹 findaction&rarr;favorites(alt+2)<ul>
+<li>可以看到我们的书签、收藏夹。</li>
+<li>单独添加到收藏夹（自定义收藏夹）<ul>
+<li>findaction &rarr; add to favorites(Alt+shift+F)</li>
+<li>我们可以光标定位到某个函数、或是某个类添加到自定义的收藏夹中（add to new favorites list)<h4 id="1-6-插件"><a href="#1-6-插件" class="headerlink" title="1.6 插件"></a>1.6 插件</h4></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>调插件页面 findaction&rarr;输入plugins</li>
+<li>1.神器 emacsIdeas 安装<ul>
+<li>browse repositories &rarr;emacIdeas&rarr;install&rarr;restart idea(重启Idea)</li>
+<li>配置emacsIdeas快捷键 settings/keymap/emacIdeas文件夹下AceJumpWord添加对应的快捷键。<ul>
+<li>按下刚配置的快捷键比如我这里shift+alt+K &rarr;按下要找的数字&rarr;输入任意高亮位置就跳转到对应位置了。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-7-编辑区分屏"><a href="#1-7-编辑区分屏" class="headerlink" title="1.7 编辑区分屏"></a>1.7 编辑区分屏</h4><ul>
+<li>垂直分屏<ul>
+<li>IntelliJ IDEA 支持对代码进行垂直或是水平分组，在打开的文件Tab上打开鼠标右键菜单，选择对应的split vertically功能即可</li>
+</ul>
+</li>
+<li>水平分屏<ul>
+<li>设为split horizontally即可。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-高速定位代码"><a href="#2-高速定位代码" class="headerlink" title="2.高速定位代码"></a>2.高速定位代码</h3><h4 id="2-1-精准搜索"><a href="#2-1-精准搜索" class="headerlink" title="2.1 精准搜索"></a>2.1 精准搜索</h4><ul>
+<li>类<ul>
+<li>菜单栏 &rarr;Navigate &rarr;Class(Ctrl+shift+T) 其中include none..勾上就可以关联到Jar包里所依赖的类。</li>
+</ul>
+</li>
+<li>文件<ul>
+<li>菜单栏 navigate &rarr;file(ctrl+shift+r)</li>
+</ul>
+</li>
+<li>符号<ul>
+<li>菜单栏 navigate &rarr;symbol(ctrl+alt+shift+n)</li>
+</ul>
+</li>
+<li>字符串<ul>
+<li>菜单栏 edit&rarr;find&rarr;find in path(ctrl+H)<h3 id="3-代码小助手"><a href="#3-代码小助手" class="headerlink" title="3.代码小助手"></a>3.代码小助手</h3><h4 id="3-1-列操作"><a href="#3-1-列操作" class="headerlink" title="3.1 列操作"></a>3.1 列操作</h4></li>
+</ul>
+</li>
+<li>移动到当前单词尾部<ul>
+<li>findaction &rarr;输入move caret to next word(ctrl+向右箭头)</li>
+</ul>
+</li>
+<li>选中到当前单词尾部 （ctrl+shift+向右箭头）</li>
+<li>当前单词设置大小写切换<ul>
+<li>edit&rarr;toggle case(ctrl+shift+u)</li>
+</ul>
+</li>
+<li>移动到当前行首<ul>
+<li>findaction&rarr;输入move caret to line start(Home键)</li>
+</ul>
+</li>
+<li>移动到当前行尾<ul>
+<li>findaction&rarr;输入move caret to line end(End键)</li>
+</ul>
+</li>
+<li>将当前行的操作应用到相似行进行批量操作★<ul>
+<li>菜单栏edit&rarr;find&rarr;select all occurrences(ctrl+alt+Y)</li>
+</ul>
+</li>
+<li>格式化下代码<ul>
+<li>菜单栏code&rarr;reformat code<h4 id="3-2-live-Template★"><a href="#3-2-live-Template★" class="headerlink" title="3.2 live Template★"></a>3.2 live Template★</h4></li>
+</ul>
+</li>
+<li><p>main</p>
+<ul>
+<li>findaction&rarr;输入live templates&rarr;点击右上角“+”</li>
+<li>输入缩写main 简介public static void main</li>
+<li><p>输入方法体</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    $END$</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>点击define&rarr;勾选java</p>
+</li>
+<li>输入main敲下回车即可。</li>
+</ul>
+</li>
+<li><p>psfi</p>
+<ul>
+<li><p>输入最终模板(右边var1、var2确保输入一个参数回车后跳到另一参数输入)</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> $var1$=$var2$;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>点击define&rarr;勾选java      </p>
+</li>
+</ul>
+</li>
+<li><p>psfs</p>
+<ul>
+<li><p>输入最终模板(右边var1、var2确保输入一个参数回车后跳到另一参数输入)</p>
+  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String $var1$=<span class="string">"$var2$"</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>点击define&rarr;勾选java</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>pic</p>
+<ul>
+<li><p>输入模板 pic(private int 带有注释)</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* $var1$</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> $var2$;</span><br><span class="line">$End$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>点击define&rarr;勾选java</p>
+</li>
+</ul>
+</li>
+<li>pi、ps（private int ..和private String..)设置同上，略。</li>
+</ul>
+<h4 id="3-3-postfix★"><a href="#3-3-postfix★" class="headerlink" title="3.3 postfix★"></a>3.3 postfix★</h4><ul>
+<li>使用此功能（神器,输入一些东西加上”.”后自动转换成想要的模板）<ul>
+<li>findaction&rarr;postfix completion&rarr;勾选enable postfix completion.<ul>
+<li>找到java&rarr;fori可以查看实现原理(下面仅列出几种常用的)。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>for循环(fori)</li>
+<li>打印(sout)</li>
+<li>field<ul>
+<li>构造方法中.field会自动补充不存在的字段(详见wqjavase项目idea包下的B.java)。</li>
+</ul>
+</li>
+<li>return</li>
+<li>nn(判断是否为空)</li>
+</ul>
+<h4 id="3-4-alt-enter智能提示"><a href="#3-4-alt-enter智能提示" class="headerlink" title="3.4 alt+enter智能提示"></a>3.4 alt+enter智能提示</h4><ul>
+<li>快捷键<ul>
+<li>findaction&rarr;show intention actions(alt+anter)</li>
+</ul>
+</li>
+<li>list replace</li>
+<li>字符串format或者build</li>
+<li>实现接口<ul>
+<li>新建接口&rarr;UserService&rarr;光标定位到接口名称&rarr;按下alt+anter</li>
+<li>选择implement interface&rarr;输入实现类名称+选择创建位置</li>
+<li>选择实现接口中的方法即可生成。</li>
+</ul>
+</li>
+<li>单词拼写<ul>
+<li>如果单词不记得如何拼写可以选中再按下alt+anter选择type change to它提示的英文单词进行矫正。</li>
+</ul>
+</li>
+<li>导包 ★<ul>
+<li>通过提示手动导包<ul>
+<li>按下alt+anter即可(我喜欢这种)</li>
+</ul>
+</li>
+<li>自动导包<ul>
+<li>Settings&rarr;Editor&rarr;general&rarr;勾上auto import Optimize…<h3 id="4-编写高质量代码"><a href="#4-编写高质量代码" class="headerlink" title="4.编写高质量代码"></a>4.编写高质量代码</h3><h4 id="4-1-重构"><a href="#4-1-重构" class="headerlink" title="4.1 重构"></a>4.1 重构</h4></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>重构变量<ul>
+<li>选中要重构的变量&rarr;菜单栏选择refactor&rarr;rename(alt+shift+r)</li>
+</ul>
+</li>
+<li>重构方法<ul>
+<li>选择要重构的方法名&rarr;菜单栏选择refactor&rarr;change signature&rarr;输入相关参数配置即可。</li>
+<li>另一种通过alt anter<ul>
+<li>直接在调用时输入要添加的参数&rarr;alt+anter&rarr;add 相应参数至方法即可。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>抽取<ul>
+<li>抽取变量<ul>
+<li>选中字符串中的变量&rarr;refactor&rarr;extract&rarr;variable(alt+shift+L);</li>
+</ul>
+</li>
+<li>抽取静态变量<ul>
+<li>选中字符串中变量&rarr;refactor&rarr;extract&rarr;Constant(ctrl+alt+c)</li>
+</ul>
+</li>
+<li>抽取方法参数<ul>
+<li>如果方法中有用到成员变量（如this.name)&rarr;refactor&rarr;extract&rarr;parameter(alt+ctrl+p)就可以将成员变量以入参的形式传进来。</li>
+</ul>
+</li>
+<li>抽取函数<ul>
+<li>将方法中的逻辑抽取为一个函数。refactor&rarr;extract&rarr;Method（shift+alt+m)<h3 id="5-寻找修改轨迹"><a href="#5-寻找修改轨迹" class="headerlink" title="5.寻找修改轨迹"></a>5.寻找修改轨迹</h3><h4 id="5-1-git集成"><a href="#5-1-git集成" class="headerlink" title="5.1 git集成"></a>5.1 git集成</h4></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>annotate<ul>
+<li>找出某行代码作者是谁<ul>
+<li>在代码行左侧右击annotate</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>移动所有改动之处<ul>
+<li>findaction&rarr;previous changes(ctrl+alt+shift+向上箭头)</li>
+</ul>
+</li>
+<li>撤销操作<ul>
+<li>findaction&rarr;revert(ctrl+z)<h4 id="5-2-local-history★"><a href="#5-2-local-history★" class="headerlink" title="5.2 local history★"></a>5.2 local history★</h4></li>
+</ul>
+</li>
+<li>显示本地修改历史记录<ul>
+<li>findaction&rarr;local history&rarr;show history</li>
+<li>点击箭头可撤销。</li>
+<li>put label(类似commit提交注释的功能)</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-关联一切"><a href="#6-关联一切" class="headerlink" title="6.关联一切"></a>6.关联一切</h3><h4 id="6-1-与Spring的关联"><a href="#6-1-与Spring的关联" class="headerlink" title="6.1 与Spring的关联"></a>6.1 与Spring的关联</h4><ul>
+<li><a href="https://www.imooc.com/video/16226" target="_blank" rel="noopener">视频学习链接</a></li>
+<li>操作流程<ul>
+<li>file&rarr;project structure&rarr;facets&rarr;点击“+”&rarr;Spring到项目&rarr;点左下角加号&rarr;再勾上Spring配置文件即可（可以看到Springbean被哪里定义等信息）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-2-与数据库的关联"><a href="#6-2-与数据库的关联" class="headerlink" title="6.2 与数据库的关联"></a>6.2 与数据库的关联</h4><ul>
+<li>数据库连接<ul>
+<li>view&rarr;tool windows&rarr;database</li>
+<li>按“+”&rarr;datasource&rarr;mysql&rarr;输入数据库名；用户名、密码测试连接出现Suqcessful即可。</li>
+<li>关联sqlmap我就略过了。<h3 id="7-调试程序"><a href="#7-调试程序" class="headerlink" title="7.调试程序"></a>7.调试程序</h3><h4 id="7-1-断点调试"><a href="#7-1-断点调试" class="headerlink" title="7.1 断点调试"></a>7.1 断点调试</h4></li>
+</ul>
+</li>
+<li>打断点<ul>
+<li>run&rarr;toggle line breakpoint(ctrl+shift+B)</li>
+</ul>
+</li>
+<li>运行Debug模式<ul>
+<li>run&rarr;debug…(alt+shift+F9)或者按小虫子</li>
+</ul>
+</li>
+<li>按步运行<ul>
+<li>step over(F6)</li>
+</ul>
+</li>
+<li>跳过断点<ul>
+<li>resume program(f8)</li>
+</ul>
+</li>
+<li>查看所有断点<ul>
+<li>run&rarr;view breakpoints(ctrl+shift+F8)</li>
+</ul>
+</li>
+<li>禁止所有断点<ul>
+<li>debug窗口中左侧找到禁止标志（mute breakpoints)&rarr;F8跳过所有断点</li>
+</ul>
+</li>
+<li>条件断点<ul>
+<li>在断点上右击出现 condition 输入条件(如s.equals(“wuqingvika”))</li>
+</ul>
+</li>
+<li>表达式求值<ul>
+<li>查看值★<ul>
+<li>run&rarr;evaluate expression</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>运行到指定行<ul>
+<li>在Debug窗口找到有个光标图标 run to cursor(ctrl+R)</li>
+</ul>
+</li>
+<li>setValue★<ul>
+<li>在debug中只要选中要设置的变量按下F2设定想要设定的值即可。<h4 id="7-2-任一处运行"><a href="#7-2-任一处运行" class="headerlink" title="7.2 任一处运行"></a>7.2 任一处运行</h4></li>
+<li>运行当前上下文<ul>
+<li>findaction&rarr;debug context 就会运行光标就近处的方法</li>
+<li>注：如果光标在中间 那么两个都会运行</li>
+</ul>
+</li>
+<li>在当前可运行列表中选择一个运行<ul>
+<li>alt+shift+F9</li>
+</ul>
+</li>
+<li>编辑当前运行    <ul>
+<li>run&rarr;edit configurations&rarr;application&rarr;选择某个应用程序&rarr;在program arguments输入参数信息<h3 id="8-其他操作"><a href="#8-其他操作" class="headerlink" title="8.其他操作"></a>8.其他操作</h3><h4 id="8-1-文本操作"><a href="#8-1-文本操作" class="headerlink" title="8.1 文本操作"></a>8.1 文本操作</h4></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>复制文件名<ul>
+<li>直接点击文件名 Ctrl+c在文本编辑区ctrl+v即可。</li>
+</ul>
+</li>
+<li>复制文件全名<ul>
+<li>shift+ctrl+c 再ctrl+v即可。</li>
+</ul>
+</li>
+<li>复制多个文件名<ul>
+<li>多次ctrl+c 再shift+ctrl+v选择要复制哪些文件名即可。</li>
+</ul>
+</li>
+<li>结构图<ul>
+<li>查看当前field、method大纲<ul>
+<li>navigate&rarr;File Structure(ctrl+F3)</li>
+</ul>
+</li>
+<li>查看maven依赖★<ul>
+<li>pom.xml&rarr;右击Maven&rarr;show dependencies可以看到所有的依赖关系。<ul>
+<li>可以按Ctrl+f进行搜索</li>
+<li>可以右击exclude进行排除</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>查看类图★<ul>
+<li>普通的子类名右击Diagrams&rarr;Show diagram即可出现类图。</li>
+</ul>
+</li>
+<li>查看类继承结构★<ul>
+<li>findaction&rarr;hierarchy actions&rarr;hierarchy(alt+8)</li>
+</ul>
+</li>
+<li>方法调用层次★<ul>
+<li>findaction&rarr;call hierarchy(ctrl+alt+H)<br>##致谢<blockquote>
+<p>此总结源自慕课网视频教程,感谢老师@闪电侠，受益匪浅！     </p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+    
+
+  </div>  
+ 
+
+  <div class="post-bottom">
+		<div class="meta-info">
+
+	
+			<ul class="ul">
+				<li class="li iconfont icon-category"></li>
+				<a class="category-link" href="/categories/工具/">工具</a>
+			</ul>
+			
+
+
+	
+			<ul class="ul">
+				<li class="li iconfont icon-tag"></li>
+				<a class="tag-link" href="/tags/idea/">idea</a>
+			</ul>
+			
+</div> 
+		
+	
+<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
+
+	<div class="-mob-share-list">
+
+		                  
+            <span class="iconfont icon-share-qq -mob-share-qq"></span>
+     	                  
+            <span class="iconfont icon-share-weixin -mob-share-weixin"></span>
+     	                  
+            <span class="iconfont icon-share-weibo -mob-share-weibo"></span>
+     	                  
+            <span class="iconfont icon-share-douban -mob-share-douban"></span>
+     	                  
+            <span class="iconfont icon-share-facebook -mob-share-facebook"></span>
+     	                  
+            <span class="iconfont icon-share-twitter -mob-share-twitter"></span>
+     	                  
+            <span class="iconfont icon-share-tumblr -mob-share-tumblr"></span>
+     	                  
+            <span class="iconfont icon-share-google -mob-share-google"></span>
+     	  
+	</div>    
+
+  </div>
+
+
+
+
+ <nav class="nav">
+
+  
+     
+
+
+
+    
+       <div class="nav-next">      
+        <a  class="nav-link" href="/2018/01/15/工具-gitbash-1/">      
+
+             
+         <span class="nav-title">【笔记】gitbash(一)基础篇之「命令学习」</span>
+          <li class="li iconfont icon-right"></li>
+        </a>
+        </div>
+    
+
+</nav>   
+
+
+
+
+<div class="donate-btn iconfont icon-donate"></div>
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMTk3NS84NTM5">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+<div id="donate-box">
+
+	<span class="donate-cancel iconfont icon-cancel"></span>
+
+	<div class="donate-img-box">
+		<img id="donate-qr-wechat" class="donate-img no-gallery" src="/img/donate1.png" alt="No donate img !">	
+		<img id="donate-qr-alipay" class="donate-img no-gallery" src="/img/donate2.png" alt="No donate img !">				
+	</div>
+
+	<span class="donate-word slideDownMin">emm...请赐一包辣条可好..</span>
+
+	<div class="donate-list fadeIn">
+		<span class="iconfont icon-donate-wechat"></span>
+		<span class="iconfont icon-donate-alipay"></span>
+	</div>
+
+</div>
+
+ 
+
+
+
+
+	
+
+
+  
+
+  <div class="post-widget">
+    
+    <a class="post-widget-title iconfont icon-category" href="/categories">
+    分类</a>
+
+
+    <div class="small-tag">
+         
+          <a href="/categories/前端开发/">前端开发</a>     
+         
+          <a href="/categories/博文索引/">博文索引</a>     
+         
+          <a href="/categories/后端开发/">后端开发</a>     
+         
+          <a href="/categories/工具/">工具</a>     
+         
+          <a href="/categories/运维-测试/">运维&测试</a>     
+         
+          <a href="/categories/迷你小技能/">迷你小技能</a>     
+        
+    </div>
+
+  </div>
+
+  
+
+
+  
+  <div class="post-widget">
+    
+    <a class="post-widget-title iconfont icon-tag" href="/tags"> 标签</a>
+
+
+    <div class="small-tag">
+
+      <a href="/tags/Bootstrap/" style="font-size: 13px;">Bootstrap</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 13px;">IntelliJ IDEA</a> <a href="/tags/Java/" style="font-size: 13px;">Java</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/Nginx/" style="font-size: 13px;">Nginx</a> <a href="/tags/Spring/" style="font-size: 13px;">Spring</a> <a href="/tags/XX-Net/" style="font-size: 13px;">XX-Net</a> <a href="/tags/gitbash/" style="font-size: 13px;">gitbash</a> <a href="/tags/idea/" style="font-size: 13px;">idea</a> <a href="/tags/博文索引/" style="font-size: 13px;">博文索引</a>
+
+    </div>
+  </div>
+
+  
+ 
+
+
+
+</article>
+
+
+<div id="toc" class="fadeIn">		
+
+	<div class="toc-container">	
+
+	<span class="toc-contents iconfont icon-open" onclick="change()"> 目录 </span>
+
+	<ul class="toc-list"></ul>
+
+	</div>
+
+</div>
+
+
+<script src="/js/toc.js"></script>
+
+<script src="/js/post.js"></script>
+</section>
+
+     
+    
+    </div>        
+    
+    <div class="mask"> </div>
+    <div class="back-to-top iconfont icon-backtotop fadeIn"></div> 
+
+    
+
+
+
+      
+
+             
+              
+      
+
+      
+
+      
+
+      
+
+      
+
+
+
+
+
+
+
+<script src="/js/search.js"></script>     
+          
+          <div class="search-container">
+            <input type="text" placeholder="搜索点什么吧..." id="search-input" class="search-input">  
+              <span class="search-cancel iconfont icon-cancel"></span>
+              <div id="search-result" class="search-result"></div>
+          </div>
+ 
+
+     <div class="mobile-menu">      
+
+      
+      <img class="slide-icon no-gallery" src= /img/favicon.png >   
+      
+
+         
+            
+
+            <a class="mobile-menu-link" href="/">首页
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/archives">归档
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/categories">分类
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/tags">标签
+            </a>
+            
+         
+            
+
+            <a class="mobile-menu-link" href="/about">关于
+            </a>
+            
+         
+                          
+
+            <a class="mobile-menu-link mobile-menu-search" href="#">搜索 </a>                 
+            
+         
+</div>     
+    
+
+<footer id="footer">
+
+    
+   	 <div class="foot-busuanzi">	
+
+     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+   
+     <span class="iconfont icon-pv"></span>
+     <span id="busuanzi_value_site_pv"></span>
+ 
+     <span class="iconfont icon-uv"></span>
+     <span id="busuanzi_value_site_uv"></span>
+
+   	 </div>
+    
+
+    	
+	<div class="foot-link">
+	
+	 <a href="http://hexo.io/" target="_blank">Hexo</a>
+
+	 Theme
+
+	 <a href="https://github.com/Lemonreds/hexo-theme-Nayo" target="_blank">Nayo</a> 
+
+	 </div>	
+
+	 <div class="foot-copyright">
+	  &copy; 
+	 
+	 	2017-
+	 
+
+	 2018
+	 吴里庆庆	 
+
+	 </div>
+</footer> 
+    
+
+<!-- Baidu Analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c308290134e6d5242e273a2dc60778a1"; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+ 
+  </body>   
+  <script src="/js/animation.js"></script>   
+</html>
